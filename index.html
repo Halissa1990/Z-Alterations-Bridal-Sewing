@@ -28,19 +28,18 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 20px;
+            padding: 10px 20px 15px 20px;
             text-align: center;
-            background-color: #ffffff;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            background-color: transparent; /* Allows pink background to show through */
         }
 
         .logo-container img {
-            width: 600px;            /* Sets your desired large display size */
+            width: 600px;            
             max-width: 100%;
             height: auto;
-            image-rendering: -webkit-optimize-contrast; /* Sharpens edges slightly in some browsers */
-            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); /* Adds a soft pop against the pink background */
-            margin-bottom: 20px;
+            image-rendering: -webkit-optimize-contrast; 
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); 
+            margin-bottom: 5px; /* Reduced space between logo and navigation */
         }
 
         nav {
@@ -58,16 +57,17 @@
         }
 
         nav ul li a {
-            color: var(--nav-blue); /* Navigation color set to blue */
+            color: #ffffff; /* White text for contrast against pink background */
             font-weight: 600;
             text-decoration: none;
             font-size: 1.1rem;
             transition: color 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         nav ul li a:hover, 
         nav ul li a.active {
-            color: var(--brand-pink); 
+            color: var(--nav-blue); 
             text-decoration: underline;
         }
 
@@ -103,7 +103,7 @@
         }
 
         .slideshow-container {
-            max-width: 1200px; /* Container width set to 1200px */
+            max-width: 1000px; /* Slideshow width set to 1000px */
             position: relative;
             margin: 25px auto;
         }
@@ -114,7 +114,7 @@
 
         .slide img {
             width: 100%;
-            height: 600px; /* Image height set to 600px */
+            height: 500px; /* Slideshow height set to 500px */
             object-fit: cover;
             border-radius: 6px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -205,7 +205,7 @@
 </head>
 <body>
 
-    <!-- Header with Larger Logo Centered & Blue Navigation in the Middle -->
+    <!-- Header -->
     <header>
         <div class="logo-container">
             <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
@@ -228,7 +228,7 @@
             <p>With over 30 years of family-owned craftsmanship, Z Alterations & Bridal Sewing LLC specializes in expert tailoring, precision alterations, and bridal wear. Located at 4160 S 108th St, Greenfield, WI 53228, we are dedicated to bringing your vision to life with timely, passionate service. Learn more <a href="about.html" style="color: var(--brand-pink); text-decoration: underline; font-weight: 600;">about us here</a>.</p>
             <div class="feature-badge">Featured on Greenfield: We're Open!</div>
 
-            <!-- Picture Slideshow (Limited from Image 1 to Image 8) -->
+            <!-- Picture Slideshow -->
             <div class="slideshow-container">
                 <div class="slide fade"><img src="images/image1.jpg" alt="Tailoring workspace"></div>
                 <div class="slide fade"><img src="images/image2.jpg" alt="Sewing tools"></div>
@@ -240,7 +240,7 @@
                 <div class="slide fade"><img src="images/image8.JPG" alt="Alteration work"></div>
             </div>
 
-            <!-- Slideshow Dots (Reduced to 8 dots matching images 1-8) -->
+            <!-- Slideshow Dots -->
             <div class="dot-container">
                 <span class="dot" onclick="currentSlide(1)"></span>
                 <span class="dot" onclick="currentSlide(2)"></span>
