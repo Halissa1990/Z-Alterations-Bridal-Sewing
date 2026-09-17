@@ -10,8 +10,8 @@
            ========================================== */
 
         :root {
-            --brand-pink: #e86998; /* Balanced medium pink */
-            --nav-blue: #1e3a8a;   /* Deep professional blue for navigation */
+            --brand-pink: #e86998; 
+            --nav-blue: #1e3a8a;   
             --text-dark: #333333;
         }
 
@@ -19,12 +19,12 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--brand-pink); /* Pink background */
+            background-color: var(--brand-pink); 
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Header layout: Logo on left, navigation on white background next to it */
+        /* Forces header items to the left side */
         header {
             display: flex;
             justify-content: flex-start;
@@ -32,7 +32,7 @@
             padding: 20px 40px;
             max-width: 1600px;
             margin: 0 auto;
-            gap: 30px; /* Space between logo and navigation box */
+            gap: 25px; 
         }
 
         .logo-container {
@@ -42,15 +42,14 @@
         }
 
         .logo-container img {
-            width: 380px;            
+            width: 350px;            
             max-width: 100%;
             height: auto;
             display: block;
-            image-rendering: -webkit-optimize-contrast; 
             filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); 
         }
 
-        /* White background panel behind the navigation */
+        /* White background panel behind navigation */
         nav {
             background-color: #ffffff;
             padding: 12px 25px;
@@ -67,7 +66,7 @@
         }
 
         nav ul li a {
-            color: var(--nav-blue); /* Professional blue text for navigation */
+            color: var(--nav-blue); /* Blue navigation text */
             font-weight: 600;
             text-decoration: none;
             font-size: 1.05rem;
@@ -111,8 +110,9 @@
             margin: 15px 0;
         }
 
+        /* Slideshow dimensions: 1200px width, 700px height */
         .slideshow-container {
-            max-width: 1200px; /* Slideshow width set to 1200px */
+            max-width: 1200px; 
             position: relative;
             margin: 25px auto;
         }
@@ -123,7 +123,7 @@
 
         .slide img {
             width: 100%;
-            height: 700px; /* Slideshow height set to 700px */
+            height: 700px; 
             object-fit: cover;
             border-radius: 6px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -211,7 +211,6 @@
             margin-top: 15px;
         }
 
-        /* Responsive adjustment for mobile screens */
         @media (max-width: 900px) {
             header {
                 flex-direction: column;
@@ -306,7 +305,7 @@
         <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
     </footer>
 
-    <!-- Slideshow JavaScript Script -->
+    <!-- Slideshow JavaScript Script (20 Second Timer) -->
     <script>
         let slideIndex = 0;
         showSlides();
@@ -325,7 +324,7 @@
             }
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 20000); // Change image every 20 seconds
+            setTimeout(showSlides, 20000); // 20 seconds
         }
 
         function currentSlide(n) {
