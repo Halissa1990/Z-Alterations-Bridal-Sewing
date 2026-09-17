@@ -24,54 +24,46 @@
             line-height: 1.6;
         }
 
-        /* Header layout containing the single white box wrapper */
+        /* Header layout aligning everything to the left */
         header {
             display: flex;
             justify-content: flex-start;
             align-items: center;
-            padding: 20px 40px;
+            padding: 25px 40px;
             max-width: 1600px;
             margin: 0 auto;
         }
 
-        /* Single Professional White Container Box holding BOTH Logo and Navigation */
+        /* Tight white box container wrapping ONLY logo and nav together */
         .header-content-box {
-            display: flex;
+            display: inline-flex;
             align-items: center;
             background-color: #ffffff; 
-            padding: 15px 35px;
+            padding: 15px 30px;
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            gap: 50px; /* Generous space between logo and menu items */
-            width: 100%;
-            max-width: 1300px;
+            gap: 40px; /* Space between logo and menu items */
         }
 
         .logo-container {
             line-height: 0;
             margin: 0;
             padding: 0;
-            flex-shrink: 0;
         }
 
         .logo-container img {
-            width: 320px;            
+            width: 280px; 
             max-width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Navigation menu inside the white box with larger, professional font */
-        nav {
-            flex-grow: 1;
-        }
-
+        /* Navigation menu with big, bold professional font */
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: flex-end;
             gap: 30px;
         }
 
@@ -79,7 +71,7 @@
             color: var(--nav-blue); 
             font-weight: 700;
             text-decoration: none;
-            font-size: 1.25rem; /* Larger, professional font size */
+            font-size: 1.35rem; /* Big professional font size */
             transition: color 0.3s ease;
         }
 
@@ -221,15 +213,17 @@
             margin-top: 15px;
         }
 
-        @media (max-width: 1000px) {
+        @media (max-width: 900px) {
             .header-content-box {
                 flex-direction: column;
                 gap: 20px;
                 text-align: center;
+                width: 100%;
+                box-sizing: border-box;
             }
             nav ul {
-                justify-content: center;
                 flex-wrap: wrap;
+                justify-content: center;
                 gap: 15px;
             }
         }
@@ -237,7 +231,7 @@
 </head>
 <body>
 
-    <!-- Header Section with Combined White Box Container -->
+    <!-- Header Section -->
     <header>
         <div class="header-content-box">
             <div class="logo-container">
@@ -262,7 +256,7 @@
             <p>With over 30 years of family-owned craftsmanship, Z Alterations & Bridal Sewing LLC specializes in expert tailoring, precision alterations, and bridal wear. Located at 4160 S 108th St, Greenfield, WI 53228, we are dedicated to bringing your vision to life with timely, passionate service. Learn more <a href="about.html" style="color: var(--brand-pink); text-decoration: underline; font-weight: 600;">about us here</a>.</p>
             <div class="feature-badge">Featured on Greenfield: We're Open!</div>
 
-            <!-- Picture Slideshow -->
+            <!-- Picture Slideshow (1200px width by 700px height) -->
             <div class="slideshow-container">
                 <div class="slide fade"><img src="images/image1.jpg" alt="Tailoring workspace"></div>
                 <div class="slide fade"><img src="images/image2.jpg" alt="Sewing tools"></div>
