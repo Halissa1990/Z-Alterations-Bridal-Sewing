@@ -24,38 +24,28 @@
             line-height: 1.6;
         }
 
-        /* Header layout with Logo on left and Nav container on right */
         header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 15px 40px;
-            background-color: transparent; 
-            max-width: 1600px;
-            margin: 0 auto;
-        }
-
-        .logo-container {
-            line-height: 0;
-            margin: 0;
-            padding: 0;
+            padding: 10px 20px 15px 20px;
+            text-align: center;
+            background-color: transparent; /* Allows pink background to show through */
         }
 
         .logo-container img {
-            width: 380px;            
+            width: 600px;            
             max-width: 100%;
             height: auto;
-            display: block;
             image-rendering: -webkit-optimize-contrast; 
-            filter: contrast(1.1) drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); 
+            filter: drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.1)); 
+            margin-bottom: 5px; /* Reduced space between logo and navigation */
         }
 
-        /* White background panel behind navigation */
         nav {
-            background-color: #ffffff;
-            padding: 12px 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            width: 100%;
+            display: flex;
+            justify-content: center;
         }
 
         nav ul {
@@ -63,20 +53,21 @@
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 20px;
+            gap: 25px;
         }
 
         nav ul li a {
-            color: var(--text-dark); /* Dark text for contrast against the white box */
+            color: #ffffff; /* White text for contrast against pink background */
             font-weight: 600;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             transition: color 0.3s ease;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.2);
         }
 
         nav ul li a:hover, 
         nav ul li a.active {
-            color: var(--brand-pink); 
+            color: var(--nav-blue); 
             text-decoration: underline;
         }
 
@@ -112,7 +103,7 @@
         }
 
         .slideshow-container {
-            max-width: 1200px; /* Slideshow width set to 1200px */
+            max-width: 1000px; /* Slideshow width set to 1000px */
             position: relative;
             margin: 25px auto;
         }
@@ -123,7 +114,7 @@
 
         .slide img {
             width: 100%;
-            height: 700px; /* Slideshow height set to 700px */
+            height: 500px; /* Slideshow height set to 500px */
             object-fit: cover;
             border-radius: 6px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -209,18 +200,6 @@
         .social img {
             width: 35px;
             margin-top: 15px;
-        }
-
-        /* Responsive adjustment for mobile screens */
-        @media (max-width: 900px) {
-            header {
-                flex-direction: column;
-                gap: 15px;
-                padding: 15px;
-            }
-            .logo-container img {
-                width: 300px;
-            }
         }
     </style>
 </head>
@@ -327,7 +306,7 @@
             }
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 10000); // Change image every 10 seconds
+            setTimeout(showSlides, 5000); // Change image every 5 seconds
         }
 
         function currentSlide(n) {
