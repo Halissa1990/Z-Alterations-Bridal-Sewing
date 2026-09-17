@@ -4,7 +4,7 @@
 
 /* Root Variables */
 :root {
-    --brand-pink: #c71585; /* Darker pink (Medium Violet Red) */
+    --brand-pink: #d81b60; /* Balanced medium pink */
     --nav-blue: #1e3a8a;   /* Deep professional blue for navigation */
     --text-dark: #333333;
     --bg-light: #fafafa;
@@ -32,10 +32,10 @@ header {
 }
 
 .logo-container img {
-    width: 220px; /* Larger logo size */
+    width: 300px; /* Made logo noticeably bigger */
     max-width: 100%;
     height: auto;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 nav {
@@ -53,7 +53,7 @@ nav ul {
 }
 
 nav ul li a {
-    color: var(--nav-blue); /* Navigation color changed to blue */
+    color: var(--nav-blue); /* Navigation color is blue */
     font-weight: 600;
     text-decoration: none;
     font-size: 1.1rem;
@@ -62,14 +62,14 @@ nav ul li a {
 
 nav ul li a:hover, 
 nav ul li a.active {
-    color: var(--brand-pink); /* Shifts to darker pink on hover/active */
+    color: var(--brand-pink); 
     text-decoration: underline;
 }
 
 /* Main Content & Hero Section */
 main {
     padding: 20px;
-    max-width: 1000px;
+    max-width: 1100px;
     margin: 0 auto;
 }
 
@@ -98,11 +98,11 @@ main {
     margin: 15px 0;
 }
 
-/* Slideshow Styling */
+/* Slideshow Styling - Made Bigger */
 .slideshow-container {
-    max-width: 600px;
+    max-width: 800px; /* Increased width */
     position: relative;
-    margin: 20px auto;
+    margin: 25px auto;
 }
 
 .slide {
@@ -111,10 +111,10 @@ main {
 
 .slide img {
     width: 100%;
-    height: 350px;
+    height: 480px; /* Increased height */
     object-fit: cover;
     border-radius: 6px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
 /* Slideshow Fade Animation */
@@ -162,7 +162,7 @@ main {
 }
 
 .button:hover {
-    background-color: #a0106b; /* Darker shade on hover */
+    background-color: #ad1457; /* Darker pink shade on hover */
 }
 
 /* Hours Section */
