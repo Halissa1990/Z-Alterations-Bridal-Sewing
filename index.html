@@ -10,9 +10,10 @@
            ========================================== */
 
         :root {
-            --header-blue: #64b5f6;       /* Light blue background for header */
-            --nav-pink: #f8bbd0;          /* Light pink background for navigation */
-            --nav-text: #880e4f;          /* Deep pink text for menu links */
+            --header-pink: #f8bbd0;       /* Light pink background for header */
+            --header-text: #880e4f;       /* Deep pink/burgundy text for header */
+            --nav-blue: #64b5f6;          /* Light blue background for navigation */
+            --nav-text: #ffffff;          /* White text for menu links */
             --brand-pink: #e86998; 
             --accent-gold: #c5a059;
             --text-dark: #333333;
@@ -32,12 +33,12 @@
             line-height: 1.6;
         }
 
-        /* Header Section - Light Blue Background, Centered Content */
+        /* Header Section - Light Pink Background, Centered Content */
         header {
-            background-color: var(--header-blue);
+            background-color: var(--header-pink);
             text-align: center;
             padding: 35px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
 
         .header-content {
@@ -58,17 +59,17 @@
 
         .site-title {
             margin: 10px 0 0 0;
-            color: #ffffff;
+            color: var(--header-text);
             font-size: 2.2rem;
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
         }
 
-        /* Navigation Bar - Light Pink Block */
+        /* Navigation Bar - Light Blue Block */
         nav {
-            background-color: var(--nav-pink);
+            background-color: var(--nav-blue);
             padding: 15px 10px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
         }
 
         nav ul {
@@ -95,7 +96,7 @@
         nav ul li a:hover, 
         nav ul li a.active {
             background-color: #ffffff;
-            color: var(--brand-pink);
+            color: #1976d2;
         }
 
         /* Main Container */
@@ -194,24 +195,50 @@
             background-color: #ad1457;
         }
 
-        /* Important Announcement / Policy Card Styling */
+        /* Hours Section */
+        .hours {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            max-width: 450px;
+            margin: 40px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .hours h3 {
+            margin-top: 0;
+            color: var(--brand-pink);
+            font-size: 1.5rem;
+        }
+
+        /* Footer & Important Announcement Card Styling */
+        footer {
+            background-color: #111827;
+            color: #ffffff;
+            text-align: center;
+            padding: 50px 20px 40px 20px;
+            margin-top: 50px;
+        }
+
         .announcement-card {
             background: #faf8f5;
             border: 2px solid var(--accent-gold);
             outline: 1px solid var(--accent-gold);
             outline-offset: -6px;
-            border-radius: 4px;
+            border-radius: 6px;
             padding: 40px 30px;
             max-width: 850px;
-            margin: 40px auto;
+            margin: 0 auto 50px auto;
             text-align: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+            color: var(--text-dark);
         }
 
         .announcement-title {
             font-family: 'Georgia', serif;
             color: #5c1428;
-            font-size: 2.2rem;
+            font-size: 2rem;
             letter-spacing: 2px;
             margin-top: 0;
             margin-bottom: 30px;
@@ -270,31 +297,6 @@
             margin-bottom: 5px;
         }
 
-        /* Hours Section */
-        .hours {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 450px;
-            margin: 40px auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        .hours h3 {
-            margin-top: 0;
-            color: var(--brand-pink);
-            font-size: 1.5rem;
-        }
-
-        footer {
-            background-color: #111827;
-            color: #ffffff;
-            text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-        }
-
         footer a {
             color: #60a5fa;
             text-decoration: none;
@@ -309,13 +311,15 @@
             justify-content: center;
             align-items: center;
             gap: 15px;
-            margin-top: 15px;
+            margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .social img {
             width: 35px;
             height: 35px;
             object-fit: contain;
+            border-radius: 4px;
         }
 
         @media (min-width: 768px) {
@@ -329,7 +333,7 @@
 </head>
 <body>
 
-    <!-- Light Blue Header with Logo and Title Centered -->
+    <!-- Light Pink Header with Logo and Title Centered -->
     <header>
         <div class="header-content">
             <div class="logo-container">
@@ -339,7 +343,7 @@
         </div>
     </header>
 
-    <!-- Light Pink Navigation Bar -->
+    <!-- Light Blue Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -386,7 +390,18 @@
             </div>
         </section>
 
-        <!-- Important Announcement / Policy Section -->
+        <!-- Hours Section -->
+        <section class="hours" id="services">
+            <h3>Opening Hours</h3>
+            <p><strong>MON - FRI:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>SAT:</strong> 10:00 AM - 3:00 PM</p>
+            <p><strong>SUN:</strong> CLOSED</p>
+        </section>
+    </main>
+
+    <!-- Footer with Important Announcement / Policy Card -->
+    <footer id="contact">
+        <!-- Important Announcement / Policy Section moved into Footer -->
         <section class="announcement-card">
             <h2 class="announcement-title">Important Announcement</h2>
 
@@ -417,17 +432,6 @@
             </div>
         </section>
 
-        <!-- Hours Section -->
-        <section class="hours" id="services">
-            <h3>Opening Hours</h3>
-            <p><strong>MON - FRI:</strong> 10:00 AM - 6:00 PM</p>
-            <p><strong>SAT:</strong> 10:00 AM - 3:00 PM</p>
-            <p><strong>SUN:</strong> CLOSED</p>
-        </section>
-    </main>
-
-    <!-- Footer -->
-    <footer id="contact">
         <h3>Z Alterations & Bridal Sewing LLC</h3>
         <p>
             4160 S 108th St<br>
@@ -444,7 +448,7 @@
                 <img src="images/facebook.webp" alt="Z Alterations Facebook">
             </a>
             <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
-                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
+                <img src="images/tiktok.jpg" alt="Z Alterations TikTok">
             </a>
         </div>
         <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
