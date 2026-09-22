@@ -141,6 +141,19 @@
             margin: 10px 0 20px 0;
         }
 
+        .media-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+
+        .media-container img, 
+        .media-container video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+        }
+
         .grid-highlights {
             display: grid;
             grid-template-columns: 1fr;
@@ -312,7 +325,7 @@
 </head>
 <body>
 
-    <!-- Light Pink Header with Logo and Title Centered -->
+    <!-- Header Section -->
     <header>
         <div class="header-content">
             <div class="logo-container">
@@ -322,7 +335,7 @@
         </div>
     </header>
 
-    <!-- Light Blue Navigation Bar -->
+    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -333,6 +346,7 @@
         </ul>
     </nav>
 
+    <!-- Main Content Section -->
     <main>
         <section class="about-card">
             <h1>About Our Craftsmanship</h1>
@@ -340,9 +354,23 @@
                 <div class="feature-badge">Featured on Greenfield: We're Open!</div>
             </div>
 
+            <!-- Featured Image -->
+            <div class="media-container">
+                <img src="images/image1.jpg" alt="Z Alterations Workshop">
+            </div>
+
             <p>Welcome to <strong>Z Alterations & Bridal Sewing LLC</strong>. Built on a rich legacy of over 30 years of family-owned craftsmanship, we are proud to offer expert tailoring, precision alterations, and dedicated bridal wear design for every occasion.</p>
 
             <p>Located in Greenfield, Wisconsin, our shop is dedicated to bringing your unique garment vision to life with passion, meticulous attention to detail, and dependable, timely service. Whether you need a delicate wedding gown fitted for your big day or custom alterations on everyday wardrobe pieces, we treat every garment with extreme care.</p>
+
+            <!-- Video Section -->
+            <h2>See Our Work in Action</h2>
+            <div class="media-container">
+                <video controls>
+                    <source src="images/video.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
 
             <h2>Why Choose Us?</h2>
             
@@ -376,7 +404,6 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <!-- Important Announcement / Policy Section in Footer -->
         <section class="announcement-card">
             <h2 class="announcement-title">Important Announcement</h2>
 
