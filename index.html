@@ -3,17 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Z Alterations & Bridal Sewing</title>
+    <title>Z Alterations & Bridal Sewing LLC</title>
     <style>
-        /* ==========================================
-           Z Alterations & Bridal Sewing - Custom CSS
-           ========================================== */
-
         :root {
-            --header-pink: #f8bbd0;       /* Light pink background for header */
-            --header-text: #880e4f;       /* Deep pink/burgundy text for header */
-            --nav-blue: #64b5f6;          /* Light blue background for navigation */
-            --nav-text: #ffffff;          /* White text for menu links */
+            --header-pink: #fff8fa;
+            --header-text: #880e4f;
+            --nav-blue: #64b5f6;
+            --nav-text: #ffffff;
             --brand-pink: #e86998; 
             --accent-gold: #c5a059;
             --text-dark: #333333;
@@ -33,12 +29,11 @@
             line-height: 1.6;
         }
 
-        /* Header Section - Light Pink Background, Centered Content */
         header {
             background-color: var(--header-pink);
             text-align: center;
             padding: 35px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-content {
@@ -62,10 +57,8 @@
             color: var(--header-text);
             font-size: 2.2rem;
             font-weight: 700;
-            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
         }
 
-        /* Navigation Bar - Light Blue Block */
         nav {
             background-color: var(--nav-blue);
             padding: 15px 10px;
@@ -96,46 +89,23 @@
         nav ul li a:hover, 
         nav ul li a.active {
             background-color: #ffffff;
-            color: #1976d2;
+            color: var(--brand-pink);
         }
 
-        /* Main Container */
         main {
-            padding: 30px 20px;
-            max-width: 1400px;
+            padding: 40px 20px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .hero {
-            text-align: center;
-            padding: 40px 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            margin-bottom: 40px;
-        }
-
-        .hero h1 {
-            color: var(--text-dark);
-            margin-bottom: 15px;
-        }
-
-        .feature-badge {
-            display: inline-block;
-            background-color: var(--brand-pink);
-            color: #ffffff;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 600;
-            margin: 15px 0 25px 0;
-        }
-
-        /* Slideshow dimensions */
         .slideshow-container {
-            max-width: 1200px; 
+            max-width: 800px;
             position: relative;
-            margin: 25px auto;
+            margin: 0 auto 30px auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            background-color: #ffffff;
         }
 
         .slide {
@@ -144,129 +114,133 @@
 
         .slide img {
             width: 100%;
-            height: 650px; 
+            height: auto;
+            vertical-align: middle;
+            max-height: 500px;
             object-fit: cover;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
-        .fade {
-            animation-name: fade;
-            animation-duration: 1.5s;
-        }
-
-        @keyframes fade {
-            from {opacity: .4} 
-            to {opacity: 1}
-        }
-
-        .dot-container {
+        .dots-container {
             text-align: center;
-            margin-top: 15px;
+            margin-bottom: 30px;
         }
 
         .dot {
-            cursor: pointer;
             height: 12px;
             width: 12px;
             margin: 0 4px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.6s ease;
+            cursor: pointer;
         }
 
         .dot.active, .dot:hover {
             background-color: var(--brand-pink);
         }
 
+        .intro-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .intro-card h2 {
+            color: var(--header-text);
+            margin-top: 0;
+        }
+
         .button {
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 12px 30px;
+            padding: 12px 25px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             transition: background 0.3s ease;
+            margin-top: 15px;
         }
 
         .button:hover {
             background-color: #ad1457;
         }
 
-        /* Hours Section */
-        .hours {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 8px;
-            text-align: center;
-            max-width: 450px;
-            margin: 40px auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-        }
-
-        .hours h3 {
-            margin-top: 0;
-            color: var(--brand-pink);
-            font-size: 1.5rem;
-        }
-
-        /* Footer & Important Announcement Card Styling */
         footer {
-            background-color: #111827;
-            color: #ffffff;
+            background-color: var(--header-pink);
+            color: var(--text-dark);
             text-align: center;
-            padding: 50px 20px 40px 20px;
+            padding: 40px 20px;
             margin-top: 50px;
+            border-top: 1px solid #f0e0e6;
+        }
+
+        .footer-company-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--header-text);
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: var(--brand-pink);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
         }
 
         .announcement-card {
-            background: #faf8f5;
+            background: #ffffff;
             border: 2px solid var(--accent-gold);
             outline: 1px solid var(--accent-gold);
             outline-offset: -6px;
-            border-radius: 6px;
-            padding: 40px 30px;
+            border-radius: 4px;
+            padding: 30px 20px;
             max-width: 850px;
-            margin: 0 auto 50px auto;
+            margin: 0 auto 40px auto;
             text-align: center;
-            box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-            color: var(--text-dark);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
         .announcement-title {
             font-family: 'Georgia', serif;
             color: #5c1428;
-            font-size: 2rem;
+            font-size: 1.8rem;
             letter-spacing: 2px;
             margin-top: 0;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             text-transform: uppercase;
         }
 
         .policy-block {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             text-align: left;
-            padding: 0 15px;
+            padding: 0 10px;
         }
 
         .policy-header {
             display: flex;
             align-items: center;
             gap: 12px;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .policy-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--accent-gold);
         }
 
         .policy-title {
             font-family: 'Georgia', serif;
             color: #5c1428;
-            font-size: 1.15rem;
+            font-size: 1.1rem;
             font-weight: 700;
             letter-spacing: 0.5px;
             text-transform: uppercase;
@@ -275,16 +249,16 @@
 
         .policy-text {
             color: #444444;
-            font-size: 0.98rem;
+            font-size: 0.95rem;
             line-height: 1.6;
             margin: 0;
-            padding-left: 32px;
+            padding-left: 28px;
         }
 
         .announcement-footer {
-            margin-top: 35px;
+            margin-top: 25px;
             border-top: 1px solid #e0d5c1;
-            padding-top: 20px;
+            padding-top: 15px;
             font-size: 0.85rem;
             color: #666666;
         }
@@ -297,29 +271,18 @@
             margin-bottom: 5px;
         }
 
-        footer a {
-            color: #60a5fa;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
         .social {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px;
-            margin-top: 20px;
-            margin-bottom: 20px;
+            margin-top: 15px;
         }
 
         .social img {
             width: 35px;
             height: 35px;
             object-fit: contain;
-            border-radius: 4px;
         }
 
         @media (min-width: 768px) {
@@ -333,7 +296,6 @@
 </head>
 <body>
 
-    <!-- Light Pink Header with Logo and Title Centered -->
     <header>
         <div class="header-content">
             <div class="logo-container">
@@ -343,7 +305,6 @@
         </div>
     </header>
 
-    <!-- Light Blue Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html" class="active">Home</a></li>
@@ -355,53 +316,52 @@
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero" id="home">
-            <h1>Welcome To Z Alterations & Bridal Sewing!</h1>
-            <p>With over 30 years of family-owned craftsmanship, Z Alterations & Bridal Sewing LLC specializes in expert tailoring, precision alterations, and bridal wear. Located at 4160 S 108th St, Greenfield, WI 53228, we are dedicated to bringing your vision to life with timely, passionate service. Learn more <a href="about.html" style="color: var(--brand-pink); text-decoration: underline; font-weight: 600;">about us here</a>.</p>
-            <div class="feature-badge">Featured on Greenfield: We're Open!</div>
-
-            <!-- Picture Slideshow -->
-            <div class="slideshow-container">
-                <div class="slide fade"><img src="images/image1.jpg" alt="Tailoring workspace"></div>
-                <div class="slide fade"><img src="images/image2.jpg" alt="Sewing tools"></div>
-                <div class="slide fade"><img src="images/image3.jpg" alt="Measuring dress"></div>
-                <div class="slide fade"><img src="images/image4.jpg" alt="Vintage sewing machine"></div>
-                <div class="slide fade"><img src="images/image5.jpg" alt="Bridal lace details"></div>
-                <div class="slide fade"><img src="images/image6.jpg" alt="Tailoring white wedding dress"></div>
-                <div class="slide fade"><img src="images/image7.jpg" alt="Bridal gown on mannequin"></div>
-                <div class="slide fade"><img src="images/image8.JPG" alt="Alteration work"></div>
+        <div class="slideshow-container">
+            <div class="slide">
+                <img src="images/image1.jpg" alt="Tailoring Craftsmanship 1">
             </div>
-
-            <!-- Slideshow Dots -->
-            <div class="dot-container">
-                <span class="dot" onclick="currentSlide(1)"></span>
-                <span class="dot" onclick="currentSlide(2)"></span>
-                <span class="dot" onclick="currentSlide(3)"></span>
-                <span class="dot" onclick="currentSlide(4)"></span>
-                <span class="dot" onclick="currentSlide(5)"></span>
-                <span class="dot" onclick="currentSlide(6)"></span>
-                <span class="dot" onclick="currentSlide(7)"></span>
-                <span class="dot" onclick="currentSlide(8)"></span>
+            <div class="slide">
+                <img src="images/image2.jpg" alt="Tailoring Craftsmanship 2">
             </div>
-
-            <div style="margin-top: 30px;">
-                <a href="contact.html" class="button">Get in Touch</a>
+            <div class="slide">
+                <img src="images/image3.jpg" alt="Tailoring Craftsmanship 3">
             </div>
-        </section>
+            <div class="slide">
+                <img src="images/image4.jpg" alt="Tailoring Craftsmanship 4">
+            </div>
+            <div class="slide">
+                <img src="images/image5.jpg" alt="Tailoring Craftsmanship 5">
+            </div>
+            <div class="slide">
+                <img src="images/image6.jpg" alt="Tailoring Craftsmanship 6">
+            </div>
+            <div class="slide">
+                <img src="images/image7.jpg" alt="Tailoring Craftsmanship 7">
+            </div>
+            <div class="slide">
+                <img src="images/image8.JPG" alt="Tailoring Craftsmanship 8">
+            </div>
+        </div>
 
-        <!-- Hours Section -->
-        <section class="hours" id="services">
-            <h3>Opening Hours</h3>
-            <p><strong>MON - FRI:</strong> 10:00 AM - 6:00 PM</p>
-            <p><strong>SAT:</strong> 10:00 AM - 3:00 PM</p>
-            <p><strong>SUN:</strong> CLOSED</p>
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+            <span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>
+        </div>
+
+        <section class="intro-card">
+            <h2>Expert Alterations & Fine Sewing</h2>
+            <p>Welcome to Z Alterations & Bridal Sewing LLC. Over 30 years of family-owned experience delivering perfection for your special garments and daily wardrobe.</p>
+            <a href="services.html" class="button">Explore Our Services</a>
         </section>
     </main>
 
-    <!-- Footer with Important Announcement / Policy Card -->
     <footer id="contact">
-        <!-- Important Announcement / Policy Section moved into Footer -->
         <section class="announcement-card">
             <h2 class="announcement-title">Important Announcement</h2>
 
@@ -427,12 +387,12 @@
 
             <div class="announcement-footer">
                 <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
-                <div>Z. Alterations & Bridal Sewing LLC</div>
+                <div>Z Alterations & Bridal Sewing LLC</div>
                 <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
             </div>
         </section>
 
-        <h3>Z Alterations & Bridal Sewing LLC</h3>
+        <div class="footer-company-name">Z Alterations & Bridal Sewing LLC</div>
         <p>
             4160 S 108th St<br>
             Greenfield, WI 53228<br>
@@ -454,9 +414,9 @@
         <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
     </footer>
 
-    <!-- Slideshow JavaScript Script (20 Second Timer) -->
     <script>
         let slideIndex = 0;
+        let slideTimer;
         showSlides();
 
         function showSlides() {
@@ -473,14 +433,14 @@
             }
             slides[slideIndex-1].style.display = "block";  
             dots[slideIndex-1].className += " active";
-            setTimeout(showSlides, 20000); // 20 seconds
+            slideTimer = setTimeout(showSlides, 20000); // 20 seconds
         }
 
         function currentSlide(n) {
+            clearTimeout(slideTimer);
             slideIndex = n - 1;
             showSlides();
         }
     </script>
-
 </body>
 </html>

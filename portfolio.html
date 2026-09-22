@@ -10,13 +10,15 @@
            ========================================== */
 
         :root {
-            --header-blue: #64b5f6;       /* Light blue background for header */
-            --nav-pink: #f8bbd0;          /* Light pink background for navigation */
-            --nav-text: #880e4f;          /* Deep pink text for menu links */
+            --header-pink: #fff8fa;        /* Extremely light soft pink */
+            --nav-blue: #64b5f6;           /* Light blue background for navigation */
+            --nav-text: #0d47a1;           /* Deep blue text for menu links */
             --brand-pink: #e86998; 
             --accent-gold: #c5a059;
             --text-dark: #333333;
             --bg-light: #f7f9fa;
+            --deep-burgundy: #5c1428;
+            --header-text: #880e4f;
         }
 
         * {
@@ -32,12 +34,13 @@
             line-height: 1.6;
         }
 
-        /* 1. Header Section - Light Blue Background, Centered Content */
+        /* Header Section - Extremely Light Pink Background */
         header {
-            background-color: var(--header-blue);
+            background-color: var(--header-pink);
             text-align: center;
             padding: 35px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-bottom: 1px solid #f2e3e8;
         }
 
         .header-content {
@@ -58,15 +61,14 @@
 
         .site-title {
             margin: 10px 0 0 0;
-            color: #ffffff;
+            color: var(--deep-burgundy);
             font-size: 2.2rem;
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-        /* 2. Navigation Bar - Light Pink Block */
+        /* Navigation Bar - Light Blue */
         nav {
-            background-color: var(--nav-pink);
+            background-color: var(--nav-blue);
             padding: 15px 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.05);
         }
@@ -82,7 +84,7 @@
         }
 
         nav ul li a {
-            color: var(--nav-text);
+            color: #ffffff;
             font-weight: 700;
             text-decoration: none;
             font-size: 1.25rem;
@@ -95,7 +97,7 @@
         nav ul li a:hover, 
         nav ul li a.active {
             background-color: #ffffff;
-            color: var(--brand-pink);
+            color: var(--nav-text);
         }
 
         /* Main Container Layout */
@@ -111,9 +113,37 @@
         }
 
         .portfolio-header h1 {
-            font-size: 2.5em;
-            color: var(--text-dark);
+            font-size: 2.3rem;
+            color: var(--deep-burgundy);
             margin-bottom: 15px;
+        }
+
+        /* Filter Controls */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 35px;
+        }
+
+        .filter-btn {
+            background-color: #ffffff;
+            color: var(--deep-burgundy);
+            border: 2px solid var(--header-pink);
+            padding: 8px 18px;
+            border-radius: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background-color: var(--brand-pink);
+            color: #ffffff;
+            border-color: var(--brand-pink);
         }
 
         /* Grid Layout */
@@ -126,15 +156,19 @@
 
         .portfolio-card {
             background: #ffffff;
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.3s ease;
         }
 
         .portfolio-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-card.hide {
+            display: none;
         }
 
         .portfolio-card img {
@@ -142,34 +176,48 @@
             height: 380px;
             object-fit: cover;
             display: block;
+            cursor: pointer;
         }
 
         .portfolio-info {
             padding: 20px;
         }
 
-        .portfolio-info h3 {
+        .portfolio-tag {
+            display: inline-block;
+            background-color: var(--header-pink);
             color: var(--brand-pink);
-            font-size: 1.3em;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        .portfolio-info h3 {
+            color: var(--deep-burgundy);
+            font-size: 1.25rem;
             margin-top: 0;
             margin-bottom: 8px;
         }
 
         .portfolio-info p {
-            color: #666;
-            font-size: 1em;
-            line-height: 1.6;
+            color: #555555;
+            font-size: 0.95rem;
+            line-height: 1.5;
             margin: 0;
         }
 
         /* Call To Action Card */
         .cta-card {
             background: #ffffff;
-            border: 2px solid var(--nav-pink);
+            border: 1px solid #f2e3e8;
             padding: 40px 20px;
-            border-radius: 12px;
+            border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             margin-top: 40px;
         }
 
@@ -178,10 +226,10 @@
             background-color: var(--brand-pink);
             color: white;
             padding: 12px 30px;
-            border-radius: 6px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1em;
+            font-size: 1.05rem;
             transition: background 0.3s ease;
         }
 
@@ -189,36 +237,182 @@
             background-color: #ad1457;
         }
 
-        /* Footer */
-        footer {
-            background-color: #111827;
+        /* Lightbox Modal */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 4px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-caption {
             color: #ffffff;
+            margin-top: 15px;
+            font-size: 1.1rem;
             text-align: center;
-            padding: 40px 20px;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--brand-pink);
+        }
+
+        /* Footer Section - Same extremely light soft pink background */
+        footer {
+            background-color: var(--header-pink);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 50px 20px 30px 20px;
             margin-top: 50px;
+            border-top: 1px solid #f2e3e8;
+        }
+
+        footer h3 {
+            color: var(--deep-burgundy);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #444444;
+            font-size: 1rem;
+            margin-bottom: 12px;
         }
 
         footer a {
-            color: #60a5fa;
+            color: #1976d2;
             text-decoration: none;
+            font-weight: 600;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
+        /* Policy Card inside Footer */
+        .announcement-card {
+            background: #ffffff;
+            border: 2px solid var(--accent-gold);
+            outline: 1px solid var(--accent-gold);
+            outline-offset: -6px;
+            border-radius: 4px;
+            padding: 35px 25px;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+        }
+
+        .announcement-title {
+            font-family: 'Georgia', serif;
+            color: var(--deep-burgundy);
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .policy-block {
+            margin-bottom: 20px;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .policy-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .policy-icon {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+        }
+
+        .policy-title {
+            font-family: 'Georgia', serif;
+            color: var(--deep-burgundy);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .policy-text {
+            color: #444444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+            padding-left: 28px;
+        }
+
+        .announcement-footer {
+            margin-top: 25px;
+            border-top: 1px solid #e0d5c1;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        .announcement-footer .thanks {
+            font-weight: 700;
+            color: var(--deep-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
         .social {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 18px;
+            margin: 25px 0 20px 0;
         }
 
         .social img {
             width: 35px;
             height: 35px;
             object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .social img:hover {
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-top: 20px;
         }
 
         @media (min-width: 768px) {
@@ -232,7 +426,7 @@
 </head>
 <body>
 
-    <!-- Light Blue Header with Logo and Title Centered -->
+    <!-- Header with Ultra Light Soft Pink Background -->
     <header>
         <div class="header-content">
             <div class="logo-container">
@@ -242,7 +436,7 @@
         </div>
     </header>
 
-    <!-- Light Pink Navigation Bar -->
+    <!-- Navigation Bar - Light Blue -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -257,47 +451,79 @@
         <!-- Portfolio Header Section -->
         <div class="portfolio-header">
             <h1>Our Work & Portfolio</h1>
-            <p style="font-size: 1.2em; color: #555555; max-width: 800px; margin: 0 auto;">
-                Take a look at some of our recent bridal alterations, intricate lace details, and custom tailoring projects. Each piece reflects our commitment to precision and elegance.
+            <p style="font-size: 1.15rem; color: #555555; max-width: 800px; margin: 0 auto;">
+                Take a look at some of our recent bridal alterations, intricate lace details, and custom tailoring projects. Each piece reflects our commitment to precision, fit, and craftsmanship.
             </p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="filter-container">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="bridal">Bridal Gowns</button>
+            <button class="filter-btn" data-filter="details">Lace & Details</button>
+            <button class="filter-btn" data-filter="formal">Formalwear</button>
         </div>
 
         <!-- Portfolio Image Grid -->
         <div class="portfolio-grid">
             
             <!-- Portfolio Item 1 -->
-            <div class="portfolio-card">
-                <img src="images/image10.JPG" alt="Bridal gown with intricate lace details">
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image10.JPG" alt="Bridal gown with intricate lace details" class="gallery-img">
                 <div class="portfolio-info">
+                    <span class="portfolio-tag">Bridal Gowns</span>
                     <h3>Custom Bridal Gown Tailoring</h3>
-                    <p>Precision fitting, bodice adjustments, and elegant train management.</p>
+                    <p>Precision fitting, bodice adjustments, and elegant train management for the ultimate bridal silhouette.</p>
                 </div>
             </div>
 
             <!-- Portfolio Item 2 -->
-            <div class="portfolio-card">
-                <img src="images/image9.JPG" alt="Back view of tailored wedding dress with delicate lace">
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image9.jpg" alt="Back view of tailored wedding dress with delicate lace" class="gallery-img">
                 <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
                     <h3>Back Detailing & Bustles</h3>
-                    <p>Custom corset adjustments and custom-tailored lace back designs.</p>
+                    <p>Custom corset adjustments and custom-tailored lace back designs crafted with high precision.</p>
                 </div>
             </div>
 
             <!-- Portfolio Item 3 -->
-            <div class="portfolio-card">
-                <img src="images/image7.JPG" alt="Satin wedding dress with hand-beaded bodice">
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image7.jpg" alt="Satin wedding dress with hand-beaded bodice" class="gallery-img">
                 <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
                     <h3>Beaded Bodice & Satin Gown</h3>
-                    <p>Hand-stitched beadwork detailing and structured gown fitting.</p>
+                    <p>Hand-stitched beadwork detailing and structured gown fitting for maximum comfort and style.</p>
                 </div>
             </div>
 
             <!-- Portfolio Item 4 -->
-            <div class="portfolio-card">
-                <img src="images/image11.JPG" alt="Sheer illusion back bridal dress">
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image11.JPG" alt="Sheer illusion back bridal dress" class="gallery-img">
                 <div class="portfolio-info">
+                    <span class="portfolio-tag">Bridal Gowns</span>
                     <h3>Illusion Back & Floral Appliqué</h3>
-                    <p>Seamless alterations on sheer fabrics and multi-layer skirts.</p>
+                    <p>Seamless alterations on delicate sheer fabrics and intricate multi-layer skirt hemline adjustments.</p>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 5 -->
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image8.jpg" alt="Tailored evening dress gown fitting" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Evening Dress Restyling</h3>
+                    <p>Custom waist re-fitting, hemline shortening, and neck alterations for special occasion gowns.</p>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 6 -->
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image12.jpg" alt="Tailored suit and dress alterations" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Bridesmaid & Suit Tailoring</h3>
+                    <p>Precise hem adjustments, shoulder sleeve takes, and waist tailoring for the entire wedding party.</p>
                 </div>
             </div>
 
@@ -305,16 +531,54 @@
 
         <!-- Call to Action Box -->
         <div class="cta-card">
-            <h3 style="color: var(--brand-pink); font-size: 1.8em; margin-top: 0; margin-bottom: 15px;">Ready to Transform Your Garment?</h3>
-            <p style="font-size: 1.15em; color: #444; max-width: 700px; margin: 0 auto 25px auto; line-height: 1.8;">
+            <h3 style="color: var(--deep-burgundy); font-size: 1.6rem; margin-top: 0; margin-bottom: 15px;">Ready to Transform Your Garment?</h3>
+            <p style="font-size: 1.05rem; color: #444; max-width: 700px; margin: 0 auto 25px auto; line-height: 1.7;">
                 Whether it's your dream wedding dress or everyday formal wear, trust our experienced tailor to get the perfect fit.
             </p>
             <a href="contact.html" class="button">Schedule a Fitting</a>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Lightbox Modal -->
+    <div id="lightboxModal" class="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImg" alt="Enlarged view">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+    </div>
+
+    <!-- Footer - Light Pink Background -->
     <footer id="contact">
+        <!-- Important Announcement / Policy Section inside Footer -->
+        <section class="announcement-card">
+            <h2 class="announcement-title">Important Announcement</h2>
+
+            <div class="policy-block">
+                <div class="policy-header">
+                    <span class="policy-icon">🏅</span>
+                    <h3 class="policy-title">Customer Satisfaction Policy</h3>
+                </div>
+                <p class="policy-text">
+                    We stand by the quality of our workmanship. Should you be dissatisfied, please return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge to ensure your satisfaction.
+                </p>
+            </div>
+
+            <div class="policy-block">
+                <div class="policy-header">
+                    <span class="policy-icon">⏱️</span>
+                    <h3 class="policy-title">Garment Holding Policy</h3>
+                </div>
+                <p class="policy-text">
+                    To efficiently manage our space, we kindly request that all completed garments be collected within 45 days of notification. Unclaimed garments remaining beyond this period may be considered abandoned.
+                </p>
+            </div>
+
+            <div class="announcement-footer">
+                <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
+                <div>Z. Alterations & Bridal Sewing LLC</div>
+                <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
+            </div>
+        </section>
+
         <h3>Z Alterations & Bridal Sewing LLC</h3>
         <p>
             4160 S 108th St<br>
@@ -331,11 +595,61 @@
                 <img src="images/facebook.webp" alt="Z Alterations Facebook">
             </a>
             <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
-                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
+                <img src="images/tiktok.jpg" alt="Z Alterations TikTok">
             </a>
         </div>
-        <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
+        <p class="copyright">&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
     </footer>
 
+    <!-- Interactive Scripts for Filtering and Lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Category Filter Logic
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const cards = document.querySelectorAll('.portfolio-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    cards.forEach(card => {
+                        if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                            card.classList.remove('hide');
+                        } else {
+                            card.classList.add('hide');
+                        }
+                    });
+                });
+            });
+
+            // Lightbox Modal Logic
+            const modal = document.getElementById('lightboxModal');
+            const modalImg = document.getElementById('lightboxImg');
+            const modalCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const galleryImgs = document.querySelectorAll('.gallery-img');
+
+            galleryImgs.forEach(img => {
+                img.addEventListener('click', () => {
+                    modal.style.display = 'flex';
+                    modalImg.src = img.src;
+                    modalCaption.textContent = img.alt;
+                });
+            });
+
+            closeBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

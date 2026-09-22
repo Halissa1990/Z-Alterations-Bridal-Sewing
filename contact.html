@@ -10,13 +10,14 @@
            ========================================== */
 
         :root {
-            --header-blue: #64b5f6;       /* Light blue background for header */
-            --nav-pink: #f8bbd0;          /* Light pink background for navigation */
-            --nav-text: #880e4f;          /* Deep pink text for menu links */
+            --header-pink: #fff8fa;        /* Extremely light soft pink */
+            --nav-blue: #64b5f6;           /* Light blue background for navigation */
+            --nav-text: #0d47a1;           /* Deep blue text for menu links */
             --brand-pink: #e86998; 
             --accent-gold: #c5a059;
             --text-dark: #333333;
             --bg-light: #f7f9fa;
+            --deep-burgundy: #5c1428;
         }
 
         * {
@@ -32,12 +33,13 @@
             line-height: 1.6;
         }
 
-        /* 1. Header Section - Light Blue Background, Centered Content */
+        /* Header Section - Extremely Light Pink Background */
         header {
-            background-color: var(--header-blue);
+            background-color: var(--header-pink);
             text-align: center;
             padding: 35px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border-bottom: 1px solid #f2e3e8;
         }
 
         .header-content {
@@ -58,15 +60,14 @@
 
         .site-title {
             margin: 10px 0 0 0;
-            color: #ffffff;
+            color: var(--deep-burgundy);
             font-size: 2.2rem;
             font-weight: 700;
-            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
         }
 
-        /* 2. Navigation Bar - Light Pink Block */
+        /* Navigation Bar - Light Blue */
         nav {
-            background-color: var(--nav-pink);
+            background-color: var(--nav-blue);
             padding: 15px 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.05);
         }
@@ -82,7 +83,7 @@
         }
 
         nav ul li a {
-            color: var(--nav-text);
+            color: #ffffff;
             font-weight: 700;
             text-decoration: none;
             font-size: 1.25rem;
@@ -95,197 +96,371 @@
         nav ul li a:hover, 
         nav ul li a.active {
             background-color: #ffffff;
-            color: var(--brand-pink);
+            color: var(--nav-text);
         }
 
-        /* Main Container Layout */
+        /* Main Container */
         main {
-            padding: 40px 20px;
-            max-width: 1200px;
+            padding: 30px 20px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
-        .contact-header {
+        .hero {
             text-align: center;
+            padding: 40px 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
             margin-bottom: 40px;
         }
 
-        .contact-header h1 {
-            font-size: 2.5em;
+        .hero h1 {
             color: var(--text-dark);
             margin-bottom: 15px;
         }
 
-        /* Two Column Layout */
+        .feature-badge {
+            display: inline-block;
+            background-color: var(--brand-pink);
+            color: #ffffff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin: 15px 0 25px 0;
+        }
+
+        /* Grid Layout for Contact Section */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 30px;
+            margin-bottom: 40px;
         }
 
-        @media (min-width: 850px) {
+        @media (min-width: 992px) {
             .contact-grid {
                 grid-template-columns: 1fr 1fr;
             }
         }
 
-        /* Information Cards */
-        .info-card {
+        /* Card Panels */
+        .card-panel {
             background: #ffffff;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            border-top: 4px solid var(--brand-pink);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
-        .info-card h2 {
-            color: var(--brand-pink);
-            font-size: 1.6em;
+        .card-panel h2 {
+            color: var(--deep-burgundy);
+            font-size: 1.6rem;
             margin-top: 0;
             margin-bottom: 20px;
+            border-bottom: 2px solid var(--header-pink);
+            padding-bottom: 10px;
         }
 
-        .info-item {
-            margin-bottom: 25px;
-        }
-
-        .info-item h4 {
-            margin: 0 0 5px 0;
-            font-size: 1.1em;
-            color: var(--text-dark);
-        }
-
-        .info-item p {
-            margin: 0;
-            color: #555555;
-            font-size: 1.05em;
-        }
-
-        .info-item a {
-            color: var(--brand-pink);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .info-item a:hover {
-            text-decoration: underline;
-        }
-
-        /* Contact Form */
-        .form-card {
-            background: #ffffff;
-            padding: 35px;
-            border-radius: 12px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-            border-top: 4px solid var(--brand-pink);
-        }
-
-        .form-card h2 {
-            color: var(--brand-pink);
-            font-size: 1.6em;
-            margin-top: 0;
+        /* Contact Details Styling */
+        .contact-detail-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
             margin-bottom: 20px;
         }
 
-        .form-group {
-            margin-bottom: 20px;
+        .contact-icon {
+            font-size: 1.5rem;
+            line-height: 1;
+            background: var(--header-pink);
+            padding: 10px;
+            border-radius: 50%;
+            border: 1px solid #f2e3e8;
         }
 
-        .form-group label {
+        .contact-info-text strong {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: var(--text-dark);
+            color: var(--deep-burgundy);
+            font-size: 1.05rem;
+            margin-bottom: 3px;
         }
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 1px solid #cccccc;
-            border-radius: 6px;
-            font-family: inherit;
-            font-size: 1em;
-            color: var(--text-dark);
-            background-color: #fafafa;
-            transition: border-color 0.3s ease;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--brand-pink);
-            background-color: #ffffff;
+        .action-buttons-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .button {
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 6px;
+            padding: 12px 24px;
+            border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 1.1em;
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
             cursor: pointer;
-            transition: background 0.3s ease;
-            width: 100%;
+            text-align: center;
         }
 
         .button:hover {
             background-color: #ad1457;
         }
 
-        /* Map Embed Container */
-        .map-card {
-            background: #ffffff;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+        .button-secondary {
+            background-color: var(--nav-blue);
+            color: #ffffff;
+        }
+
+        .button-secondary:hover {
+            background-color: #1e88e5;
+        }
+
+        .button-outline {
+            background-color: transparent;
+            color: var(--deep-burgundy);
+            border: 2px solid var(--deep-burgundy);
+        }
+
+        .button-outline:hover {
+            background-color: var(--deep-burgundy);
+            color: #ffffff;
+        }
+
+        /* Form Controls */
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fafafa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand-pink);
+            box-shadow: 0 0 0 3px rgba(232, 105, 152, 0.2);
+            background-color: #ffffff;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        @media (min-width: 600px) {
+            .form-row {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Google Map Container */
+        .map-container {
+            width: 100%;
+            height: 280px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e0e0e0;
             margin-top: 20px;
         }
 
-        .map-card iframe {
+        .map-container iframe {
             width: 100%;
-            height: 300px;
+            height: 100%;
             border: 0;
-            border-radius: 8px;
         }
 
-        /* Footer */
-        footer {
-            background-color: #111827;
-            color: #ffffff;
+        /* Hours Section */
+        .hours {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
             text-align: center;
-            padding: 40px 20px;
+            max-width: 450px;
+            margin: 40px auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+        }
+
+        .hours h3 {
+            margin-top: 0;
+            color: var(--brand-pink);
+            font-size: 1.5rem;
+        }
+
+        /* Footer Section - Same extremely light soft pink background */
+        footer {
+            background-color: var(--header-pink);
+            color: var(--text-dark);
+            text-align: center;
+            padding: 50px 20px 30px 20px;
             margin-top: 50px;
+            border-top: 1px solid #f2e3e8;
+        }
+
+        footer h3 {
+            color: var(--deep-burgundy);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            color: #444444;
+            font-size: 1rem;
+            margin-bottom: 12px;
         }
 
         footer a {
-            color: #60a5fa;
+            color: #1976d2;
             text-decoration: none;
+            font-weight: 600;
         }
 
         footer a:hover {
             text-decoration: underline;
         }
 
+        /* Policy Card inside Footer */
+        .announcement-card {
+            background: #ffffff;
+            border: 2px solid var(--accent-gold);
+            outline: 1px solid var(--accent-gold);
+            outline-offset: -6px;
+            border-radius: 4px;
+            padding: 35px 25px;
+            max-width: 850px;
+            margin: 0 auto 40px auto;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+        }
+
+        .announcement-title {
+            font-family: 'Georgia', serif;
+            color: var(--deep-burgundy);
+            font-size: 1.8rem;
+            letter-spacing: 1.5px;
+            margin-top: 0;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .policy-block {
+            margin-bottom: 20px;
+            text-align: left;
+            padding: 0 10px;
+        }
+
+        .policy-header {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 6px;
+        }
+
+        .policy-icon {
+            font-size: 1.3rem;
+            color: var(--accent-gold);
+        }
+
+        .policy-title {
+            font-family: 'Georgia', serif;
+            color: var(--deep-burgundy);
+            font-size: 1.05rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .policy-text {
+            color: #444444;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin: 0;
+            padding-left: 28px;
+        }
+
+        .announcement-footer {
+            margin-top: 25px;
+            border-top: 1px solid #e0d5c1;
+            padding-top: 15px;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        .announcement-footer .thanks {
+            font-weight: 700;
+            color: var(--deep-burgundy);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
         .social {
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 18px;
+            margin: 25px 0 20px 0;
         }
 
         .social img {
             width: 35px;
             height: 35px;
             object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+
+        .social img:hover {
+            transform: scale(1.1);
+        }
+
+        .copyright {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-top: 20px;
+        }
+
+        /* Success Message Box */
+        .status-message {
+            display: none;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .status-success {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
         }
 
         @media (min-width: 768px) {
@@ -299,7 +474,7 @@
 </head>
 <body>
 
-    <!-- Light Blue Header with Logo and Title Centered -->
+    <!-- Header with Ultra Light Soft Pink Background -->
     <header>
         <div class="header-content">
             <div class="logo-container">
@@ -309,7 +484,7 @@
         </div>
     </header>
 
-    <!-- Light Pink Navigation Bar -->
+    <!-- Navigation Bar - Light Blue -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -321,57 +496,55 @@
     </nav>
 
     <main>
-        <!-- Contact Header Section -->
-        <div class="contact-header">
-            <h1>Get in Touch</h1>
-            <p style="font-size: 1.2em; color: #555555; max-width: 800px; margin: 0 auto;">
-                Have questions about our alteration services or ready to schedule a fitting? Reach out to us today—we look forward to helping you achieve the perfect fit.
-            </p>
-        </div>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Contact Us & Request an Appointment</h1>
+            <p>We are here to help you achieve the perfect fit for your special occasion or everyday wardrobe. Reach out to us via call, text, or fill out our request form below.</p>
+            <div class="feature-badge">Featured on Greenfield: We're Open!</div>
+        </section>
 
+        <!-- Contact Information & Form Grid -->
         <div class="contact-grid">
-            
-            <!-- Left Column: Contact Details & Map -->
-            <div>
-                <div class="info-card">
-                    <h2>Visit & Contact Us</h2>
-                    
-                    <div class="info-item">
-                        <h4>Location</h4>
-                        <p>4160 S 108th St<br>Greenfield, WI 53228</p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>Phone Number</h4>
-                        <p><a href="tel:4144672291">(414) 467-2291</a></p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>Local Listing & Reviews</h4>
-                        <p>
-                            <a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">
-                                View Local Business Listing
-                            </a>
-                        </p>
-                    </div>
-
-                    <div class="info-item">
-                        <h4>Connect with Us</h4>
-                        <div class="social" style="justify-content: flex-start; margin-top: 10px;">
-                            <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
-                                <img src="images/facebook.webp" alt="Z Alterations Facebook">
-                            </a>
-                            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
-                                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
-                            </a>
-                        </div>
+            <!-- Left Panel: Direct Contact Details & Map -->
+            <div class="card-panel">
+                <h2>Get in Touch</h2>
+                
+                <div class="contact-detail-item">
+                    <span class="contact-icon">📍</span>
+                    <div class="contact-info-text">
+                        <strong>Our Location</strong>
+                        4160 S 108th St, Greenfield, WI 53228
                     </div>
                 </div>
 
-                <!-- Google Maps Card -->
-                <div class="map-card">
+                <div class="contact-detail-item">
+                    <span class="contact-icon">📞</span>
+                    <div class="contact-info-text">
+                        <strong>Phone Number</strong>
+                        <a href="tel:4144672291" style="color: var(--brand-pink); font-weight: 600; text-decoration: underline;">(414) 467-2291</a>
+                    </div>
+                </div>
+
+                <div class="contact-detail-item">
+                    <span class="contact-icon">💬</span>
+                    <div class="contact-info-text">
+                        <strong>Text Message / SMS</strong>
+                        Direct SMS line available for quick questions or fitting inquiries.
+                    </div>
+                </div>
+
+                <!-- Quick Action Buttons -->
+                <div class="action-buttons-group">
+                    <a href="tel:4144672291" class="button"> Call Us Now</a>
+                    <a href="sms:+14144672291" class="button button-secondary"> Text Us (SMS)</a>
+                    <a href="https://maps.google.com/?q=4160+S+108th+St,+Greenfield,+WI+53228" target="_blank" rel="noopener" class="button button-outline"> Get Directions</a>
+                </div>
+
+                <!-- Google Maps Embed -->
+                <div class="map-container">
                     <iframe 
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.123456789!2d-88.048!3d42.968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8805123456789%3A0x123456789!2s4160%20S%20108th%20St%2C%20Greenfield%2C%20WI%2053228!5e0!3m2!1sen!2sus!4v1600000000000" 
+                        title="Z Alterations Location Map"
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.824905183424!2d-88.04944982343825!3d42.95982897114349!2m3!1f0!0f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88051052fb5bc8c9%3A0x6b772c676239121d!2s4160%20S%20108th%20St%2C%20Greenfield%2C%20WI%2053228!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
                         allowfullscreen="" 
                         loading="lazy" 
                         referrerpolicy="no-referrer-when-downgrade">
@@ -379,51 +552,103 @@
                 </div>
             </div>
 
-            <!-- Right Column: Appointment / Message Form -->
-            <div class="form-card">
+            <!-- Right Panel: Appointment / Contact Request Form -->
+            <div class="card-panel">
                 <h2>Send Us a Message</h2>
-                <form action="#" method="post">
-                    <div class="form-group">
-                        <label for="name">Full Name *</label>
-                        <input type="text" id="name" name="name" required placeholder="Your full name">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" class="form-control" placeholder="e.g. Jane Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number *</label>
+                            <input type="tel" id="phoneNumber" class="form-control" placeholder="(414) 000-0000" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="emailAddress">Email Address</label>
+                            <input type="email" id="emailAddress" class="form-control" placeholder="name@example.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceType">Type of Service Needed</label>
+                            <select id="serviceType" class="form-control">
+                                <option value="Bridal Wear">Bridal Wear & Gowns</option>
+                                <option value="Suits & Tuxedos">Suits & Tuxedos</option>
+                                <option value="Dress Alterations">Prom / Formal Dress Alterations</option>
+                                <option value="Hemming & Repairs">Hemming & General Repairs</option>
+                                <option value="Custom Sewing">Custom Sewing</option>
+                                <option value="Other">Other Services</option>
+                            </select>
+                        </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="phone">Phone Number *</label>
-                        <input type="tel" id="phone" name="phone" required placeholder="(414) 000-0000">
+                        <label for="preferredDate">Preferred Appointment Date/Time</label>
+                        <input type="text" id="preferredDate" class="form-control" placeholder="e.g. Next Tuesday around 2:00 PM">
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
+                        <label for="messageText">Details / Special Notes</label>
+                        <textarea id="messageText" class="form-control" placeholder="Describe what garments need tailoring or any specific deadline dates..."></textarea>
                     </div>
 
-                    <div class="form-group">
-                        <label for="service">Service Needed</label>
-                        <select id="service" name="service">
-                            <option value="wedding">Wedding Dress / Bridal Sewing</option>
-                            <option value="prom">Prom & Casual Dress</option>
-                            <option value="suits">Suits, Coats, Jackets</option>
-                            <option value="pants">Pants, Slacks, Jeans</option>
-                            <option value="leather">Leather Alterations</option>
-                            <option value="other">Other / General Mending</option>
-                        </select>
+                    <div class="action-buttons-group">
+                        <button type="submit" class="button">Send Message / Email Request</button>
+                        <button type="button" class="button button-secondary" onclick="sendViaSMS()">Send via Text Message / SMS</button>
                     </div>
-
-                    <div class="form-group">
-                        <label for="message">Details / Questions *</label>
-                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your garment or fitting preferences..."></textarea>
-                    </div>
-
-                    <button type="submit" class="button">Submit Request</button>
                 </form>
-            </div>
 
+                <div id="statusMessage" class="status-message status-success">
+                    Thank you! Your message inquiry has been created successfully. We look forward to fitting you!
+                </div>
+            </div>
         </div>
+
+        <!-- Hours Section -->
+        <section class="hours" id="services">
+            <h3>Opening Hours</h3>
+            <p><strong>MON - FRI:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>SAT:</strong> 10:00 AM - 3:00 PM</p>
+            <p><strong>SUN:</strong> CLOSED</p>
+        </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer - Light Pink Background -->
     <footer id="contact">
+        <!-- Important Announcement / Policy Section inside Footer -->
+        <section class="announcement-card">
+            <h2 class="announcement-title">Important Announcement</h2>
+
+            <div class="policy-block">
+                <div class="policy-header">
+                    <span class="policy-icon">🏅</span>
+                    <h3 class="policy-title">Customer Satisfaction Policy</h3>
+                </div>
+                <p class="policy-text">
+                    We stand by the quality of our workmanship. Should you be dissatisfied, please return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge to ensure your satisfaction.
+                </p>
+            </div>
+
+            <div class="policy-block">
+                <div class="policy-header">
+                    <span class="policy-icon">⏱️</span>
+                    <h3 class="policy-title">Garment Holding Policy</h3>
+                </div>
+                <p class="policy-text">
+                    To efficiently manage our space, we kindly request that all completed garments be collected within 45 days of notification. Unclaimed garments remaining beyond this period may be considered abandoned.
+                </p>
+            </div>
+
+            <div class="announcement-footer">
+                <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
+                <div>Z. Alterations & Bridal Sewing LLC</div>
+                <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
+            </div>
+        </section>
+
         <h3>Z Alterations & Bridal Sewing LLC</h3>
         <p>
             4160 S 108th St<br>
@@ -440,11 +665,44 @@
                 <img src="images/facebook.webp" alt="Z Alterations Facebook">
             </a>
             <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
-                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
+                <img src="images/tiktok.jpg" alt="Z Alterations TikTok">
             </a>
         </div>
-        <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
+        <p class="copyright">&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
     </footer>
 
+    <script>
+        // Form Submission logic
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            const statusMessage = document.getElementById('statusMessage');
+            statusMessage.style.display = 'block';
+            
+            // Scroll to message smoothly
+            statusMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Reset form fields
+            document.getElementById('contactForm').reset();
+        }
+
+        // Send inquiry directly via native mobile SMS
+        function sendViaSMS() {
+            const name = document.getElementById('fullName').value || 'Customer';
+            const service = document.getElementById('serviceType').value;
+            const preferredDate = document.getElementById('preferredDate').value;
+            const notes = document.getElementById('messageText').value;
+
+            let smsText = `Hello Z Alterations! My name is ${name}. I am inquiring about ${service}.`;
+            if (preferredDate) {
+                smsText += ` Preferred date/time: ${preferredDate}.`;
+            }
+            if (notes) {
+                smsText += ` Notes: ${notes}`;
+            }
+
+            const encodedText = encodeURIComponent(smsText);
+            window.location.href = `sms:+14144672291?body=${encodedText}`;
+        }
+    </script>
 </body>
 </html>
