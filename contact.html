@@ -3,192 +3,423 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us & Reviews - Z Alterations & Bridal Sewing</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Contact Us - Z Alterations & Bridal Sewing</title>
+    <style>
+        /* ==========================================
+           Z Alterations & Bridal Sewing - Custom CSS
+           ========================================== */
+
+        :root {
+            --header-blue: #64b5f6;       /* Light blue background for header */
+            --nav-pink: #f8bbd0;          /* Light pink background for navigation */
+            --nav-text: #880e4f;          /* Deep pink text for menu links */
+            --brand-pink: #e86998; 
+            --accent-gold: #c5a059;
+            --text-dark: #333333;
+            --bg-light: #f7f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* 1. Header Section - Light Blue Background, Centered Content */
+        header {
+            background-color: var(--header-blue);
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            max-width: 280px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .site-title {
+            margin: 10px 0 0 0;
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 2. Navigation Bar - Light Pink Block */
+        nav {
+            background-color: var(--nav-pink);
+            padding: 15px 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav ul li a {
+            color: var(--nav-text);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.25rem;
+            padding: 6px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: #ffffff;
+            color: var(--brand-pink);
+        }
+
+        /* Main Container Layout */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .contact-header h1 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Two Column Layout */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        @media (min-width: 850px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* Information Cards */
+        .info-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--brand-pink);
+        }
+
+        .info-card h2 {
+            color: var(--brand-pink);
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h4 {
+            margin: 0 0 5px 0;
+            font-size: 1.1em;
+            color: var(--text-dark);
+        }
+
+        .info-item p {
+            margin: 0;
+            color: #555555;
+            font-size: 1.05em;
+        }
+
+        .info-item a {
+            color: var(--brand-pink);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .info-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Form */
+        .form-card {
+            background: #ffffff;
+            padding: 35px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            border-top: 4px solid var(--brand-pink);
+        }
+
+        .form-card h2 {
+            color: var(--brand-pink);
+            font-size: 1.6em;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 6px;
+            font-family: inherit;
+            font-size: 1em;
+            color: var(--text-dark);
+            background-color: #fafafa;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--brand-pink);
+            background-color: #ffffff;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--brand-pink);
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 100%;
+        }
+
+        .button:hover {
+            background-color: #ad1457;
+        }
+
+        /* Map Embed Container */
+        .map-card {
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-top: 20px;
+        }
+
+        .map-card iframe {
+            width: 100%;
+            height: 300px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                gap: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header with Logo on the Left -->
+    <!-- Light Blue Header with Logo and Title Centered -->
     <header>
-        <div class="logo-container">
-            <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
+            </div>
+            <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html">Portfolio</a></li>
-                <li><a href="contact.html" class="active">Contact us</a></li>
-            </ul>
-        </nav>
     </header>
 
+    <!-- Light Pink Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html" class="active">Contact us</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <!-- Contact Hero Section -->
-        <section class="hero" id="contact-hero" style="max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: left;">
-            <h1 style="font-size: 2.8em; margin-bottom: 25px; text-align: center; color: var(--brand-dark);">Get In Touch With Us</h1>
-            
-            <p style="font-size: 1.35em; line-height: 1.9; color: #333333; margin-bottom: 40px; text-align: center;">
-                We would love to hear from you! Whether you have questions about our tailoring services, bridal alterations, or want to schedule a visit, please reach out to us using the form or details below.
+        <!-- Contact Header Section -->
+        <div class="contact-header">
+            <h1>Get in Touch</h1>
+            <p style="font-size: 1.2em; color: #555555; max-width: 800px; margin: 0 auto;">
+                Have questions about our alteration services or ready to schedule a fitting? Reach out to us today—we look forward to helping you achieve the perfect fit.
             </p>
+        </div>
 
-            <!-- Contact Form & Info Grid -->
-            <div style="display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; margin-top: 30px;">
-                
-                <!-- Contact Form Box -->
-                <div style="flex: 1.2; min-width: 320px; background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--brand-pink);">
-                    <h3 style="color: var(--brand-pink); font-size: 1.8em; margin-top: 0; margin-bottom: 25px;">Send Us a Message</h3>
+        <div class="contact-grid">
+            
+            <!-- Left Column: Contact Details & Map -->
+            <div>
+                <div class="info-card">
+                    <h2>Visit & Contact Us</h2>
                     
-                    <form action="#" method="POST">
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">NAME</label>
-                            <input type="text" name="name" placeholder="Enter Your Name" required style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box;">
-                        </div>
-
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">EMAIL ADDRESS</label>
-                            <input type="email" name="email" placeholder="Enter Your Email" required style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box;">
-                        </div>
-
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">PHONE NUMBER</label>
-                            <input type="tel" name="phone" placeholder="Enter Your Phone Number" style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box;">
-                        </div>
-
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">SUBJECT</label>
-                            <input type="text" name="subject" placeholder="Enter Subject" style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box;">
-                        </div>
-
-                        <div style="margin-bottom: 25px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">MESSAGE</label>
-                            <textarea name="message" rows="5" placeholder="Enter Message..." required style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; box-sizing: border-box; resize: vertical;"></textarea>
-                        </div>
-
-                        <div>
-                            <button type="submit" class="button" style="width: 100%; padding: 14px; border: none; cursor: pointer; font-size: 1.1em; font-weight: bold;">Send Message</button>
-                        </div>
-                    </form>
-                </div>
-                
-                <!-- Contact Information & Map Column -->
-                <div style="flex: 1; min-width: 300px; display: flex; flex-direction: column; gap: 30px;">
-                    
-                    <!-- Information Box -->
-                    <div style="background: #ffffff; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--brand-pink);">
-                        <h3 style="color: var(--brand-pink); font-size: 1.6em; margin-top: 0; margin-bottom: 15px;">Contact Information</h3>
-                        
-                        <p style="font-size: 1.1em; line-height: 1.8; color: #444444; margin-bottom: 12px;">
-                            <strong>Address:</strong><br>
-                            4160 S 108th St<br>
-                            Greenfield, WI 53228
-                        </p>
-
-                        <p style="font-size: 1.1em; line-height: 1.8; color: #444444; margin-bottom: 12px;">
-                            <strong>Phone:</strong><br>
-                            <a href="tel:4144672291" style="color: var(--brand-pink); text-decoration: none;">(414) 467-2291</a>
-                        </p>
-
-                        <p style="font-size: 1.1em; line-height: 1.8; color: #444444; margin-bottom: 15px;">
-                            <strong>Hours:</strong><br>
-                            Mon - Fri: 10:00 AM - 6:00 PM<br>
-                            Sat: 10:00 AM - 3:00 PM<br>
-                            Sun: Closed
-                        </p>
-
-                        <div>
-                            <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener" class="button" style="display: inline-block; padding: 10px 20px; font-size: 0.95em;">Visit Our Facebook</a>
-                        </div>
+                    <div class="info-item">
+                        <h4>Location</h4>
+                        <p>4160 S 108th St<br>Greenfield, WI 53228</p>
                     </div>
 
-                    <!-- Google Map Embed Box -->
-                    <div style="border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.1); height: 320px;">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=42.967783,-88.047085&z=17&output=embed" 
-                            width="100%" 
-                            height="100%" 
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
+                    <div class="info-item">
+                        <h4>Phone Number</h4>
+                        <p><a href="tel:4144672291">(414) 467-2291</a></p>
                     </div>
 
+                    <div class="info-item">
+                        <h4>Local Listing & Reviews</h4>
+                        <p>
+                            <a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">
+                                View Local Business Listing
+                            </a>
+                        </p>
+                    </div>
+
+                    <div class="info-item">
+                        <h4>Connect with Us</h4>
+                        <div class="social" style="justify-content: flex-start; margin-top: 10px;">
+                            <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
+                                <img src="images/facebook.webp" alt="Z Alterations Facebook">
+                            </a>
+                            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
+                                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
+                            </a>
+                        </div>
+                    </div>
                 </div>
 
+                <!-- Google Maps Card -->
+                <div class="map-card">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2919.123456789!2d-88.048!3d42.968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8805123456789%3A0x123456789!2s4160%20S%20108th%20St%2C%20Greenfield%2C%20WI%2053228!5e0!3m2!1sen!2sus!4v1600000000000" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
             </div>
 
-            <!-- CUSTOMER REVIEWS & TESTIMONIALS SECTION -->
-            <div style="margin-top: 80px; border-top: 2px solid #eaeaea; padding-top: 60px;">
-                <div style="text-align: center; margin-bottom: 40px;">
-                    <h2 style="font-size: 2.3em; color: var(--brand-dark); margin-bottom: 10px;">What Our Customers Say</h2>
-                    <p style="color: #666; font-size: 1.1em;">Read feedback from our wonderful clients or leave a review of your own experience!</p>
-                    <div style="color: #f39c12; font-size: 1.5em; margin-top: 10px;">★★★★★ <span style="color: #444; font-size: 0.8em; font-weight: bold;">(4.9 / 5.0 Rating)</span></div>
-                </div>
-
-                <!-- Reviews Display Grid -->
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-bottom: 50px;">
-                    
-                    <!-- Review 1 -->
-                    <div style="background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border-left: 4px solid var(--brand-pink);">
-                        <div style="color: #f39c12; margin-bottom: 8px;">★★★★★</div>
-                        <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 15px;">"Absolute perfection! They tailored my wedding dress right before the big day and it fit like a glove. Incredible attention to detail and lovely service."</p>
-                        <p style="font-weight: bold; color: var(--brand-dark); margin: 0; font-size: 0.95em;">— Jessica M.</p>
+            <!-- Right Column: Appointment / Message Form -->
+            <div class="form-card">
+                <h2>Send Us a Message</h2>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="name">Full Name *</label>
+                        <input type="text" id="name" name="name" required placeholder="Your full name">
                     </div>
 
-                    <!-- Review 2 -->
-                    <div style="background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border-left: 4px solid var(--brand-pink);">
-                        <div style="color: #f39c12; margin-bottom: 8px;">★★★★★</div>
-                        <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 15px;">"Fast, professional, and high-quality suit alterations. Brought in three pairs of slacks and two jackets—all done expertly on schedule."</p>
-                        <p style="font-weight: bold; color: var(--brand-dark); margin: 0; font-size: 0.95em;">— David R.</p>
+                    <div class="form-group">
+                        <label for="phone">Phone Number *</label>
+                        <input type="tel" id="phone" name="phone" required placeholder="(414) 000-0000">
                     </div>
 
-                    <!-- Review 3 -->
-                    <div style="background: #ffffff; padding: 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.04); border-left: 4px solid var(--brand-pink);">
-                        <div style="color: #f39c12; margin-bottom: 8px;">★★★★★</div>
-                        <p style="font-style: italic; color: #555; line-height: 1.6; margin-bottom: 15px;">"The best tailor in Greenfield! Very kind seamstress who understands complex alterations. Highly recommend Z Alterations to everyone."</p>
-                        <p style="font-weight: bold; color: var(--brand-dark); margin: 0; font-size: 0.95em;">— Amanda K.</p>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="your.email@example.com">
                     </div>
 
-                </div>
+                    <div class="form-group">
+                        <label for="service">Service Needed</label>
+                        <select id="service" name="service">
+                            <option value="wedding">Wedding Dress / Bridal Sewing</option>
+                            <option value="prom">Prom & Casual Dress</option>
+                            <option value="suits">Suits, Coats, Jackets</option>
+                            <option value="pants">Pants, Slacks, Jeans</option>
+                            <option value="leather">Leather Alterations</option>
+                            <option value="other">Other / General Mending</option>
+                        </select>
+                    </div>
 
-                <!-- Leave a Review Form Box -->
-                <div style="background: #fdf6f7; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); max-width: 700px; margin: 0 auto; border: 1px solid #f2d9de;">
-                    <h3 style="color: var(--brand-pink); font-size: 1.6em; margin-top: 0; margin-bottom: 10px; text-align: center;">Leave Us a Review</h3>
-                    <p style="text-align: center; color: #555; margin-bottom: 25px; font-size: 0.95em;">Had a great experience with us? Let us know your thoughts below!</p>
-                    
-                    <form action="#" method="POST">
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">YOUR NAME</label>
-                            <input type="text" name="review_name" placeholder="Enter Your Name" required style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; background: #fff; box-sizing: border-box;">
-                        </div>
+                    <div class="form-group">
+                        <label for="message">Details / Questions *</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Tell us about your garment or fitting preferences..."></textarea>
+                    </div>
 
-                        <div style="margin-bottom: 20px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">RATING</label>
-                            <select name="rating" style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; background: #fff; box-sizing: border-box;">
-                                <option value="5">★★★★★ - 5 Stars (Excellent)</option>
-                                <option value="4">★★★★☆ - 4 Stars (Very Good)</option>
-                                <option value="3">★★★☆☆ - 3 Stars (Average)</option>
-                                <option value="2">★★☆☆☆ - 2 Stars (Fair)</option>
-                                <option value="1">★☆☆☆☆ - 1 Star (Poor)</option>
-                            </select>
-                        </div>
-
-                        <div style="margin-bottom: 25px;">
-                            <label style="display: block; font-size: 0.85em; font-weight: bold; letter-spacing: 1px; color: #333333; margin-bottom: 8px;">YOUR REVIEW</label>
-                            <textarea name="review_text" rows="4" placeholder="Write your review here..." required style="width: 100%; padding: 12px 15px; border: 1px solid #ccc; border-radius: 6px; font-size: 1em; background: #fff; box-sizing: border-box; resize: vertical;"></textarea>
-                        </div>
-
-                        <div style="text-align: center;">
-                            <button type="submit" class="button" style="padding: 12px 30px; border: none; cursor: pointer; font-size: 1.05em; font-weight: bold;">Submit Review</button>
-                        </div>
-                    </form>
-                </div>
-
+                    <button type="submit" class="button">Submit Request</button>
+                </form>
             </div>
 
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -207,6 +438,9 @@
         <div class="social">
             <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
                 <img src="images/facebook.webp" alt="Z Alterations Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
+                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
             </a>
         </div>
         <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>

@@ -6,84 +6,102 @@
     <title>Z Alterations & Bridal Sewing</title>
     <style>
         /* ==========================================
-           Z Alterations & Bridal Sewing - Embedded CSS
+           Z Alterations & Bridal Sewing - Custom CSS
            ========================================== */
 
         :root {
+            --header-blue: #64b5f6;       /* Light blue background for header */
+            --nav-pink: #f8bbd0;          /* Light pink background for navigation */
+            --nav-text: #880e4f;          /* Deep pink text for menu links */
             --brand-pink: #e86998; 
-            --nav-blue: #1e3a8a;   
+            --accent-gold: #c5a059;
             --text-dark: #333333;
+            --bg-light: #f7f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
         }
 
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: var(--brand-pink); 
+            background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
         }
 
-        /* Header layout aligning everything to the left */
+        /* Header Section - Light Blue Background, Centered Content */
         header {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 25px 40px;
-            max-width: 1600px;
+            background-color: var(--header-blue);
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        /* Tight white box container wrapping ONLY logo and nav together */
-        .header-content-box {
-            display: inline-flex;
-            align-items: center;
-            background-color: #ffffff; 
-            padding: 15px 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            gap: 40px; /* Space between logo and menu items */
-        }
-
         .logo-container {
-            line-height: 0;
-            margin: 0;
-            padding: 0;
+            margin-bottom: 15px;
         }
 
         .logo-container img {
-            width: 280px; 
-            max-width: 100%;
+            max-width: 280px;
             height: auto;
             display: block;
+            margin: 0 auto;
         }
 
-        /* Navigation menu with big, bold professional font */
+        .site-title {
+            margin: 10px 0 0 0;
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Navigation Bar - Light Pink Block */
+        nav {
+            background-color: var(--nav-pink);
+            padding: 15px 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+
         nav ul {
             list-style: none;
             padding: 0;
             margin: 0;
             display: flex;
-            gap: 30px;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
         }
 
         nav ul li a {
-            color: var(--nav-blue); 
+            color: var(--nav-text);
             font-weight: 700;
             text-decoration: none;
-            font-size: 1.35rem; /* Big professional font size */
-            transition: color 0.3s ease;
+            font-size: 1.25rem;
+            padding: 6px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
         }
 
         nav ul li a:hover, 
         nav ul li a.active {
-            color: var(--brand-pink); 
-            text-decoration: underline;
+            background-color: #ffffff;
+            color: var(--brand-pink);
         }
 
+        /* Main Container */
         main {
-            padding: 20px;
-            max-width: 1600px;
+            padding: 30px 20px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -93,7 +111,7 @@
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            margin-bottom: 30px;
+            margin-bottom: 40px;
         }
 
         .hero h1 {
@@ -105,14 +123,14 @@
             display: inline-block;
             background-color: var(--brand-pink);
             color: #ffffff;
-            padding: 6px 14px;
+            padding: 6px 16px;
             border-radius: 20px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             font-weight: 600;
-            margin: 15px 0;
+            margin: 15px 0 25px 0;
         }
 
-        /* Slideshow dimensions: 1200px width, 700px height */
+        /* Slideshow dimensions */
         .slideshow-container {
             max-width: 1200px; 
             position: relative;
@@ -125,9 +143,9 @@
 
         .slide img {
             width: 100%;
-            height: 700px; 
+            height: 650px; 
             object-fit: cover;
-            border-radius: 6px;
+            border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
@@ -165,7 +183,7 @@
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 10px 25px;
+            padding: 12px 30px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
@@ -176,19 +194,97 @@
             background-color: #ad1457;
         }
 
+        /* Important Announcement / Policy Card Styling */
+        .announcement-card {
+            background: #faf8f5;
+            border: 2px solid var(--accent-gold);
+            outline: 1px solid var(--accent-gold);
+            outline-offset: -6px;
+            border-radius: 4px;
+            padding: 40px 30px;
+            max-width: 850px;
+            margin: 40px auto;
+            text-align: center;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+
+        .announcement-title {
+            font-family: 'Georgia', serif;
+            color: #5c1428;
+            font-size: 2.2rem;
+            letter-spacing: 2px;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .policy-block {
+            margin-bottom: 25px;
+            text-align: left;
+            padding: 0 15px;
+        }
+
+        .policy-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .policy-icon {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+        }
+
+        .policy-title {
+            font-family: 'Georgia', serif;
+            color: #5c1428;
+            font-size: 1.15rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .policy-text {
+            color: #444444;
+            font-size: 0.98rem;
+            line-height: 1.6;
+            margin: 0;
+            padding-left: 32px;
+        }
+
+        .announcement-footer {
+            margin-top: 35px;
+            border-top: 1px solid #e0d5c1;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        .announcement-footer .thanks {
+            font-weight: 700;
+            color: #5c1428;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 5px;
+        }
+
+        /* Hours Section */
         .hours {
             background: #ffffff;
-            padding: 25px;
+            padding: 30px;
             border-radius: 8px;
             text-align: center;
-            max-width: 400px;
-            margin: 30px auto;
+            max-width: 450px;
+            margin: 40px auto;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
         .hours h3 {
             margin-top: 0;
             color: var(--brand-pink);
+            font-size: 1.5rem;
         }
 
         footer {
@@ -208,46 +304,51 @@
             text-decoration: underline;
         }
 
-        .social img {
-            width: 35px;
+        .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
             margin-top: 15px;
         }
 
-        @media (max-width: 900px) {
-            .header-content-box {
-                flex-direction: column;
-                gap: 20px;
-                text-align: center;
-                width: 100%;
-                box-sizing: border-box;
-            }
+        .social img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
             nav ul {
-                flex-wrap: wrap;
+                flex-direction: row;
                 justify-content: center;
-                gap: 15px;
+                gap: 25px;
             }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Light Blue Header with Logo and Title Centered -->
     <header>
-        <div class="header-content-box">
+        <div class="header-content">
             <div class="logo-container">
                 <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
             </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="about.html">About Us</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="contact.html">Contact us</a></li>
-                </ul>
-            </nav>
+            <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
         </div>
     </header>
+
+    <!-- Light Pink Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
 
     <main>
         <!-- Hero Section -->
@@ -256,7 +357,7 @@
             <p>With over 30 years of family-owned craftsmanship, Z Alterations & Bridal Sewing LLC specializes in expert tailoring, precision alterations, and bridal wear. Located at 4160 S 108th St, Greenfield, WI 53228, we are dedicated to bringing your vision to life with timely, passionate service. Learn more <a href="about.html" style="color: var(--brand-pink); text-decoration: underline; font-weight: 600;">about us here</a>.</p>
             <div class="feature-badge">Featured on Greenfield: We're Open!</div>
 
-            <!-- Picture Slideshow (1200px width by 700px height) -->
+            <!-- Picture Slideshow -->
             <div class="slideshow-container">
                 <div class="slide fade"><img src="images/image1.jpg" alt="Tailoring workspace"></div>
                 <div class="slide fade"><img src="images/image2.jpg" alt="Sewing tools"></div>
@@ -285,6 +386,37 @@
             </div>
         </section>
 
+        <!-- Important Announcement / Policy Section -->
+        <section class="announcement-card">
+            <h2 class="announcement-title">Important Announcement</h2>
+
+            <div class="policy-block">
+                <div class="policy-header">
+                    <span class="policy-icon">🏅</span>
+                    <h3 class="policy-title">Customer Satisfaction Policy</h3>
+                </div>
+                <p class="policy-text">
+                    We stand by the quality of our workmanship. Should you be dissatisfied, please return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge to ensure your satisfaction.
+                </p>
+            </div>
+
+            <div class="policy-block">
+                <div class="policy-header">
+                    <span class="policy-icon">⏱️</span>
+                    <h3 class="policy-title">Garment Holding Policy</h3>
+                </div>
+                <p class="policy-text">
+                    To efficiently manage our space, we kindly request that all completed garments be collected within 45 days of notification. Unclaimed garments remaining beyond this period may be considered abandoned.
+                </p>
+            </div>
+
+            <div class="announcement-footer">
+                <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
+                <div>Z. Alterations & Bridal Sewing LLC</div>
+                <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
+            </div>
+        </section>
+
         <!-- Hours Section -->
         <section class="hours" id="services">
             <h3>Opening Hours</h3>
@@ -310,6 +442,9 @@
         <div class="social">
             <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
                 <img src="images/facebook.webp" alt="Z Alterations Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
+                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
             </a>
         </div>
         <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>

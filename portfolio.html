@@ -4,86 +4,313 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Z Alterations & Bridal Sewing</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* ==========================================
+           Z Alterations & Bridal Sewing - Custom CSS
+           ========================================== */
+
+        :root {
+            --header-blue: #64b5f6;       /* Light blue background for header */
+            --nav-pink: #f8bbd0;          /* Light pink background for navigation */
+            --nav-text: #880e4f;          /* Deep pink text for menu links */
+            --brand-pink: #e86998; 
+            --accent-gold: #c5a059;
+            --text-dark: #333333;
+            --bg-light: #f7f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* 1. Header Section - Light Blue Background, Centered Content */
+        header {
+            background-color: var(--header-blue);
+            text-align: center;
+            padding: 35px 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .logo-container {
+            margin-bottom: 15px;
+        }
+
+        .logo-container img {
+            max-width: 280px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .site-title {
+            margin: 10px 0 0 0;
+            color: #ffffff;
+            font-size: 2.2rem;
+            font-weight: 700;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        /* 2. Navigation Bar - Light Pink Block */
+        nav {
+            background-color: var(--nav-pink);
+            padding: 15px 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+
+        nav ul li a {
+            color: var(--nav-text);
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 1.25rem;
+            padding: 6px 20px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        nav ul li a:hover, 
+        nav ul li a.active {
+            background-color: #ffffff;
+            color: var(--brand-pink);
+        }
+
+        /* Main Container Layout */
+        main {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .portfolio-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .portfolio-header h1 {
+            font-size: 2.5em;
+            color: var(--text-dark);
+            margin-bottom: 15px;
+        }
+
+        /* Grid Layout */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .portfolio-card {
+            background: #ffffff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .portfolio-card img {
+            width: 100%;
+            height: 380px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-info h3 {
+            color: var(--brand-pink);
+            font-size: 1.3em;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .portfolio-info p {
+            color: #666;
+            font-size: 1em;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* Call To Action Card */
+        .cta-card {
+            background: #ffffff;
+            border: 2px solid var(--nav-pink);
+            padding: 40px 20px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            margin-top: 40px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: var(--brand-pink);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1em;
+            transition: background 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ad1457;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #ffffff;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 50px;
+        }
+
+        footer a {
+            color: #60a5fa;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .social {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .social img {
+            width: 35px;
+            height: 35px;
+            object-fit: contain;
+        }
+
+        @media (min-width: 768px) {
+            nav ul {
+                flex-direction: row;
+                justify-content: center;
+                gap: 25px;
+            }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Header with Logo on the Left -->
+    <!-- Light Blue Header with Logo and Title Centered -->
     <header>
-        <div class="logo-container">
-            <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
+            </div>
+            <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="portfolio.html" class="active">Portfolio</a></li>
-                <li><a href="contact.html">Contact us</a></li>
-            </ul>
-        </nav>
     </header>
 
+    <!-- Light Pink Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="contact.html">Contact us</a></li>
+        </ul>
+    </nav>
+
     <main>
-        <!-- Portfolio Section -->
-        <section class="hero" id="portfolio-page" style="max-width: 1200px; margin: 40px auto; padding: 0 20px; text-align: left;">
-            <h1 style="font-size: 2.8em; margin-bottom: 15px; text-align: center; color: var(--brand-dark);">Our Work & Portfolio</h1>
-            
-            <p style="font-size: 1.25em; line-height: 1.8; color: #555555; margin-bottom: 40px; text-align: center; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <!-- Portfolio Header Section -->
+        <div class="portfolio-header">
+            <h1>Our Work & Portfolio</h1>
+            <p style="font-size: 1.2em; color: #555555; max-width: 800px; margin: 0 auto;">
                 Take a look at some of our recent bridal alterations, intricate lace details, and custom tailoring projects. Each piece reflects our commitment to precision and elegance.
             </p>
+        </div>
 
-            <!-- Portfolio Image Grid -->
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 50px;">
-                
-                <!-- Portfolio Item 1 -->
-                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
-                    <img src="images/image10.JPG" alt="Bridal gown with intricate lace details" style="width: 100%; height: 380px; object-fit: cover; display: block;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--brand-pink); font-size: 1.3em; margin-top: 0; margin-bottom: 8px;">Custom Bridal Gown Tailoring</h3>
-                        <p style="color: #666; font-size: 1em; line-height: 1.6; margin: 0;">Precision fitting, bodice adjustments, and elegant train management.</p>
-                    </div>
+        <!-- Portfolio Image Grid -->
+        <div class="portfolio-grid">
+            
+            <!-- Portfolio Item 1 -->
+            <div class="portfolio-card">
+                <img src="images/image10.JPG" alt="Bridal gown with intricate lace details">
+                <div class="portfolio-info">
+                    <h3>Custom Bridal Gown Tailoring</h3>
+                    <p>Precision fitting, bodice adjustments, and elegant train management.</p>
                 </div>
-
-                <!-- Portfolio Item 2 -->
-                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
-                    <img src="images/image9.JPG" alt="Back view of tailored wedding dress with delicate lace" style="width: 100%; height: 380px; object-fit: cover; display: block;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--brand-pink); font-size: 1.3em; margin-top: 0; margin-bottom: 8px;">Back Detailing & Bustles</h3>
-                        <p style="color: #666; font-size: 1em; line-height: 1.6; margin: 0;">Custom corset adjustments and custom-tailored lace back designs.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 3 -->
-                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
-                    <img src="images/image7.JPG" alt="Satin wedding dress with hand-beaded bodice" style="width: 100%; height: 380px; object-fit: cover; display: block;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--brand-pink); font-size: 1.3em; margin-top: 0; margin-bottom: 8px;">Beaded Bodice & Satin Gown</h3>
-                        <p style="color: #666; font-size: 1em; line-height: 1.6; margin: 0;">Hand-stitched beadwork detailing and structured gown fitting.</p>
-                    </div>
-                </div>
-
-                <!-- Portfolio Item 4 -->
-                <div style="background: #ffffff; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 20px rgba(0,0,0,0.08);">
-                    <img src="images/image11.JPG" alt="Sheer illusion back bridal dress" style="width: 100%; height: 380px; object-fit: cover; display: block;">
-                    <div style="padding: 20px;">
-                        <h3 style="color: var(--brand-pink); font-size: 1.3em; margin-top: 0; margin-bottom: 8px;">Illusion Back & Floral Appliqué</h3>
-                        <p style="color: #666; font-size: 1em; line-height: 1.6; margin: 0;">Seamless alterations on sheer fabrics and multi-layer skirts.</p>
-                    </div>
-                </div>
-
             </div>
 
-            <!-- Call to Action Box -->
-            <div style="background: #fff8f9; border: 1px solid #f2d9de; padding: 40px; border-radius: 12px; text-align: center; margin-top: 40px;">
-                <h3 style="color: var(--brand-pink); font-size: 1.6em; margin-top: 0; margin-bottom: 15px;">Ready to Transform Your Garment?</h3>
-                <p style="font-size: 1.1em; color: #444; max-width: 700px; margin: 0 auto 25px auto; line-height: 1.8;">
-                    Whether it's your dream wedding dress or everyday formal wear, trust our experienced tailor to get the perfect fit.
-                </p>
-                <a href="contact.html" class="button" style="display: inline-block; padding: 12px 30px; font-size: 1.1em;">Schedule a Fitting</a>
+            <!-- Portfolio Item 2 -->
+            <div class="portfolio-card">
+                <img src="images/image9.JPG" alt="Back view of tailored wedding dress with delicate lace">
+                <div class="portfolio-info">
+                    <h3>Back Detailing & Bustles</h3>
+                    <p>Custom corset adjustments and custom-tailored lace back designs.</p>
+                </div>
             </div>
 
-        </section>
+            <!-- Portfolio Item 3 -->
+            <div class="portfolio-card">
+                <img src="images/image7.JPG" alt="Satin wedding dress with hand-beaded bodice">
+                <div class="portfolio-info">
+                    <h3>Beaded Bodice & Satin Gown</h3>
+                    <p>Hand-stitched beadwork detailing and structured gown fitting.</p>
+                </div>
+            </div>
+
+            <!-- Portfolio Item 4 -->
+            <div class="portfolio-card">
+                <img src="images/image11.JPG" alt="Sheer illusion back bridal dress">
+                <div class="portfolio-info">
+                    <h3>Illusion Back & Floral Appliqué</h3>
+                    <p>Seamless alterations on sheer fabrics and multi-layer skirts.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Call to Action Box -->
+        <div class="cta-card">
+            <h3 style="color: var(--brand-pink); font-size: 1.8em; margin-top: 0; margin-bottom: 15px;">Ready to Transform Your Garment?</h3>
+            <p style="font-size: 1.15em; color: #444; max-width: 700px; margin: 0 auto 25px auto; line-height: 1.8;">
+                Whether it's your dream wedding dress or everyday formal wear, trust our experienced tailor to get the perfect fit.
+            </p>
+            <a href="contact.html" class="button">Schedule a Fitting</a>
+        </div>
     </main>
 
     <!-- Footer -->
@@ -102,6 +329,9 @@
         <div class="social">
             <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
                 <img src="images/facebook.webp" alt="Z Alterations Facebook">
+            </a>
+            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
+                <img src="images/tiktok.jpeg" alt="Z Alterations TikTok">
             </a>
         </div>
         <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
