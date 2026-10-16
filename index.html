@@ -6,7 +6,7 @@
     <title>Z Alterations & Bridal Sewing LLC</title>
     <style>
         :root {
-            --header-pink: #fce1ed00; /* Richer, deeper soft pink */
+            --header-pink: #fce1ed; /* Soft pink background */
             --header-text: #720033;
             --nav-blue: #4ba3f0;
             --nav-text: #ffffff;
@@ -30,30 +30,32 @@
         }
 
         header {
-            background-color: #ffffff; /* Made header/logo area white */
-            text-align: center;
-            padding: 35px 20px;
+            background-color: #ffffff;
+            padding: 25px 20px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
         }
 
         .logo-container {
-            margin-bottom: 15px;
+            flex-shrink: 0;
         }
 
         .logo-container img {
-            max-width: 360px;
+            max-width: 120px;
             height: auto;
             display: block;
-            margin: 0 auto;
         }
 
         .site-title {
-            margin: 10px 0 0 0;
+            margin: 0;
             color: var(--header-text);
             font-size: 2.2rem;
             font-weight: 700;
@@ -99,7 +101,7 @@
         }
 
         .slideshow-container {
-            max-width: 800px;
+            max-width: 1000px;
             position: relative;
             margin: 0 auto 30px auto;
             border-radius: 8px;
@@ -170,7 +172,6 @@
             background-color: #990033;
         }
 
-        /* Updated footer layout matching your reference image */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -197,7 +198,7 @@
             outline-offset: -4px;
             border-radius: 4px;
             padding: 20px;
-            width: 320px;
+            width: 300px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             text-align: center;
         }
@@ -221,7 +222,7 @@
 
         .footer-column {
             flex: 1;
-            min-width: 200px;
+            min-width: 220px;
         }
 
         .footer-column h4 {
@@ -248,6 +249,16 @@
 
         .footer-column a:hover {
             text-decoration: underline;
+        }
+
+        .footer-image {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
         }
 
         .footer-bottom {
@@ -345,9 +356,6 @@
                 <img src="images/image14.JPG" alt="Tailoring Craftsmanship 14">
             </div>
             <div class="slide">
-                <img src="images/image16.jpg" alt="Tailoring Craftsmanship 16">
-            </div>
-            <div class="slide">
                 <img src="images/image18.JPG" alt="Tailoring Craftsmanship 18">
             </div>
             <div class="slide">
@@ -379,7 +387,6 @@
             <span class="dot" onclick="currentSlide(12)"></span>
             <span class="dot" onclick="currentSlide(13)"></span>
             <span class="dot" onclick="currentSlide(14)"></span>
-            <span class="dot" onclick="currentSlide(15)"></span>
         </div>
 
         <section class="intro-card">
@@ -398,12 +405,13 @@
                 <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
             </div>
 
-            <!-- Middle Column: Customer Satisfaction & Garment Holding Policies -->
+            <!-- Middle Column: Customer Satisfaction, Garment Holding Policies & Footer Image -->
             <div class="footer-column">
                 <h4>Customer Satisfaction</h4>
                 <p>Our customer satisfaction within the customer Satisfaction and/ess your promote announcent.</p>
                 <h4 style="margin-top: 15px;">Garment Holding</h4>
                 <p>We garment holding so due to imove any garment holds with our concoment.</p>
+                <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
             </div>
 
             <!-- Right Column: Address Us & Socials -->
