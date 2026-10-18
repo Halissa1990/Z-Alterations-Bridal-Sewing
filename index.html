@@ -27,29 +27,27 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
             background-color: #ffffff;
-            padding: 25px 20px;
+            padding: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-content {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 20px;
-        }
-
-        .logo-container {
-            flex-shrink: 0;
+            text-align: center;
+            gap: 10px;
         }
 
         .logo-container img {
-            max-width: 200px;
+            max-width: 150px;
             height: auto;
             display: block;
         }
@@ -57,14 +55,17 @@
         .site-title {
             margin: 0;
             color: var(--header-text);
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
         nav {
             background-color: var(--nav-blue);
-            padding: 15px 10px;
+            padding: 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -72,17 +73,17 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
         }
 
         nav ul li a {
             color: var(--nav-text);
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
-            font-size: 1.25rem;
-            padding: 6px 20px;
+            font-size: 0.95rem;
+            padding: 6px 12px;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: inline-block;
@@ -98,19 +99,19 @@
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
-            padding: 20px 15px;
+            padding: 15px 10px;
             border-bottom: 1px solid #f2cdd9;
         }
 
         .welcome-banner h2 {
             margin: 0;
             color: var(--header-text);
-            font-size: 1.8rem;
+            font-size: 1.3rem;
             font-weight: 700;
         }
 
         main {
-            padding: 40px 20px;
+            padding: 20px 15px;
             max-width: 1000px;
             margin: 0 auto;
         }
@@ -118,7 +119,7 @@
         .slideshow-container {
             max-width: 1000px;
             position: relative;
-            margin: 0 auto 30px auto;
+            margin: 0 auto 20px auto;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -132,20 +133,23 @@
         .slide img {
             width: 100%;
             height: auto;
-            vertical-align: middle;
-            max-height: 500px;
+            max-height: 350px;
             object-fit: cover;
+            vertical-align: middle;
         }
 
         .dots-container {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
+            padding: 0 10px;
+            overflow-x: auto;
+            white-space: nowrap;
         }
 
         .dot {
-            height: 12px;
-            width: 12px;
-            margin: 0 4px;
+            height: 10px;
+            width: 10px;
+            margin: 0 3px;
             background-color: #bbb;
             border-radius: 50%;
             display: inline-block;
@@ -159,15 +163,16 @@
 
         .intro-card {
             background: #ffffff;
-            padding: 30px;
+            padding: 20px 15px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         .intro-card h2 {
             color: var(--header-text);
+            font-size: 1.4rem;
             margin-top: 0;
         }
 
@@ -175,10 +180,11 @@
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 12px 25px;
+            padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
+            font-size: 0.95rem;
             transition: background 0.3s ease;
             margin-top: 15px;
         }
@@ -190,8 +196,8 @@
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
-            padding: 50px 20px;
-            margin-top: 50px;
+            padding: 30px 15px;
+            margin-top: 30px;
             border-top: 1px solid #f2cdd9;
         }
 
@@ -199,10 +205,8 @@
             max-width: 1000px;
             margin: 0 auto;
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 30px;
+            flex-direction: column;
+            gap: 25px;
             text-align: left;
         }
 
@@ -212,8 +216,8 @@
             outline: 1px solid var(--accent-gold);
             outline-offset: -4px;
             border-radius: 4px;
-            padding: 20px;
-            width: 300px;
+            padding: 15px;
+            width: 100%;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             text-align: center;
         }
@@ -221,9 +225,9 @@
         .footer-announcement-box h3 {
             font-family: 'Georgia', serif;
             color: #5c1428;
-            font-size: 1.1rem;
+            font-size: 1rem;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             letter-spacing: 1px;
             text-transform: uppercase;
         }
@@ -232,21 +236,19 @@
             font-size: 0.85rem;
             color: #444444;
             line-height: 1.4;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
 
         .footer-column {
-            flex: 1;
-            min-width: 220px;
+            width: 100%;
         }
 
         .footer-column h4 {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             color: var(--text-dark);
             font-size: 1rem;
             font-weight: 700;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .footer-column p {
@@ -262,40 +264,36 @@
             font-weight: 600;
         }
 
-        .footer-column a:hover {
-            text-decoration: underline;
-        }
-
         .footer-image {
             width: 100%;
-            max-width: 250px;
+            max-width: 200px;
             height: auto;
             border-radius: 6px;
-            margin-top: 15px;
+            margin-top: 10px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
             display: block;
         }
 
         .footer-bottom {
             max-width: 1000px;
-            margin: 40px auto 0 auto;
+            margin: 25px auto 0 auto;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            text-align: center;
             border-top: 1px solid #f2cdd9;
-            padding-top: 20px;
-            flex-wrap: wrap;
-            gap: 15px;
+            padding-top: 15px;
+            gap: 10px;
         }
 
         .footer-bottom-company {
             font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: var(--header-text);
         }
 
         .footer-bottom-copy {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #666;
         }
 
@@ -306,16 +304,77 @@
         }
 
         .social img {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             object-fit: contain;
         }
 
+        /* Desktop Media Queries */
         @media (min-width: 768px) {
-            nav ul {
+            header {
+                padding: 25px 20px;
+            }
+            .header-content {
                 flex-direction: row;
                 justify-content: center;
+            }
+            .logo-container img {
+                max-width: 200px;
+            }
+            .site-title {
+                font-size: 2.2rem;
+            }
+            nav {
+                padding: 15px 10px;
+            }
+            nav ul {
                 gap: 25px;
+            }
+            nav ul li a {
+                font-size: 1.25rem;
+                padding: 6px 20px;
+            }
+            .welcome-banner {
+                padding: 20px 15px;
+            }
+            .welcome-banner h2 {
+                font-size: 1.8rem;
+            }
+            main {
+                padding: 40px 20px;
+            }
+            .slide img {
+                max-height: 500px;
+            }
+            .intro-card {
+                padding: 30px;
+            }
+            .intro-card h2 {
+                font-size: 1.8rem;
+            }
+            footer {
+                padding: 50px 20px;
+            }
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
+            .footer-announcement-box {
+                width: 300px;
+            }
+            .footer-column {
+                flex: 1;
+                min-width: 220px;
+            }
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
+            .social img {
+                width: 32px;
+                height: 32px;
             }
         }
     </style>
@@ -341,55 +400,26 @@
         </ul>
     </nav>
 
-    <!-- Welcome Heading Added Below Navigation -->
     <section class="welcome-banner">
         <h2>Welcome To Z Alterations & Bridal Sewing</h2>
     </section>
 
     <main>
         <div class="slideshow-container">
-            <div class="slide">
-                <img src="images/image1.jpg" alt="Tailoring Craftsmanship 1">
-            </div>
-            <div class="slide">
-                <img src="images/image2.jpg" alt="Tailoring Craftsmanship 2">
-            </div>
-            <div class="slide">
-                <img src="images/image3.jpg" alt="Tailoring Craftsmanship 3">
-            </div>
-            <div class="slide">
-                <img src="images/image4.jpg" alt="Tailoring Craftsmanship 4">
-            </div>
-            <div class="slide">
-                <img src="images/image5.jpg" alt="Tailoring Craftsmanship 5">
-            </div>
-            <div class="slide">
-                <img src="images/image6.jpg" alt="Tailoring Craftsmanship 6">
-            </div>
-            <div class="slide">
-                <img src="images/image7.jpg" alt="Tailoring Craftsmanship 7">
-            </div>
-            <div class="slide">
-                <img src="images/image8.JPG" alt="Tailoring Craftsmanship 8">
-            </div>
-            <div class="slide">
-                <img src="images/image14.JPG" alt="Tailoring Craftsmanship 14">
-            </div>
-            <div class="slide">
-                <img src="images/image18.JPG" alt="Tailoring Craftsmanship 18">
-            </div>
-            <div class="slide">
-                <img src="images/image19.JPG" alt="Tailoring Craftsmanship 19">
-            </div>
-            <div class="slide">
-                <img src="images/image20.JPG" alt="Tailoring Craftsmanship 20">
-            </div>
-            <div class="slide">
-                <img src="images/image21.JPG" alt="Tailoring Craftsmanship 21">
-            </div>
-            <div class="slide">
-                <img src="images/image22.PNG" alt="Tailoring Craftsmanship 22">
-            </div>
+            <div class="slide"><img src="images/image1.jpg" alt="Tailoring Craftsmanship 1"></div>
+            <div class="slide"><img src="images/image2.jpg" alt="Tailoring Craftsmanship 2"></div>
+            <div class="slide"><img src="images/image3.jpg" alt="Tailoring Craftsmanship 3"></div>
+            <div class="slide"><img src="images/image4.jpg" alt="Tailoring Craftsmanship 4"></div>
+            <div class="slide"><img src="images/image5.jpg" alt="Tailoring Craftsmanship 5"></div>
+            <div class="slide"><img src="images/image6.jpg" alt="Tailoring Craftsmanship 6"></div>
+            <div class="slide"><img src="images/image7.jpg" alt="Tailoring Craftsmanship 7"></div>
+            <div class="slide"><img src="images/image8.JPG" alt="Tailoring Craftsmanship 8"></div>
+            <div class="slide"><img src="images/image14.JPG" alt="Tailoring Craftsmanship 14"></div>
+            <div class="slide"><img src="images/image18.JPG" alt="Tailoring Craftsmanship 18"></div>
+            <div class="slide"><img src="images/image19.JPG" alt="Tailoring Craftsmanship 19"></div>
+            <div class="slide"><img src="images/image20.JPG" alt="Tailoring Craftsmanship 20"></div>
+            <div class="slide"><img src="images/image21.JPG" alt="Tailoring Craftsmanship 21"></div>
+            <div class="slide"><img src="images/image22.PNG" alt="Tailoring Craftsmanship 22"></div>
         </div>
 
         <div class="dots-container">
@@ -418,14 +448,12 @@
 
     <footer id="contact">
         <div class="footer-container">
-            <!-- Left Box: Important Announcement Card -->
             <div class="footer-announcement-box">
                 <h3>Important Announcement</h3>
                 <p>This important announcement process set you an anoune and wwwmmeet your eocoration to our portant announcement.</p>
                 <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
             </div>
 
-            <!-- Middle Column: Customer Satisfaction, Garment Holding Policies & Footer Image -->
             <div class="footer-column">
                 <h4>Customer Satisfaction</h4>
                 <p>Our customer satisfaction within the customer Satisfaction and/ess your promote announcent.</p>
@@ -434,7 +462,6 @@
                 <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
             </div>
 
-            <!-- Right Column: Address Us & Socials -->
             <div class="footer-column">
                 <h4>Address Us</h4>
                 <p>
