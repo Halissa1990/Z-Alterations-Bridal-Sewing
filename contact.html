@@ -3,17 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Z Alterations & Bridal Sewing</title>
+    <title>Contact Us - Z Alterations & Bridal Sewing LLC</title>
     <style>
-        /* ==========================================
-           Z Alterations & Bridal Sewing - Custom CSS
-           ========================================== */
-
         :root {
-            --header-pink: #fff8fa;        /* Extremely light soft pink */
-            --nav-blue: #64b5f6;           /* Light blue background for navigation */
-            --nav-text: #0d47a1;           /* Deep blue text for menu links */
-            --brand-pink: #e86998; 
+            --header-pink: #fce1ed; /* Soft pink background */
+            --header-text: #720033;
+            --nav-blue: #4ba3f0;
+            --nav-text: #ffffff;
+            --brand-pink: #e04b82; /* Brighter, more vibrant pink */
             --accent-gold: #c5a059;
             --text-dark: #333333;
             --bg-light: #f7f9fa;
@@ -31,45 +28,45 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* Header Section - Extremely Light Pink Background */
         header {
-            background-color: var(--header-pink);
-            text-align: center;
-            padding: 35px 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
-            border-bottom: 1px solid #f2e3e8;
+            background-color: #ffffff;
+            padding: 15px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-content {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .logo-container {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
         }
 
         .logo-container img {
-            max-width: 280px;
+            max-width: 150px;
             height: auto;
             display: block;
-            margin: 0 auto;
         }
 
         .site-title {
-            margin: 10px 0 0 0;
-            color: var(--deep-burgundy);
-            font-size: 2.2rem;
+            margin: 0;
+            color: var(--header-text);
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
-        /* Navigation Bar - Light Blue */
         nav {
             background-color: var(--nav-blue);
-            padding: 15px 10px;
-            box-shadow: 0 3px 6px rgba(0,0,0,0.05);
+            padding: 10px;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -77,17 +74,17 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
         }
 
         nav ul li a {
-            color: #ffffff;
-            font-weight: 700;
+            color: var(--nav-text);
+            font-weight: 600;
             text-decoration: none;
-            font-size: 1.25rem;
-            padding: 6px 20px;
+            font-size: 0.95rem;
+            padding: 6px 12px;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: inline-block;
@@ -96,27 +93,43 @@
         nav ul li a:hover, 
         nav ul li a.active {
             background-color: #ffffff;
-            color: var(--nav-text);
+            color: var(--brand-pink);
         }
 
-        /* Main Container */
+        /* Welcome Banner */
+        .welcome-banner {
+            background-color: var(--header-pink);
+            text-align: center;
+            padding: 15px 10px;
+            border-bottom: 1px solid #f2cdd9;
+        }
+
+        .welcome-banner h2 {
+            margin: 0;
+            color: var(--header-text);
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
         main {
-            padding: 30px 20px;
-            max-width: 1400px;
+            padding: 20px 15px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
         .hero {
             text-align: center;
-            padding: 40px 20px;
+            padding: 30px 20px;
             background: #ffffff;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            margin-bottom: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
         }
 
         .hero h1 {
-            color: var(--text-dark);
+            color: var(--header-text);
+            margin-top: 0;
+            font-size: 1.8rem;
             margin-bottom: 15px;
         }
 
@@ -128,15 +141,15 @@
             border-radius: 20px;
             font-size: 0.95rem;
             font-weight: 600;
-            margin: 15px 0 25px 0;
+            margin: 15px 0 15px 0;
         }
 
-        /* Grid Layout for Contact Section */
+        /* Grid Layout */
         .contact-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 30px;
-            margin-bottom: 40px;
+            gap: 25px;
+            margin-bottom: 30px;
         }
 
         @media (min-width: 992px) {
@@ -145,51 +158,49 @@
             }
         }
 
-        /* Card Panels */
         .card-panel {
             background: #ffffff;
-            padding: 30px;
+            padding: 25px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
         .card-panel h2 {
-            color: var(--deep-burgundy);
-            font-size: 1.6rem;
+            color: var(--header-text);
+            font-size: 1.4rem;
             margin-top: 0;
             margin-bottom: 20px;
             border-bottom: 2px solid var(--header-pink);
             padding-bottom: 10px;
         }
 
-        /* Contact Details Styling */
         .contact-detail-item {
             display: flex;
             align-items: flex-start;
             gap: 15px;
-            margin-bottom: 20px;
+            margin-bottom: 18px;
         }
 
         .contact-icon {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             line-height: 1;
             background: var(--header-pink);
             padding: 10px;
             border-radius: 50%;
-            border: 1px solid #f2e3e8;
+            border: 1px solid #f2cdd9;
         }
 
         .contact-info-text strong {
             display: block;
-            color: var(--deep-burgundy);
-            font-size: 1.05rem;
+            color: var(--header-text);
+            font-size: 1rem;
             margin-bottom: 3px;
         }
 
         .action-buttons-group {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
+            gap: 10px;
             margin-top: 20px;
         }
 
@@ -197,24 +208,24 @@
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 12px 24px;
+            padding: 10px 18px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
-            transition: background 0.3s ease, transform 0.2s ease;
+            font-size: 0.95rem;
+            transition: background 0.3s ease;
             border: none;
             cursor: pointer;
             text-align: center;
         }
 
         .button:hover {
-            background-color: #ad1457;
+            background-color: #990033;
         }
 
         .button-booking {
             background-color: var(--deep-burgundy);
             color: #ffffff;
-            font-size: 1.05rem;
         }
 
         .button-booking:hover {
@@ -243,39 +254,38 @@
 
         /* Form Controls */
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             text-align: left;
         }
 
         .form-group label {
             display: block;
             font-weight: 600;
-            margin-bottom: 6px;
+            margin-bottom: 5px;
             color: var(--text-dark);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px 15px;
+            padding: 10px 12px;
             border: 1px solid #cccccc;
             border-radius: 4px;
             font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+            font-size: 0.95rem;
             background-color: #fafafa;
         }
 
         .form-control:focus {
             outline: none;
             border-color: var(--brand-pink);
-            box-shadow: 0 0 0 3px rgba(232, 105, 152, 0.2);
+            box-shadow: 0 0 0 3px rgba(224, 75, 130, 0.15);
             background-color: #ffffff;
         }
 
         textarea.form-control {
             resize: vertical;
-            min-height: 120px;
+            min-height: 100px;
         }
 
         .form-row {
@@ -290,10 +300,9 @@
             }
         }
 
-        /* Google Map Container */
         .map-container {
             width: 100%;
-            height: 280px;
+            height: 250px;
             border-radius: 8px;
             overflow: hidden;
             border: 1px solid #e0e0e0;
@@ -306,37 +315,29 @@
             border: 0;
         }
 
-        /* Location & Hours Section */
+        /* Hours Section */
         .hours-card {
             background: #ffffff;
-            padding: 35px 30px;
+            padding: 30px 25px;
             border-radius: 8px;
-            max-width: 600px;
-            margin: 40px auto;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            max-width: 700px;
+            margin: 30px auto;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
         }
 
         .hours-card h2 {
             margin-top: 0;
-            color: var(--deep-burgundy);
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-
-        .hours-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px 30px;
-            align-items: center;
-            margin-top: 15px;
+            color: var(--header-text);
+            font-size: 1.5rem;
+            margin-bottom: 10px;
         }
 
         .hours-row {
             display: flex;
             justify-content: space-between;
-            padding: 6px 0;
+            padding: 8px 0;
             border-bottom: 1px solid #f0f0f0;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
         .hours-row .day {
@@ -349,10 +350,10 @@
         }
 
         .get-directions-link {
-            color: #1976d2;
+            color: var(--nav-blue);
             font-weight: 600;
             text-decoration: none;
-            font-size: 1.05rem;
+            font-size: 1rem;
             display: inline-block;
             margin-bottom: 15px;
         }
@@ -361,126 +362,124 @@
             text-decoration: underline;
         }
 
-        /* Footer Section */
+        /* Footer Matching Index */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
+            padding: 30px 15px;
+            margin-top: 30px;
+            border-top: 1px solid #f2cdd9;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        .footer-announcement-box {
+            background: #ffffff;
+            border: 2px solid var(--accent-gold);
+            outline: 1px solid var(--accent-gold);
+            outline-offset: -4px;
+            border-radius: 4px;
+            padding: 15px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             text-align: center;
-            padding: 50px 20px 30px 20px;
-            margin-top: 50px;
-            border-top: 1px solid #f2e3e8;
         }
 
-        footer h3 {
+        .footer-announcement-box h3 {
+            font-family: 'Georgia', serif;
             color: var(--deep-burgundy);
-            font-size: 1.6rem;
+            font-size: 1rem;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        footer p {
+        .footer-announcement-box p {
+            font-size: 0.85rem;
             color: #444444;
-            font-size: 1rem;
+            line-height: 1.4;
             margin-bottom: 12px;
         }
 
-        footer a {
-            color: #1976d2;
+        .footer-column {
+            width: 100%;
+        }
+
+        .footer-column h4 {
+            color: var(--text-dark);
+            font-size: 1rem;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 8px;
+        }
+
+        .footer-column p {
+            font-size: 0.9rem;
+            color: #444;
+            margin: 0 0 10px 0;
+            line-height: 1.5;
+        }
+
+        .footer-column a {
+            color: var(--brand-pink);
             text-decoration: none;
             font-weight: 600;
         }
 
-        footer a:hover {
+        .footer-column a:hover {
             text-decoration: underline;
         }
 
-        /* Policy Card inside Footer */
-        .announcement-card {
-            background: #ffffff;
-            border: 2px solid var(--accent-gold);
-            outline: 1px solid var(--accent-gold);
-            outline-offset: -6px;
-            border-radius: 4px;
-            padding: 35px 25px;
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            text-align: center;
-            box-shadow: 0 4px 14px rgba(0,0,0,0.04);
+        .footer-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
         }
 
-        .announcement-title {
-            font-family: 'Georgia', serif;
-            color: var(--deep-burgundy);
-            font-size: 1.8rem;
-            letter-spacing: 1.5px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .policy-block {
-            margin-bottom: 20px;
-            text-align: left;
-            padding: 0 10px;
-        }
-
-        .policy-header {
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 25px auto 0 auto;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 10px;
-            margin-bottom: 6px;
-        }
-
-        .policy-icon {
-            font-size: 1.3rem;
-            color: var(--accent-gold);
-        }
-
-        .policy-title {
-            font-family: 'Georgia', serif;
-            color: var(--deep-burgundy);
-            font-size: 1.05rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .policy-text {
-            color: #444444;
-            font-size: 0.95rem;
-            line-height: 1.5;
-            margin: 0;
-            padding-left: 28px;
-        }
-
-        .announcement-footer {
-            margin-top: 25px;
-            border-top: 1px solid #e0d5c1;
+            text-align: center;
+            border-top: 1px solid #f2cdd9;
             padding-top: 15px;
-            font-size: 0.85rem;
-            color: #666666;
+            gap: 10px;
         }
 
-        .announcement-footer .thanks {
+        .footer-bottom-company {
             font-weight: 700;
-            color: var(--deep-burgundy);
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            font-size: 1rem;
+            color: var(--header-text);
+        }
+
+        .footer-bottom-copy {
+            font-size: 0.8rem;
+            color: #666;
         }
 
         .social {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 18px;
-            margin: 25px 0 20px 0;
+            gap: 12px;
         }
 
         .social img {
-            width: 35px;
-            height: 35px;
+            width: 28px;
+            height: 28px;
             object-fit: contain;
             transition: transform 0.2s ease;
         }
@@ -489,16 +488,9 @@
             transform: scale(1.1);
         }
 
-        .copyright {
-            font-size: 0.9rem;
-            color: #666666;
-            margin-top: 20px;
-        }
-
-        /* Success Message Box */
         .status-message {
             display: none;
-            padding: 15px;
+            padding: 12px;
             margin-top: 15px;
             border-radius: 4px;
             text-align: center;
@@ -511,12 +503,24 @@
             border: 1px solid #a5d6a7;
         }
 
+        /* Desktop Queries */
         @media (min-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                justify-content: center;
-                gap: 25px;
-            }
+            header { padding: 25px 20px; }
+            .header-content { flex-direction: row; justify-content: center; }
+            .logo-container img { max-width: 200px; }
+            .site-title { font-size: 2.2rem; }
+            nav { padding: 15px 10px; }
+            nav ul { gap: 25px; }
+            nav ul li a { font-size: 1.25rem; padding: 6px 20px; }
+            .welcome-banner { padding: 20px 15px; }
+            .welcome-banner h2 { font-size: 1.8rem; }
+            main { padding: 40px 20px; }
+            footer { padding: 50px 20px; }
+            .footer-container { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+            .footer-announcement-box { width: 300px; }
+            .footer-column { flex: 1; min-width: 220px; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+            .social img { width: 32px; height: 32px; }
         }
     </style>
 </head>
@@ -526,7 +530,7 @@
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
+                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
             </div>
             <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
         </div>
@@ -543,22 +547,27 @@
         </ul>
     </nav>
 
+    <!-- Welcome Banner -->
+    <section class="welcome-banner">
+        <h2>Contact Us & Book an Appointment</h2>
+    </section>
+
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Contact Us & Book an Appointment</h1>
+            <h1>Get in Touch With Our Tailoring Experts</h1>
             <p>With 22 years of experience in clothing alterations and sewing, we are passionate about helping every customer look and feel their best in clothing that fits perfectly.</p>
-            <div style="margin-top: 20px;">
+            <div style="margin-top: 15px;">
                 <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">📅 Book Appointment Online</a>
             </div>
             <div class="feature-badge">Featured on Greenfield: We're Open!</div>
         </section>
 
-        <!-- Contact Information & Form Grid -->
+        <!-- Contact Grid -->
         <div class="contact-grid">
             <!-- Left Panel: Direct Contact Details & Map -->
             <div class="card-panel">
-                <h2>Get in Touch</h2>
+                <h2>Direct Contact Info</h2>
                 
                 <div class="contact-detail-item">
                     <span class="contact-icon">📍</span>
@@ -584,15 +593,7 @@
                     </div>
                 </div>
 
-                <div class="contact-detail-item">
-                    <span class="contact-icon">💬</span>
-                    <div class="contact-info-text">
-                        <strong>Text Message / SMS</strong>
-                        Direct SMS line available for quick questions or fitting inquiries.
-                    </div>
-                </div>
-
-                <!-- Quick Action Buttons -->
+                <!-- Action Buttons -->
                 <div class="action-buttons-group">
                     <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">Book Appointment</a>
                     <a href="tel:4144672291" class="button">Call Us Now</a>
@@ -612,7 +613,7 @@
                 </div>
             </div>
 
-            <!-- Right Panel: Appointment / Contact Request Form -->
+            <!-- Right Panel: Message Form -->
             <div class="card-panel">
                 <h2>Send Us a Message</h2>
                 <form id="contactForm" onsubmit="handleFormSubmit(event)">
@@ -652,7 +653,7 @@
 
                     <div class="form-group">
                         <label for="messageText">Details / Special Notes</label>
-                        <textarea id="messageText" class="form-control" placeholder="Describe what garments need tailoring or any specific deadline dates..."></textarea>
+                        <textarea id="messageText" class="form-control" placeholder="Describe what garments need tailoring or any specific deadlines..."></textarea>
                     </div>
 
                     <div class="action-buttons-group">
@@ -662,12 +663,12 @@
                 </form>
 
                 <div id="statusMessage" class="status-message status-success">
-                    Thank you! Your message inquiry has been created successfully. We look forward to fitting you!
+                    Thank you! Your message inquiry has been sent successfully. We look forward to fitting you!
                 </div>
             </div>
         </div>
 
-        <!-- Location & Hours Section (Matched to Image) -->
+        <!-- Location & Hours Section -->
         <section class="hours-card">
             <h2>Location & Hours</h2>
             <a href="https://maps.google.com/?q=4160+S+108th+St,+Greenfield,+WI+53228" target="_blank" rel="noopener" class="get-directions-link">Get directions</a>
@@ -707,59 +708,44 @@
 
     <!-- Footer -->
     <footer id="contact">
-        <section class="announcement-card">
-            <h2 class="announcement-title">Important Announcement</h2>
+        <div class="footer-container">
+            <div class="footer-announcement-box">
+                <h3>Important Announcement</h3>
+                <p>We stand by the quality of our workmanship. Please return garments within 14 days with receipt for adjustments.</p>
+                <a href="contact.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
+            </div>
 
-            <div class="policy-block">
-                <div class="policy-header">
-                    <span class="policy-icon">🏅</span>
-                    <h3 class="policy-title">Customer Satisfaction Policy</h3>
-                </div>
-                <p class="policy-text">
-                    We stand by the quality of our workmanship. Should you be dissatisfied, please return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge to ensure your satisfaction.
+            <div class="footer-column">
+                <h4>Customer Satisfaction</h4>
+                <p>Dissatisfied? Return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge.</p>
+                <h4 style="margin-top: 15px;">Garment Holding</h4>
+                <p>Please collect all completed garments within 45 days of notification to help us efficiently manage our space.</p>
+                <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
+            </div>
+
+            <div class="footer-column">
+                <h4>Address Us</h4>
+                <p>
+                    4160 S 108th St,<br>
+                    Greenfield, WI 53228<br>
+                    <a href="tel:4144672291">(414) 467-2291</a>
                 </p>
-            </div>
-
-            <div class="policy-block">
-                <div class="policy-header">
-                    <span class="policy-icon">⏱️</span>
-                    <h3 class="policy-title">Garment Holding Policy</h3>
+                <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
+                <div class="social" style="margin-top: 10px;">
+                    <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
+                        <img src="images/facebook.webp" alt="Facebook">
+                    </a>
+                    <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
+                        <img src="images/tiktok.jpg" alt="TikTok">
+                    </a>
                 </div>
-                <p class="policy-text">
-                    To efficiently manage our space, we kindly request that all completed garments be collected within 45 days of notification. Unclaimed garments remaining beyond this period may be considered abandoned.
-                </p>
             </div>
-
-            <div class="announcement-footer">
-                <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
-                <div>Z Alterations & Bridal Sewing LLC</div>
-                <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
-            </div>
-        </section>
-
-        <h3>Z Alterations & Bridal Sewing LLC</h3>
-        <p>
-            4160 S 108th St<br>
-            Greenfield, WI 53228<br>
-            <a href="tel:4144672291">(414) 467-2291</a>
-        </p>
-        <p>
-            <a href="https://zalterations.square.site" target="_blank" rel="noopener" style="color: var(--brand-pink); font-weight: bold;">
-                Book an Appointment Online
-            </a> | 
-            <a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">
-                View Local Listing
-            </a>
-        </p>
-        <div class="social">
-            <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
-                <img src="images/facebook.webp" alt="Z Alterations Facebook">
-            </a>
-            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
-                <img src="images/tiktok.jpg" alt="Z Alterations TikTok">
-            </a>
         </div>
-        <p class="copyright">&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-company">Z Alterations & Bridal Sewing LLC</div>
+            <div class="footer-bottom-copy">&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</div>
+        </div>
     </footer>
 
     <script>
@@ -769,24 +755,6 @@
             statusMessage.style.display = 'block';
             statusMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
             document.getElementById('contactForm').reset();
-        }
-
-        function sendViaSMS() {
-            const name = document.getElementById('fullName').value || 'Customer';
-            const service = document.getElementById('serviceType').value;
-            const preferredDate = document.getElementById('preferredDate').value;
-            const notes = document.getElementById('messageText').value;
-
-            let smsText = `Hello Z Alterations! My name is ${name}. I am inquiring about ${service}.`;
-            if (preferredDate) {
-                smsText += ` Preferred date/time: ${preferredDate}.`;
-            }
-            if (notes) {
-                smsText += ` Notes: ${notes}`;
-            }
-
-            const encodedText = encodeURIComponent(smsText);
-            window.location.href = `sms:+14144672291?body=${encodedText}`;
         }
     </script>
 </body>

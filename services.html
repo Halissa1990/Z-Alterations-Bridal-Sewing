@@ -3,17 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services & Pricing - Z Alterations & Bridal Sewing</title>
+    <title>Services - Z Alterations & Bridal Sewing LLC</title>
     <style>
         :root {
-            --header-pink: #fff8fa;
-            --header-text: #880e4f;
-            --nav-blue: #64b5f6;
+            --header-pink: #fce1ed; /* Soft pink background */
+            --header-text: #720033;
+            --nav-blue: #4ba3f0;
             --nav-text: #ffffff;
-            --brand-pink: #e86998; 
+            --brand-pink: #e04b82; /* Brighter, more vibrant pink */
             --accent-gold: #c5a059;
             --text-dark: #333333;
             --bg-light: #f7f9fa;
+            --deep-burgundy: #5c1428;
         }
 
         * {
@@ -27,42 +28,45 @@
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         header {
-            background-color: var(--header-pink);
-            text-align: center;
-            padding: 35px 20px;
+            background-color: #ffffff;
+            padding: 15px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
 
         .header-content {
-            max-width: 800px;
+            max-width: 1000px;
             margin: 0 auto;
-        }
-
-        .logo-container {
-            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
         }
 
         .logo-container img {
-            max-width: 280px;
+            max-width: 150px;
             height: auto;
             display: block;
-            margin: 0 auto;
         }
 
         .site-title {
-            margin: 10px 0 0 0;
+            margin: 0;
             color: var(--header-text);
-            font-size: 2.2rem;
+            font-size: 1.6rem;
             font-weight: 700;
         }
 
         nav {
             background-color: var(--nav-blue);
-            padding: 15px 10px;
+            padding: 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         nav ul {
@@ -70,17 +74,17 @@
             padding: 0;
             margin: 0;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
         }
 
         nav ul li a {
             color: var(--nav-text);
-            font-weight: 700;
+            font-weight: 600;
             text-decoration: none;
-            font-size: 1.25rem;
-            padding: 6px 20px;
+            font-size: 0.95rem;
+            padding: 6px 12px;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: inline-block;
@@ -92,389 +96,269 @@
             color: var(--brand-pink);
         }
 
-        main {
-            padding: 40px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-header {
+        /* Welcome Banner */
+        .welcome-banner {
+            background-color: var(--header-pink);
             text-align: center;
-            margin-bottom: 35px;
+            padding: 15px 10px;
+            border-bottom: 1px solid #f2cdd9;
         }
 
-        .section-header h1 {
-            font-size: 2.3rem;
+        .welcome-banner h2 {
+            margin: 0;
             color: var(--header-text);
-            margin-bottom: 10px;
+            font-size: 1.3rem;
+            font-weight: 700;
         }
 
-        .section-header p {
-            color: #555555;
-            font-size: 1.1rem;
-            max-width: 750px;
+        main {
+            padding: 20px 15px;
+            max-width: 1000px;
             margin: 0 auto;
         }
 
-        .services-overview {
+        .hero {
+            text-align: center;
+            padding: 30px 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            color: var(--header-text);
+            margin-top: 0;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        /* Services Grid Layout */
+        .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: 1fr;
             gap: 25px;
-            margin-bottom: 50px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: 768px) {
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
         }
 
         .service-card {
             background: #ffffff;
+            padding: 25px;
             border-radius: 8px;
-            padding: 30px 25px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            border-top: 4px solid var(--brand-pink);
-        }
-
-        .service-card h3 {
-            color: var(--header-text);
-            margin-top: 0;
-            font-size: 1.4rem;
-        }
-
-        .price-section {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 35px 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            margin-bottom: 50px;
-        }
-
-        .price-section h2 {
-            text-align: center;
-            color: var(--header-text);
-            font-size: 2rem;
-            margin-top: 0;
-            margin-bottom: 10px;
-        }
-
-        .price-disclaimer {
-            text-align: center;
-            font-size: 0.88rem;
-            color: #777777;
-            font-weight: 600;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .price-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .price-category {
-            background: var(--header-pink);
-            border-radius: 8px;
-            padding: 22px;
-            border: 1px solid #f0e0e6;
-        }
-
-        .price-category h3 {
-            margin-top: 0;
-            color: #5c1428;
-            font-size: 1.25rem;
-            border-bottom: 2px solid var(--brand-pink);
-            padding-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .price-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .price-item {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px dashed #e0d0d6;
-            font-size: 0.98rem;
         }
 
-        .price-item:last-child {
-            border-bottom: none;
-        }
-
-        .price-item .name {
-            color: #333333;
-        }
-
-        .price-item .price {
-            font-weight: 700;
-            color: var(--brand-pink);
-        }
-
-        .turnaround-box {
-            margin-top: 30px;
-            background: #fff8eb;
-            border: 1px solid #f2d29b;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .turnaround-box h4 {
-            margin: 0 0 5px 0;
-            color: #8c5d1e;
-            font-size: 1.1rem;
-        }
-
-        .turnaround-box p {
-            margin: 0;
-            color: #664d26;
-            font-size: 0.95rem;
-        }
-
-        .reviews-section {
-            background: #ffffff;
-            border-radius: 10px;
-            padding: 35px 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
-            margin-bottom: 40px;
-        }
-
-        .reviews-section h2 {
-            text-align: center;
+        .service-card h2 {
             color: var(--header-text);
-            font-size: 2rem;
+            font-size: 1.3rem;
             margin-top: 0;
-            margin-bottom: 30px;
+            margin-bottom: 12px;
+            border-bottom: 2px solid var(--header-pink);
+            padding-bottom: 8px;
         }
 
-        .reviews-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 40px;
-        }
-
-        .review-card {
-            background: var(--header-pink);
-            border-radius: 8px;
-            padding: 20px;
-            border: 1px solid #f0e0e6;
-        }
-
-        .review-stars {
-            color: #fbc02d;
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .review-text {
-            font-style: italic;
+        .service-card p {
             color: #444444;
             font-size: 0.95rem;
-            margin-bottom: 12px;
-        }
-
-        .review-author {
-            font-weight: 700;
-            color: var(--header-text);
-            font-size: 0.9rem;
-            text-align: right;
-        }
-
-        .review-form-container {
-            background: var(--bg-light);
-            border-radius: 8px;
-            padding: 25px;
-            max-width: 650px;
-            margin: 0 auto;
-            border: 1px solid #e0e0e0;
-        }
-
-        .review-form-container h3 {
-            margin-top: 0;
-            color: var(--header-text);
-            text-align: center;
             margin-bottom: 20px;
-        }
-
-        .form-group {
-            margin-bottom: 15px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 4px;
-            font-family: inherit;
-            font-size: 0.95rem;
         }
 
         .button {
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 12px 25px;
-            border: none;
+            padding: 10px 18px;
             border-radius: 4px;
+            text-decoration: none;
             font-weight: 600;
-            cursor: pointer;
+            font-size: 0.95rem;
             transition: background 0.3s ease;
-            width: 100%;
-            font-size: 1rem;
+            text-align: center;
         }
 
         .button:hover {
-            background-color: #ad1457;
+            background-color: #990033;
         }
 
+        .button-booking {
+            background-color: var(--deep-burgundy);
+            color: #ffffff;
+            margin-top: 15px;
+        }
+
+        .button-booking:hover {
+            background-color: #3b0a18;
+        }
+
+        /* Footer Matching Index */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
+            padding: 30px 15px;
+            margin-top: 30px;
+            border-top: 1px solid #f2cdd9;
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            text-align: left;
+        }
+
+        .footer-announcement-box {
+            background: #ffffff;
+            border: 2px solid var(--accent-gold);
+            outline: 1px solid var(--accent-gold);
+            outline-offset: -4px;
+            border-radius: 4px;
+            padding: 15px;
+            width: 100%;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
             text-align: center;
-            padding: 40px 20px;
-            margin-top: 50px;
-            border-top: 1px solid #f0e0e6;
         }
 
-        .footer-company-name {
+        .footer-announcement-box h3 {
+            font-family: 'Georgia', serif;
+            color: var(--deep-burgundy);
+            font-size: 1rem;
+            margin-top: 0;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .footer-announcement-box p {
+            font-size: 0.85rem;
+            color: #444444;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+
+        .footer-column {
+            width: 100%;
+        }
+
+        .footer-column h4 {
+            color: var(--text-dark);
+            font-size: 1rem;
             font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--header-text);
-            margin-bottom: 10px;
+            margin-top: 0;
+            margin-bottom: 8px;
         }
 
-        footer a {
+        .footer-column p {
+            font-size: 0.9rem;
+            color: #444;
+            margin: 0 0 10px 0;
+            line-height: 1.5;
+        }
+
+        .footer-column a {
             color: var(--brand-pink);
             text-decoration: none;
             font-weight: 600;
         }
 
-        footer a:hover {
+        .footer-column a:hover {
             text-decoration: underline;
         }
 
-        .announcement-card {
-            background: #ffffff;
-            border: 2px solid var(--accent-gold);
-            outline: 1px solid var(--accent-gold);
-            outline-offset: -6px;
-            border-radius: 4px;
-            padding: 30px 20px;
-            max-width: 850px;
-            margin: 0 auto 40px auto;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        .footer-image {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            border-radius: 6px;
+            margin-top: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: block;
         }
 
-        .announcement-title {
-            font-family: 'Georgia', serif;
-            color: #5c1428;
-            font-size: 1.8rem;
-            letter-spacing: 2px;
-            margin-top: 0;
-            margin-bottom: 25px;
-            text-transform: uppercase;
-        }
-
-        .policy-block {
-            margin-bottom: 20px;
-            text-align: left;
-            padding: 0 10px;
-        }
-
-        .policy-header {
+        .footer-bottom {
+            max-width: 1000px;
+            margin: 25px auto 0 auto;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 12px;
-            margin-bottom: 6px;
-        }
-
-        .policy-icon {
-            font-size: 1.3rem;
-            color: var(--accent-gold);
-        }
-
-        .policy-title {
-            font-family: 'Georgia', serif;
-            color: #5c1428;
-            font-size: 1.1rem;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            margin: 0;
-        }
-
-        .policy-text {
-            color: #444444;
-            font-size: 0.95rem;
-            line-height: 1.6;
-            margin: 0;
-            padding-left: 28px;
-        }
-
-        .announcement-footer {
-            margin-top: 25px;
-            border-top: 1px solid #e0d5c1;
+            text-align: center;
+            border-top: 1px solid #f2cdd9;
             padding-top: 15px;
-            font-size: 0.85rem;
-            color: #666666;
+            gap: 10px;
         }
 
-        .announcement-footer .thanks {
+        .footer-bottom-company {
             font-weight: 700;
-            color: #5c1428;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin-bottom: 5px;
+            font-size: 1rem;
+            color: var(--header-text);
+        }
+
+        .footer-bottom-copy {
+            font-size: 0.8rem;
+            color: #666;
         }
 
         .social {
             display: flex;
-            justify-content: center;
             align-items: center;
-            gap: 15px;
-            margin-top: 15px;
+            gap: 12px;
         }
 
         .social img {
-            width: 35px;
-            height: 35px;
+            width: 28px;
+            height: 28px;
             object-fit: contain;
+            transition: transform 0.2s ease;
         }
 
+        .social img:hover {
+            transform: scale(1.1);
+        }
+
+        /* Desktop Queries */
         @media (min-width: 768px) {
-            nav ul {
-                flex-direction: row;
-                justify-content: center;
-                gap: 25px;
-            }
+            header { padding: 25px 20px; }
+            .header-content { flex-direction: row; justify-content: center; }
+            .logo-container img { max-width: 200px; }
+            .site-title { font-size: 2.2rem; }
+            nav { padding: 15px 10px; }
+            nav ul { gap: 25px; }
+            nav ul li a { font-size: 1.25rem; padding: 6px 20px; }
+            .welcome-banner { padding: 20px 15px; }
+            .welcome-banner h2 { font-size: 1.8rem; }
+            main { padding: 40px 20px; }
+            footer { padding: 50px 20px; }
+            .footer-container { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+            .footer-announcement-box { width: 300px; }
+            .footer-column { flex: 1; min-width: 220px; }
+            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+            .social img { width: 32px; height: 32px; }
         }
     </style>
 </head>
 <body>
 
+    <!-- Header -->
     <header>
         <div class="header-content">
             <div class="logo-container">
-                <img src="images/Logo.png" alt="Z Alterations & Bridal Sewing Logo">
+                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
             </div>
             <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
         </div>
     </header>
 
+    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -485,247 +369,98 @@
         </ul>
     </nav>
 
+    <!-- Welcome Banner -->
+    <section class="welcome-banner">
+        <h2>Our Tailoring & Sewing Services</h2>
+    </section>
+
     <main>
-        <div class="section-header">
-            <h1>Our Tailoring & Sewing Services</h1>
-            <p>From complex wedding dress alterations to daily wardrobe repairs, we offer over 22 years of family-owned precision craftsmanship.</p>
-        </div>
-
-        <div class="services-overview">
-            <div class="service-card">
-                <h3>Bridal & Wedding Gowns</h3>
-                <p>Complete custom fitting, bodice reshaping, hem adjustments, bustle additions, corset backs, and delicate hand-beaded lace repair.</p>
-            </div>
-            <div class="service-card">
-                <h3>Prom & Formal Attire</h3>
-                <p>Precision sizing for bridesmaid dresses, prom gowns, evening wear, and cocktail dresses for an elegant silhouette.</p>
-            </div>
-            <div class="service-card">
-                <h3>Suits & Everyday Tailoring</h3>
-                <p>Sleeve shortening, jacket side adjustments, trouser tapering, hem lines (plain, Euro, jean), zipper repair/replacement, and leather garment alterations.</p>
-            </div>
-        </div>
-
-        <section class="price-section">
-            <h2>Services & Price List</h2>
-            <div class="price-disclaimer">
-                * Prices will vary & determined by the garment's material(s), layer(s), and hem(s) *
-            </div>
-
-            <div class="price-grid">
-                <div class="price-category">
-                    <h3>Wedding Dress</h3>
-                    <ul class="price-list">
-                        <li class="price-item"><span class="name">Shorten bottom</span><span class="price">$95+</span></li>
-                        <li class="price-item"><span class="name">Side in/out</span><span class="price">$80+</span></li>
-                        <li class="price-item"><span class="name">Shorten straps</span><span class="price">$45+</span></li>
-                        <li class="price-item"><span class="name">Bustles</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Add bra pads</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Add corsets</span><span class="price">$95+</span></li>
-                    </ul>
-                </div>
-
-                <div class="price-category">
-                    <h3>Bridesmaid / Prom / Formal</h3>
-                    <ul class="price-list">
-                        <li class="price-item"><span class="name">Shorten bottom</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Side in/out</span><span class="price">$45+</span></li>
-                        <li class="price-item"><span class="name">Shorten straps</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Bustles</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Add bra pads</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Add corsets</span><span class="price">$50+</span></li>
-                    </ul>
-                </div>
-
-                <div class="price-category">
-                    <h3>Pants / Slacks / Jeans</h3>
-                    <ul class="price-list">
-                        <li class="price-item"><span class="name">Jean Hem</span><span class="price">$18+</span></li>
-                        <li class="price-item"><span class="name">Plain hem</span><span class="price">$18+</span></li>
-                        <li class="price-item"><span class="name">Double Stitch</span><span class="price">$18+</span></li>
-                        <li class="price-item"><span class="name">Euro hem</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Tricky Hem</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Cuff</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Taper legs</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Waist seat-in/out</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Waist seat-crotch</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Zipper replace</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Darts</span><span class="price">$18+</span></li>
-                    </ul>
-                </div>
-
-                <div class="price-category">
-                    <h3>Suits / Coats / Jackets</h3>
-                    <ul class="price-list">
-                        <li class="price-item"><span class="name">Shorten Sleeves w/o vent</span><span class="price">$38+</span></li>
-                        <li class="price-item"><span class="name">Shorten Sleeves w/ vent</span><span class="price">$50+</span></li>
-                        <li class="price-item"><span class="name">Side In/Out</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Shorten Bottom</span><span class="price">$65+</span></li>
-                        <li class="price-item"><span class="name">Move Collar</span><span class="price">$55+</span></li>
-                        <li class="price-item"><span class="name">Move Shoulder</span><span class="price">$95+</span></li>
-                        <li class="price-item"><span class="name">Vest Side-In</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Shorten Ties</span><span class="price">$18+</span></li>
-                        <li class="price-item"><span class="name">Zipper replacement</span><span class="price">$38+</span></li>
-                    </ul>
-                </div>
-
-                <div class="price-category">
-                    <h3>Shirts / Blouses</h3>
-                    <ul class="price-list">
-                        <li class="price-item"><span class="name">Take In/Out Sides</span><span class="price">$20+</span></li>
-                        <li class="price-item"><span class="name">Shorten Sleeve no Cuff</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Shorten Sleeve w/ Cuff</span><span class="price">$38+</span></li>
-                        <li class="price-item"><span class="name">Move Shoulder</span><span class="price">$35+</span></li>
-                        <li class="price-item"><span class="name">Shorten Bottom</span><span class="price">$25+</span></li>
-                    </ul>
-                </div>
-
-                <div class="price-category">
-                    <h3>Leather, Zipper & Repairs</h3>
-                    <ul class="price-list">
-                        <li class="price-item"><span class="name">Leather Garment Repair</span><span class="price">Varies</span></li>
-                        <li class="price-item"><span class="name">Zipper Replacement</span><span class="price">$25+</span></li>
-                        <li class="price-item"><span class="name">Zipper Slider</span><span class="price">$15+</span></li>
-                        <li class="price-item"><span class="name">Tighten button</span><span class="price">$5</span></li>
-                        <li class="price-item"><span class="name">Add new button</span><span class="price">$8</span></li>
-                        <li class="price-item"><span class="name">Re-sew hole or patch hole</span><span class="price">$10+</span></li>
-                        <li class="price-item"><span class="name">Patches</span><span class="price">$5+</span></li>
-                        <li class="price-item"><span class="name">Re-hem</span><span class="price">$10+</span></li>
-                        <li class="price-item"><span class="name">New button holes</span><span class="price">$10+</span></li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="turnaround-box">
-                <h4>⏱️ Turn-Around Time: 1 - 2 Weeks</h4>
-                <p>Rush Orders Available: <strong>+$10 - $35</strong></p>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Expert Craftsmanship For Every Occasion</h1>
+            <p>With over 22 years of professional tailoring and sewing experience, we provide meticulous alterations to ensure your wardrobe fits flawlessly.</p>
+            <div style="margin-top: 15px;">
+                <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">📅 Book Appointment Online</a>
             </div>
         </section>
 
-        <section class="reviews-section">
-            <h2>Customer Reviews</h2>
-
-            <div class="reviews-grid" id="reviewsGrid">
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">"Z Alterations altered my wedding dress perfectly! The lace work was detailed and the fit was seamless. Highly recommended!"</div>
-                    <div class="review-author">— Sarah M.</div>
+        <!-- Services Grid -->
+        <div class="services-grid">
+            <div class="service-card">
+                <div>
+                    <h2>Bridal Wear & Gowns</h2>
+                    <p>Expert bridal gown alterations, custom fittings, bustle creation, and delicate lace or beadwork management to make your special day absolute perfection.</p>
                 </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">"Fast, reliable service! Brought in two suit jackets and jeans for tapering. Perfect turnaround time."</div>
-                    <div class="review-author">— David L.</div>
-                </div>
-
-                <div class="review-card">
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">"They added bustles and bra pads to my bridesmaid dress on short notice. Very reasonable pricing!"</div>
-                    <div class="review-author">— Emily K.</div>
-                </div>
+                <a href="contact.html" class="button">Inquire / Book</a>
             </div>
 
-            <div class="review-form-container">
-                <h3>Leave a Review</h3>
-                <form id="reviewForm" onsubmit="addReview(event)">
-                    <div class="form-group">
-                        <label for="reviewerName">Your Name</label>
-                        <input type="text" id="reviewerName" required placeholder="e.g., Jessica T.">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="rating">Rating</label>
-                        <select id="rating" required>
-                            <option value="★★★★★">★★★★★ (5/5)</option>
-                            <option value="★★★★☆">★★★★☆ (4/5)</option>
-                            <option value="★★★☆☆">★★★☆☆ (3/5)</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="reviewComment">Your Feedback</label>
-                        <textarea id="reviewComment" rows="4" required placeholder="Share your experience with our alterations..."></textarea>
-                    </div>
-
-                    <button type="submit" class="button">Submit Review</button>
-                </form>
+            <div class="service-card">
+                <div>
+                    <h2>Suits & Tuxedos</h2>
+                    <p>Professional jacket resizing, sleeve shortening, taper adjustments, and trouser tailoring for a sharp, impeccably fitted formal look.</p>
+                </div>
+                <a href="contact.html" class="button">Inquire / Book</a>
             </div>
-        </section>
+
+            <div class="service-card">
+                <div>
+                    <h2>Prom & Formal Dresses</h2>
+                    <p>Precise hemming, bodice adjustments, strap modifications, and custom fit alterations for evening gowns, bridesmaid dresses, and prom wear.</p>
+                </div>
+                <a href="contact.html" class="button">Inquire / Book</a>
+            </div>
+
+            <div class="service-card">
+                <div>
+                    <h2>Hemming & General Repairs</h2>
+                    <p>Quick turnaround on everyday garment hemming, zipper replacements, patching, and minor wardrobe repairs to give your favorite clothes new life.</p>
+                </div>
+                <a href="contact.html" class="button">Inquire / Book</a>
+            </div>
+        </div>
     </main>
 
+    <!-- Footer -->
     <footer id="contact">
-        <section class="announcement-card">
-            <h2 class="announcement-title">Important Announcement</h2>
+        <div class="footer-container">
+            <div class="footer-announcement-box">
+                <h3>Important Announcement</h3>
+                <p>We stand by the quality of our workmanship. Please return garments within 14 days with receipt for adjustments.</p>
+                <a href="contact.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
+            </div>
 
-            <div class="policy-block">
-                <div class="policy-header">
-                    <span class="policy-icon">🏅</span>
-                    <h3 class="policy-title">Customer Satisfaction Policy</h3>
-                </div>
-                <p class="policy-text">
-                    We stand by the quality of our workmanship. Should you be dissatisfied, please return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge to ensure your satisfaction.
+            <div class="footer-column">
+                <h4>Customer Satisfaction</h4>
+                <p>Dissatisfied? Return your garment with the original receipt within 14 days, and we will gladly perform alterations at no additional charge.</p>
+                <h4 style="margin-top: 15px;">Garment Holding</h4>
+                <p>Please collect all completed garments within 45 days of notification to help us efficiently manage our space.</p>
+                <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
+            </div>
+
+            <div class="footer-column">
+                <h4>Address Us</h4>
+                <p>
+                    4160 S 108th St,<br>
+                    Greenfield, WI 53228<br>
+                    <a href="tel:4144672291">(414) 467-2291</a>
                 </p>
-            </div>
-
-            <div class="policy-block">
-                <div class="policy-header">
-                    <span class="policy-icon">⏱️</span>
-                    <h3 class="policy-title">Garment Holding Policy</h3>
+                <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
+                <div class="social" style="margin-top: 10px;">
+                    <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
+                        <img src="images/facebook.webp" alt="Facebook">
+                    </a>
+                    <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
+                        <img src="images/tiktok.jpg" alt="TikTok">
+                    </a>
                 </div>
-                <p class="policy-text">
-                    To efficiently manage our space, we kindly request that all completed garments be collected within 45 days of notification. Unclaimed garments remaining beyond this period may be considered abandoned.
-                </p>
             </div>
-
-            <div class="announcement-footer">
-                <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
-                <div>Z Alterations & Bridal Sewing LLC</div>
-                <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
-            </div>
-        </section>
-
-        <div class="footer-company-name">Z Alterations & Bridal Sewing LLC</div>
-        <p>
-            4160 S 108th St<br>
-            Greenfield, WI 53228<br>
-            <a href="tel:4144672291">(414) 467-2291</a>
-        </p>
-        <p>
-            <a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">
-                View Local Listing
-            </a>
-        </p>
-        <div class="social">
-            <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
-                <img src="images/facebook.webp" alt="Z Alterations Facebook">
-            </a>
-            <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
-                <img src="images/tiktok.jpg" alt="Z Alterations TikTok">
-            </a>
         </div>
-        <p>&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</p>
+
+        <div class="footer-bottom">
+            <div class="footer-bottom-company">Z Alterations & Bridal Sewing LLC</div>
+            <div class="footer-bottom-copy">&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</div>
+        </div>
     </footer>
 
-    <script>
-        function addReview(e) {
-            e.preventDefault();
-            const name = document.getElementById('reviewerName').value;
-            const rating = document.getElementById('rating').value;
-            const text = document.getElementById('reviewComment').value;
-
-            const grid = document.getElementById('reviewsGrid');
-            const card = document.createElement('div');
-            card.className = 'review-card';
-            card.innerHTML = `
-                <div class="review-stars">${rating}</div>
-                <div class="review-text">"${text}"</div>
-                <div class="review-author">— ${name}</div>
-            `;
-
-            grid.insertBefore(card, grid.firstChild);
-            document.getElementById('reviewForm').reset();
-            alert('Thank you for sharing your feedback!');
-        }
-    </script>
 </body>
 </html>
