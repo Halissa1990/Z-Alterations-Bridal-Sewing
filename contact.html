@@ -211,6 +211,16 @@
             background-color: #ad1457;
         }
 
+        .button-booking {
+            background-color: var(--deep-burgundy);
+            color: #ffffff;
+            font-size: 1.05rem;
+        }
+
+        .button-booking:hover {
+            background-color: #3b0a18;
+        }
+
         .button-secondary {
             background-color: var(--nav-blue);
             color: #ffffff;
@@ -296,24 +306,62 @@
             border: 0;
         }
 
-        /* Hours Section */
-        .hours {
+        /* Location & Hours Section */
+        .hours-card {
             background: #ffffff;
-            padding: 30px;
+            padding: 35px 30px;
             border-radius: 8px;
-            text-align: center;
-            max-width: 450px;
+            max-width: 600px;
             margin: 40px auto;
             box-shadow: 0 4px 10px rgba(0,0,0,0.03);
         }
 
-        .hours h3 {
+        .hours-card h2 {
             margin-top: 0;
-            color: var(--brand-pink);
-            font-size: 1.5rem;
+            color: var(--deep-burgundy);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
         }
 
-        /* Footer Section - Same extremely light soft pink background */
+        .hours-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px 30px;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .hours-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 1rem;
+        }
+
+        .hours-row .day {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .hours-row .time {
+            color: #555555;
+        }
+
+        .get-directions-link {
+            color: #1976d2;
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.05rem;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+
+        .get-directions-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Section */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -474,7 +522,7 @@
 </head>
 <body>
 
-    <!-- Header with Ultra Light Soft Pink Background -->
+    <!-- Header -->
     <header>
         <div class="header-content">
             <div class="logo-container">
@@ -484,7 +532,7 @@
         </div>
     </header>
 
-    <!-- Navigation Bar - Light Blue -->
+    <!-- Navigation Bar -->
     <nav>
         <ul>
             <li><a href="index.html">Home</a></li>
@@ -498,8 +546,11 @@
     <main>
         <!-- Hero Section -->
         <section class="hero">
-            <h1>Contact Us & Request an Appointment</h1>
-            <p>We are here to help you achieve the perfect fit for your special occasion or everyday wardrobe. Reach out to us via call, text, or fill out our request form below.</p>
+            <h1>Contact Us & Book an Appointment</h1>
+            <p>With 22 years of experience in clothing alterations and sewing, we are passionate about helping every customer look and feel their best in clothing that fits perfectly.</p>
+            <div style="margin-top: 20px;">
+                <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">📅 Book Appointment Online</a>
+            </div>
             <div class="feature-badge">Featured on Greenfield: We're Open!</div>
         </section>
 
@@ -526,6 +577,14 @@
                 </div>
 
                 <div class="contact-detail-item">
+                    <span class="contact-icon">🌐</span>
+                    <div class="contact-info-text">
+                        <strong>Online Booking</strong>
+                        <a href="https://zalterations.square.site" target="_blank" rel="noopener" style="color: var(--brand-pink); font-weight: 600; text-decoration: underline;">zalterations.square.site</a>
+                    </div>
+                </div>
+
+                <div class="contact-detail-item">
                     <span class="contact-icon">💬</span>
                     <div class="contact-info-text">
                         <strong>Text Message / SMS</strong>
@@ -535,9 +594,10 @@
 
                 <!-- Quick Action Buttons -->
                 <div class="action-buttons-group">
-                    <a href="tel:4144672291" class="button"> Call Us Now</a>
-                    <a href="sms:+14144672291" class="button button-secondary"> Text Us (SMS)</a>
-                    <a href="https://maps.google.com/?q=4160+S+108th+St,+Greenfield,+WI+53228" target="_blank" rel="noopener" class="button button-outline"> Get Directions</a>
+                    <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">Book Appointment</a>
+                    <a href="tel:4144672291" class="button">Call Us Now</a>
+                    <a href="sms:+14144672291" class="button button-secondary">Text Us (SMS)</a>
+                    <a href="https://maps.google.com/?q=4160+S+108th+St,+Greenfield,+WI+53228" target="_blank" rel="noopener" class="button button-outline">Get Directions</a>
                 </div>
 
                 <!-- Google Maps Embed -->
@@ -596,8 +656,8 @@
                     </div>
 
                     <div class="action-buttons-group">
-                        <button type="submit" class="button">Send Message / Email Request</button>
-                        <button type="button" class="button button-secondary" onclick="sendViaSMS()">Send via Text Message / SMS</button>
+                        <button type="submit" class="button">Send Message Request</button>
+                        <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">Book Online Directly</a>
                     </div>
                 </form>
 
@@ -607,18 +667,46 @@
             </div>
         </div>
 
-        <!-- Hours Section -->
-        <section class="hours" id="services">
-            <h3>Opening Hours</h3>
-            <p><strong>MON - FRI:</strong> 10:00 AM - 6:00 PM</p>
-            <p><strong>SAT:</strong> 10:00 AM - 3:00 PM</p>
-            <p><strong>SUN:</strong> CLOSED</p>
+        <!-- Location & Hours Section (Matched to Image) -->
+        <section class="hours-card">
+            <h2>Location & Hours</h2>
+            <a href="https://maps.google.com/?q=4160+S+108th+St,+Greenfield,+WI+53228" target="_blank" rel="noopener" class="get-directions-link">Get directions</a>
+
+            <div style="margin-top: 10px;">
+                <div class="hours-row">
+                    <span class="day">Monday</span>
+                    <span class="time">10:00 am - 6:00 pm</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Tuesday</span>
+                    <span class="time">10:00 am - 6:00 pm</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Wednesday</span>
+                    <span class="time">10:00 am - 6:00 pm</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Thursday</span>
+                    <span class="time">10:00 am - 6:00 pm</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Friday</span>
+                    <span class="time">10:00 am - 6:00 pm</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Saturday</span>
+                    <span class="time">10:00 am - 3:00 pm</span>
+                </div>
+                <div class="hours-row">
+                    <span class="day">Sunday</span>
+                    <span class="time">Closed</span>
+                </div>
+            </div>
         </section>
     </main>
 
-    <!-- Footer - Light Pink Background -->
+    <!-- Footer -->
     <footer id="contact">
-        <!-- Important Announcement / Policy Section inside Footer -->
         <section class="announcement-card">
             <h2 class="announcement-title">Important Announcement</h2>
 
@@ -644,7 +732,7 @@
 
             <div class="announcement-footer">
                 <div class="thanks">Thank you for your business. We truly appreciate you choosing us.</div>
-                <div>Z. Alterations & Bridal Sewing LLC</div>
+                <div>Z Alterations & Bridal Sewing LLC</div>
                 <div>Phone: (414) 467-2291 | 4160 S 108th St, Greenfield, WI 53228</div>
             </div>
         </section>
@@ -656,6 +744,9 @@
             <a href="tel:4144672291">(414) 467-2291</a>
         </p>
         <p>
+            <a href="https://zalterations.square.site" target="_blank" rel="noopener" style="color: var(--brand-pink); font-weight: bold;">
+                Book an Appointment Online
+            </a> | 
             <a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">
                 View Local Listing
             </a>
@@ -672,20 +763,14 @@
     </footer>
 
     <script>
-        // Form Submission logic
         function handleFormSubmit(event) {
             event.preventDefault();
             const statusMessage = document.getElementById('statusMessage');
             statusMessage.style.display = 'block';
-            
-            // Scroll to message smoothly
             statusMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            
-            // Reset form fields
             document.getElementById('contactForm').reset();
         }
 
-        // Send inquiry directly via native mobile SMS
         function sendViaSMS() {
             const name = document.getElementById('fullName').value || 'Customer';
             const service = document.getElementById('serviceType').value;
