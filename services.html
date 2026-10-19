@@ -172,14 +172,14 @@
             margin-bottom: 20px;
         }
 
-        /* Leave a Review Section */
+        /* Leave a Review Section with Form & Stars */
         .review-section {
             background: #ffffff;
-            padding: 30px 20px;
+            padding: 30px 25px;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            text-align: center;
-            margin-top: 40px;
+            max-width: 600px;
+            margin: 40px auto 10px auto;
         }
 
         .review-section h2 {
@@ -187,12 +187,74 @@
             font-size: 1.4rem;
             margin-top: 0;
             margin-bottom: 10px;
+            text-align: center;
         }
 
         .review-section p {
             color: #555;
             font-size: 0.95rem;
             margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .star-rating {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .star-rating input {
+            display: none;
+        }
+
+        .star-rating label {
+            font-size: 2rem;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .star-rating input:checked ~ label,
+        .star-rating label:hover,
+        .star-rating label:hover ~ label {
+            color: var(--accent-gold);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #fafafa;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand-pink);
+            box-shadow: 0 0 0 3px rgba(224, 75, 130, 0.15);
+            background-color: #ffffff;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 90px;
         }
 
         .button {
@@ -206,6 +268,9 @@
             font-size: 0.95rem;
             transition: background 0.3s ease;
             text-align: center;
+            border: none;
+            cursor: pointer;
+            width: 100%;
         }
 
         .button:hover {
@@ -216,10 +281,23 @@
             background-color: var(--deep-burgundy);
             color: #ffffff;
             margin-top: 15px;
+            width: auto;
         }
 
         .button-booking:hover {
             background-color: #3b0a18;
+        }
+
+        .status-message {
+            display: none;
+            padding: 12px;
+            margin-top: 15px;
+            border-radius: 4px;
+            text-align: center;
+            font-weight: 600;
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            border: 1px solid #a5d6a7;
         }
 
         /* Footer Matching Index */
@@ -414,7 +492,7 @@
                     <h2>Bridal Wear & Gowns</h2>
                     <p>Expert bridal gown alterations, custom fittings, bustle creation, and delicate lace or beadwork management to make your special day absolute perfection.</p>
                 </div>
-                <a href="contact.html" class="button">Inquire / Book</a>
+                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
             </div>
 
             <div class="service-card">
@@ -422,7 +500,7 @@
                     <h2>Suits & Tuxedos</h2>
                     <p>Professional jacket resizing, sleeve shortening, taper adjustments, and trouser tailoring for a sharp, impeccably fitted formal look.</p>
                 </div>
-                <a href="contact.html" class="button">Inquire / Book</a>
+                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
             </div>
 
             <div class="service-card">
@@ -430,7 +508,7 @@
                     <h2>Prom & Formal Dresses</h2>
                     <p>Precise hemming, bodice adjustments, strap modifications, and custom fit alterations for evening gowns, bridesmaid dresses, and prom wear.</p>
                 </div>
-                <a href="contact.html" class="button">Inquire / Book</a>
+                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
             </div>
 
             <div class="service-card">
@@ -438,15 +516,48 @@
                     <h2>Hemming & General Repairs</h2>
                     <p>Quick turnaround on everyday garment hemming, zipper replacements, patching, and minor wardrobe repairs to give your favorite clothes new life.</p>
                 </div>
-                <a href="contact.html" class="button">Inquire / Book</a>
+                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
             </div>
         </div>
 
         <!-- Leave a Review Section -->
         <section class="review-section">
-            <h2>We Value Your Feedback!</h2>
-            <p>Had a great experience with our tailoring or bridal alterations? We would love to hear your thoughts and share them with future clients.</p>
-            <a href="contact.html" class="button">Leave a Review</a>
+            <h2>Leave a Review</h2>
+            <p>Had a great experience with our tailoring or bridal alterations? We would love to hear your feedback!</p>
+            
+            <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
+                <!-- Star Rating -->
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5" required>
+                    <label for="star5" title="5 stars">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" title="4 stars">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" title="3 stars">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" title="2 stars">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" title="1 star">★</label>
+                </div>
+
+                <!-- Your Name -->
+                <div class="form-group">
+                    <label for="reviewerName">Your Name *</label>
+                    <input type="text" id="reviewerName" class="form-control" placeholder="e.g. Jane Smith" required>
+                </div>
+
+                <!-- Leave Review -->
+                <div class="form-group">
+                    <label for="reviewText">Your Review *</label>
+                    <textarea id="reviewText" class="form-control" placeholder="Share your experience with our alterations and service..." required></textarea>
+                </div>
+
+                <button type="submit" class="button">Submit Review</button>
+            </form>
+
+            <div id="reviewStatus" class="status-message">
+                Thank you so much for your review and support!
+            </div>
         </section>
     </main>
 
@@ -456,7 +567,7 @@
             <div class="footer-announcement-box">
                 <h3>Important Announcement</h3>
                 <p>This important announcement process set you an anoune and wwwmmeet your eocoration to our portant announcement.</p>
-                <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
+                <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem; width: auto;">Read More</a>
             </div>
 
             <div class="footer-column">
@@ -492,5 +603,13 @@
         </div>
     </footer>
 
+    <script>
+        function handleReviewSubmit(event) {
+            event.preventDefault();
+            const statusMessage = document.getElementById('reviewStatus');
+            statusMessage.style.display = 'block';
+            document.getElementById('reviewForm').reset();
+        }
+    </script>
 </body>
 </html>
