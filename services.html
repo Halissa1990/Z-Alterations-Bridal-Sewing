@@ -173,7 +173,61 @@
             margin-bottom: 20px;
         }
 
-        /* Value Feedback Banner (Capture 15 style) */
+        /* Customer Reviews List Section */
+        .reviews-display-section {
+            margin: 40px auto;
+            max-width: 850px;
+            display: none; /* Hidden until real reviews exist */
+        }
+
+        .reviews-display-section h3 {
+            color: var(--header-text);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .reviews-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .display-review-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border-left: 4px solid var(--brand-pink);
+        }
+
+        .display-review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .display-reviewer-name {
+            font-weight: 700;
+            color: var(--text-dark);
+            font-size: 1rem;
+        }
+
+        .display-review-stars {
+            color: var(--star-gold);
+            font-size: 1.1rem;
+            letter-spacing: 2px;
+        }
+
+        .display-review-text {
+            color: #555555;
+            font-size: 0.95rem;
+            margin: 0;
+            white-space: pre-wrap;
+        }
+
+        /* Value Feedback Banner */
         .feedback-banner {
             background: #ffffff;
             border-radius: 8px;
@@ -216,7 +270,7 @@
             background-color: #c83b6f;
         }
 
-        /* Review Modal / Google-style Form Card (Capture 16 style) */
+        /* Review Modal / Google-style Form Card */
         .modal-overlay {
             display: none;
             position: fixed;
@@ -445,7 +499,7 @@
             border: 1px solid #a5d6a7;
         }
 
-        /* Footer Matching Index */
+        /* Footer */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -571,7 +625,6 @@
             transform: scale(1.1);
         }
 
-        /* Desktop Queries */
         @media (min-width: 768px) {
             header { padding: 25px 20px; }
             .header-content { flex-direction: row; justify-content: center; }
@@ -664,6 +717,14 @@
                 <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
             </div>
         </div>
+
+        <!-- Customer Reviews Display Section -->
+        <section id="reviewsSection" class="reviews-display-section">
+            <h3>Customer Reviews</h3>
+            <div id="reviewsContainer" class="reviews-container">
+                <!-- Real submitted reviews will be inserted here -->
+            </div>
+        </section>
 
         <!-- We Value Your Feedback Section -->
         <section class="feedback-banner">
@@ -772,6 +833,9 @@
     </footer>
 
     <script>
+        // Load saved reviews on page load
+        document.addEventListener('DOMContentLoaded', loadSavedReviews);
+
         function openReviewModal() {
             document.getElementById('reviewModal').classList.add('active');
         }
@@ -782,13 +846,72 @@
 
         function handleReviewSubmit(event) {
             event.preventDefault();
+            
+            const name = document.getElementById('reviewerName').value;
+            const text = document.getElementById('reviewText').value;
+            const ratingInput = document.querySelector('input[name="rating"]:checked');
+            const rating = ratingInput ? parseInt(ratingInput.value) : 5;
+
+            const newReview = { name, text, rating };
+
+            // Save review to local storage
+            const storedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+            storedReviews.unshift(newReview);
+            localStorage.setItem('userReviews', JSON.stringify(storedReviews));
+
+            // Display review
+            renderReviewCard(newReview, true);
+
+            // Show success status message
             const statusMessage = document.getElementById('reviewStatus');
             statusMessage.style.display = 'block';
+
             setTimeout(() => {
                 document.getElementById('reviewForm').reset();
                 statusMessage.style.display = 'none';
                 closeReviewModal();
-            }, 2000);
+            }, 1500);
+        }
+
+        function loadSavedReviews() {
+            const storedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
+            if (storedReviews.length > 0) {
+                storedReviews.forEach(review => renderReviewCard(review, false));
+            }
+        }
+
+        function renderReviewCard(review, isNew) {
+            const reviewsSection = document.getElementById('reviewsSection');
+            const reviewsContainer = document.getElementById('reviewsContainer');
+
+            // Show the section when a review exists
+            reviewsSection.style.display = 'block';
+
+            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+
+            const reviewCard = document.createElement('div');
+            reviewCard.className = 'display-review-card';
+            reviewCard.innerHTML = `
+                <div class="display-review-header">
+                    <span class="display-reviewer-name">${escapeHtml(review.name)}</span>
+                    <span class="display-review-stars">${stars}</span>
+                </div>
+                <p class="display-review-text">${escapeHtml(review.text)}</p>
+            `;
+
+            if (isNew) {
+                reviewsContainer.prepend(reviewCard);
+            } else {
+                reviewsContainer.appendChild(reviewCard);
+            }
+        }
+
+        function escapeHtml(str) {
+            return str.replace(/&/g, "&amp;")
+                      .replace(/</g, "&lt;")
+                      .replace(/>/g, "&gt;")
+                      .replace(/"/g, "&quot;")
+                      .replace(/'/g, "&#039;");
         }
     </script>
 </body>
