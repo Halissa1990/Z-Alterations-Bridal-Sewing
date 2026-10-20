@@ -30,83 +30,89 @@
             overflow-x: hidden;
         }
 
-        /* HEADER & HERO BANNER */
+        /* HEADER SECTION */
         header {
-            position: relative;
-            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url('images/sewing.jpg');
-            background-size: cover;
-            background-position: center;
-            padding: 30px 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
-            border-bottom: 2px solid var(--accent-gold);
+            background-color: #ffffff;
+            padding: 25px 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-bottom: 2px solid var(--header-pink);
         }
 
-        .header-content {
-            max-width: 900px;
+        .header-container {
+            max-width: 1000px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
         }
 
-        /* Professional Logo Card */
-        .logo-card {
-            background-color: rgba(255, 255, 255, 0.93);
-            backdrop-filter: blur(5px);
-            border: 1px solid var(--accent-gold);
-            border-radius: 16px;
-            padding: 25px 30px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+        /* Side-by-Side Flex Layout (Logo Left, Sewing Right) */
+        .header-top-row {
             display: flex;
             flex-direction: column;
             align-items: center;
-            max-width: 480px;
+            justify-content: center;
+            gap: 20px;
             width: 100%;
+            background-color: #fff;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
         }
 
-        .logo-card img {
+        .header-logo-img {
             max-width: 280px;
+            width: 100%;
             height: auto;
-            display: block;
-            mix-blend-mode: multiply; /* Helps transparently integrate JPEG logos */
+            object-fit: contain;
+            mix-blend-mode: multiply;
         }
 
-        .header-tagline {
+        .header-sewing-img {
+            max-width: 260px;
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+        }
+
+        /* Sub-Header Text Section under the top row */
+        .header-details {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .tagline {
             font-family: 'Georgia', serif;
-            font-size: 1.15rem;
+            font-size: 1.3rem;
             color: var(--header-text);
             font-weight: 700;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            margin-top: 15px;
-            margin-bottom: 8px;
+            letter-spacing: 1px;
         }
 
-        .header-badge {
+        .hours-badge {
             display: inline-block;
-            background-color: var(--header-text);
+            background-color: var(--brand-pink);
             color: #ffffff;
-            padding: 4px 16px;
+            padding: 5px 18px;
             border-radius: 20px;
-            font-size: 0.82rem;
+            font-size: 0.9rem;
             font-weight: 600;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        .header-quote {
+        .quote-text {
             font-family: 'Georgia', serif;
             font-style: italic;
             font-size: 1rem;
-            color: #4a1329;
+            color: #555;
             max-width: 650px;
-            margin: 20px auto 0 auto;
-            background: rgba(255, 255, 255, 0.88);
-            padding: 10px 20px;
-            border-radius: 8px;
-            border-left: 3px solid var(--brand-pink);
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin: 5px 0 0 0;
+            line-height: 1.5;
         }
 
         nav {
@@ -414,11 +420,16 @@
             object-fit: contain;
         }
 
+        /* Responsive Layout adjustment */
         @media (min-width: 768px) {
-            header {
-                padding: 45px 20px;
+            .header-top-row {
+                flex-direction: row;
+                justify-content: space-around;
             }
-            .logo-card img {
+            .header-logo-img {
+                max-width: 340px;
+            }
+            .header-sewing-img {
                 max-width: 320px;
             }
             .difference-card {
@@ -489,13 +500,19 @@
 <body>
 
     <header>
-        <div class="header-content">
-            <div class="logo-card">
-                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
-                <div class="header-tagline">Elegance. Tailored. Bespoke.</div>
-                <div class="header-badge">Open Mon–Sat</div>
+        <div class="header-container">
+            <!-- Top Row: Logo on Left, Sewing Image on Right -->
+            <div class="header-top-row">
+                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo" class="header-logo-img">
+                <img src="images/sewing.jpg" alt="Sewing Illustration" class="header-sewing-img">
             </div>
-            <p class="header-quote">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+
+            <!-- Text Content directly under the background/row -->
+            <div class="header-details">
+                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="hours-badge">Open Mon–Sat</div>
+                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+            </div>
         </div>
     </header>
 
