@@ -30,73 +30,83 @@
             overflow-x: hidden;
         }
 
+        /* HEADER & HERO BANNER */
         header {
-            background-color: #ffffff;
-            padding: 20px 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: relative;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.6)), url('images/sewing.jpg');
+            background-size: cover;
+            background-position: center;
+            padding: 30px 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-bottom: 2px solid var(--accent-gold);
         }
 
         .header-content {
-            max-width: 1000px;
+            max-width: 900px;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             text-align: center;
-            gap: 15px;
         }
 
-        /* Updated logo container with sewing background */
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            background-image: url('images/sewing.jpg');
-            background-size: cover;
-            background-position: center;
-            border-radius: 12px;
-            padding: 25px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
-            text-align: center;
+        /* Professional Logo Card */
+        .logo-card {
+            background-color: rgba(255, 255, 255, 0.93);
+            backdrop-filter: blur(5px);
+            border: 1px solid var(--accent-gold);
+            border-radius: 16px;
+            padding: 25px 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 480px;
+            width: 100%;
         }
 
-        .logo-container img {
+        .logo-card img {
             max-width: 280px;
             height: auto;
             display: block;
-            margin: 0 auto;
-            position: relative;
-            z-index: 2;
+            mix-blend-mode: multiply; /* Helps transparently integrate JPEG logos */
         }
 
-        /* Header Subtitle & Information */
         .header-tagline {
             font-family: 'Georgia', serif;
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             color: var(--header-text);
-            font-weight: 600;
-            letter-spacing: 1px;
-            margin-top: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 8px;
         }
 
         .header-badge {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: var(--header-text);
-            padding: 4px 12px;
+            background-color: var(--header-text);
+            color: #ffffff;
+            padding: 4px 16px;
             border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            margin-top: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            font-size: 0.82rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.15);
         }
 
         .header-quote {
+            font-family: 'Georgia', serif;
             font-style: italic;
-            font-size: 0.95rem;
-            color: #555;
-            max-width: 600px;
-            margin: 5px auto 0 auto;
+            font-size: 1rem;
+            color: #4a1329;
+            max-width: 650px;
+            margin: 20px auto 0 auto;
+            background: rgba(255, 255, 255, 0.88);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border-left: 3px solid var(--brand-pink);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
 
         nav {
@@ -135,7 +145,6 @@
             color: var(--brand-pink);
         }
 
-        /* Welcome Banner Styling */
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
@@ -201,7 +210,6 @@
             background-color: var(--brand-pink);
         }
 
-        /* The Difference Section */
         .difference-card {
             background: #ffffff;
             padding: 25px 20px;
@@ -406,13 +414,12 @@
             object-fit: contain;
         }
 
-        /* Desktop Media Queries */
         @media (min-width: 768px) {
             header {
-                padding: 30px 20px;
+                padding: 45px 20px;
             }
-            .logo-container img {
-                max-width: 360px;
+            .logo-card img {
+                max-width: 320px;
             }
             .difference-card {
                 flex-direction: row;
@@ -483,7 +490,7 @@
 
     <header>
         <div class="header-content">
-            <div class="logo-container">
+            <div class="logo-card">
                 <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
                 <div class="header-tagline">Elegance. Tailored. Bespoke.</div>
                 <div class="header-badge">Open Mon–Sat</div>
@@ -559,7 +566,7 @@
 
         <section class="intro-card">
             <h2>Expert Alterations & Fine Sewing</h2>
-            <p>Welcome to Z Alterations & Bridal Sewing LLC. Over 30 years of family-owned experience delivering perfection for your special garments and daily wardrobe.</p>
+            <p>Welcome to Z Alterations & Bridal Sewing LLC. Over 22 years of family-owned experience delivering perfection for your special garments and daily wardrobe.</p>
             <a href="services.html" class="button">Explore Our Services</a>
         </section>
     </main>
