@@ -12,6 +12,7 @@
             --nav-text: #ffffff;
             --brand-pink: #e04b82; /* Brighter, more vibrant pink */
             --accent-gold: #c5a059;
+            --dark-dark-pink: #720033; /* Dark dark pink color */
             --text-dark: #333333;
             --bg-light: #f7f9fa;
         }
@@ -33,30 +34,30 @@
         /* HEADER SECTION */
         header {
             background-color: #ffffff;
-            padding: 25px 15px;
+            padding: 0 0 25px 0;
             box-shadow: 0 4px 15px rgba(0,0,0,0.06);
             border-bottom: 2px solid var(--header-pink);
+            width: 100%;
         }
 
         .header-container {
-            max-width: 1000px;
+            width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        /* Hero Banner using logo.jpg as Background */
+        /* Complete Full Width Banner */
         .header-bg-banner {
             width: 100%;
-            max-width: 800px;
-            height: 320px;
-            background-image: url('images/logo.jpg');
-            background-size: contain;
-            background-repeat: no-repeat;
-            background-position: center;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            display: block;
+        }
+
+        .header-bg-banner img {
+            width: 100%;
+            height: auto;
+            display: block;
         }
 
         /* Sub-Header Text Section directly under the background banner */
@@ -67,6 +68,8 @@
             flex-direction: column;
             align-items: center;
             gap: 10px;
+            padding: 0 15px;
+            width: 100%;
         }
 
         .tagline {
@@ -89,11 +92,13 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
+        /* Professional wrapping quote text with dark dark pink color */
         .quote-text {
             font-family: 'Georgia', serif;
             font-style: italic;
-            font-size: 1rem;
-            color: #555;
+            font-size: 1.05rem;
+            color: var(--dark-dark-pink); /* Dark dark pink color */
+            font-weight: 700;
             max-width: 650px;
             margin: 5px 0 0 0;
             line-height: 1.5;
@@ -406,9 +411,6 @@
 
         /* Responsive Layout adjustment */
         @media (min-width: 768px) {
-            .header-bg-banner {
-                height: 400px;
-            }
             .difference-card {
                 flex-direction: row;
                 text-align: left;
@@ -478,10 +480,12 @@
 
     <header>
         <div class="header-container">
-            <!-- Logo Background Container -->
-            <div class="header-bg-banner"></div>
+            <!-- Complete Full Width Logo Image -->
+            <div class="header-bg-banner">
+                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
+            </div>
 
-            <!-- Text Content directly under the background -->
+            <!-- Text Content directly under the background banner -->
             <div class="header-details">
                 <div class="tagline">Elegance. Tailored. Bespoke.</div>
                 <div class="hours-badge">Open Mon–Sat</div>
@@ -595,6 +599,9 @@
                     </a>
                     <a href="https://www.youtube.com/@zalterationsbridalsewing" target="_blank" rel="noopener">
                         <img src="images/youtube.jpg" alt="YouTube">
+                    </a>
+                    <a href="https://share.google/siQitbU8k7p7nxC6O" target="_blank" rel="noopener">
+                        <img src="images/google.jpg" alt="Google">
                     </a>
                 </div>
             </div>

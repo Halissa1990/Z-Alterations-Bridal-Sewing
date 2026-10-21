@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio - Z Alterations & Bridal Sewing LLC</title>
     <style>
-        /* ==========================================
-            Z Alterations & Bridal Sewing - Custom CSS
-            ========================================== */
-
         :root {
             --header-pink: #fce1ed; /* Soft pink background */
             --header-text: #720033;
@@ -16,6 +12,7 @@
             --nav-text: #ffffff;
             --brand-pink: #e04b82; /* Brighter, more vibrant pink */
             --accent-gold: #c5a059;
+            --dark-dark-pink: #720033;
             --text-dark: #333333;
             --bg-light: #f7f9fa;
             --deep-burgundy: #5c1428;
@@ -35,35 +32,77 @@
             overflow-x: hidden;
         }
 
+        /* HEADER SECTION - MATCHED TO INDEX */
         header {
             background-color: #ffffff;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 0 0 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-bottom: 2px solid var(--header-pink);
+            width: 100%;
         }
 
-        .header-content {
-            max-width: 1000px;
+        .header-container {
+            width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            gap: 10px;
         }
 
-        .logo-container img {
-            max-width: 150px;
+        .header-bg-banner {
+            width: 100%;
+            display: block;
+        }
+
+        .header-bg-banner img {
+            width: 100%;
             height: auto;
             display: block;
         }
 
-        .site-title {
-            margin: 0;
-            color: var(--header-text);
-            font-size: 1.6rem;
-            font-weight: 700;
+        .header-details {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 0 15px;
+            width: 100%;
         }
 
+        .tagline {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
+            color: var(--header-text);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hours-badge {
+            display: inline-block;
+            background-color: var(--brand-pink);
+            color: #ffffff;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--dark-dark-pink);
+            font-weight: 700;
+            max-width: 650px;
+            margin: 5px 0 0 0;
+            line-height: 1.5;
+        }
+
+        /* NAVIGATION BAR */
         nav {
             background-color: var(--nav-blue);
             padding: 10px;
@@ -100,7 +139,7 @@
             color: var(--brand-pink);
         }
 
-        /* Main Container Layout */
+        /* MAIN PORTFOLIO LAYOUT */
         main {
             padding: 40px 20px;
             max-width: 1200px;
@@ -112,13 +151,14 @@
             margin-bottom: 40px;
         }
 
-        .portfolio-header h1 {
-            font-size: 2.3rem;
+        .portfolio-header h1, .portfolio-header h2 {
+            font-size: 2.1rem;
             color: var(--header-text);
             margin-bottom: 15px;
+            font-family: 'Georgia', serif;
         }
 
-        /* Filter Controls */
+        /* FILTER CONTROLS */
         .filter-container {
             display: flex;
             justify-content: center;
@@ -146,7 +186,7 @@
             border-color: var(--brand-pink);
         }
 
-        /* Grid Layout */
+        /* GRID LAYOUT */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -171,12 +211,19 @@
             display: none;
         }
 
-        .portfolio-card img {
+        .portfolio-card img, .portfolio-card video {
             width: 100%;
             height: 380px;
             object-fit: cover;
             display: block;
+        }
+
+        .portfolio-card img {
             cursor: pointer;
+        }
+
+        .portfolio-card video {
+            background: #000;
         }
 
         .portfolio-info {
@@ -210,7 +257,7 @@
             margin: 0;
         }
 
-        /* Call To Action Card */
+        /* CTA CARD */
         .cta-card {
             background: #ffffff;
             border: 1px solid #f2cdd9;
@@ -237,7 +284,7 @@
             background-color: #990033;
         }
 
-        /* Lightbox Modal */
+        /* LIGHTBOX MODAL */
         .lightbox {
             display: none;
             position: fixed;
@@ -281,7 +328,7 @@
             color: var(--brand-pink);
         }
 
-        /* Footer Matching Index */
+        /* FOOTER SECTION - MATCHED TO INDEX */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -398,16 +445,11 @@
             object-fit: contain;
         }
 
-        /* Desktop Queries */
+        /* MEDIA QUERIES */
         @media (min-width: 768px) {
-            header { padding: 25px 20px; }
-            .header-content { flex-direction: row; justify-content: center; }
-            .logo-container img { max-width: 200px; }
-            .site-title { font-size: 2.2rem; }
             nav { padding: 15px 10px; }
             nav ul { gap: 25px; }
             nav ul li a { font-size: 1.25rem; padding: 6px 20px; }
-            main { padding: 40px 20px; }
             footer { padding: 50px 20px; }
             .footer-container { flex-direction: row; justify-content: space-between; align-items: flex-start; }
             .footer-announcement-box { width: 300px; }
@@ -419,13 +461,17 @@
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header Matched to Index -->
     <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
+        <div class="header-container">
+            <div class="header-bg-banner">
+                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
             </div>
-            <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
+            <div class="header-details">
+                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="hours-badge">Open Mon–Sat</div>
+                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+            </div>
         </div>
     </header>
 
@@ -445,7 +491,7 @@
         <div class="portfolio-header">
             <h1>Our Work & Portfolio</h1>
             <p style="font-size: 1.15rem; color: #555555; max-width: 800px; margin: 0 auto;">
-                Take a look at some of our recent bridal alterations, intricate lace details, and custom tailoring projects. Each piece reflects our commitment to precision, fit, and craftsmanship.
+                Take a look at our recent bridal alterations, intricate lace details, and custom tailoring projects. Each piece reflects our commitment to precision, fit, and craftsmanship.
             </p>
         </div>
 
@@ -460,79 +506,29 @@
         <!-- Portfolio Image Grid -->
         <div class="portfolio-grid">
             
-            <!-- Portfolio Item 1 -->
+            <!-- Image 18 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image10.JPG" alt="Bridal gown with intricate lace details" class="gallery-img">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Custom Bridal Gown Tailoring</h3>
-                    <p>Precision fitting, bodice adjustments, and elegant train management for the ultimate bridal silhouette.</p>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 2 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image9.jpg" alt="Back view of tailored wedding dress with delicate lace" class="gallery-img">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Back Detailing & Bustles</h3>
-                    <p>Custom corset adjustments and custom-tailored lace back designs crafted with high precision.</p>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 3 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image7.jpg" alt="Satin wedding dress with hand-beaded bodice" class="gallery-img">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Beaded Bodice & Satin Gown</h3>
-                    <p>Hand-stitched beadwork detailing and structured gown fitting for maximum comfort and style.</p>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 4 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image11.JPG" alt="Sheer illusion back bridal dress" class="gallery-img">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Illusion Back & Floral Appliqué</h3>
-                    <p>Seamless alterations on delicate sheer fabrics and intricate multi-layer skirt hemline adjustments.</p>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 5 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image8.JPG" alt="Tailored evening dress gown fitting" class="gallery-img">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear</span>
-                    <h3>Evening Dress Restyling</h3>
-                    <p>Custom waist re-fitting, hemline shortening, and neck alterations for special occasion gowns.</p>
-                </div>
-            </div>
-
-            <!-- Portfolio Item 6 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image18.JPG" alt="Elegant wedding gown tailoring" class="gallery-img">
+                <img src="images/image18.JPG" alt="Custom Bridal Gown Tailoring 18" class="gallery-img">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Bridal Gowns</span>
                     <h3>Classic Bridal Silhouette</h3>
-                    <p>Flawless bodice fitting and custom hem adjustments tailored to perfection for the big day.</p>
+                    <p>Flawless bodice fitting and custom hem adjustments tailored to perfection.</p>
                 </div>
             </div>
 
-            <!-- Portfolio Item 7 -->
+            <!-- Image 19 -->
             <div class="portfolio-card" data-category="details">
-                <img src="images/image19.JPG" alt="Intricate lacework and embroidery" class="gallery-img">
+                <img src="images/image19.JPG" alt="Intricate Lacework and Trim 19" class="gallery-img">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Lace & Details</span>
                     <h3>Intricate Lacework & Trim</h3>
-                    <p>Meticulous hand-sewing and lace placement to preserve original gown patterns during resizing.</p>
+                    <p>Meticulous hand-sewing and lace placement to preserve original gown patterns.</p>
                 </div>
             </div>
 
-            <!-- Portfolio Item 8 -->
+            <!-- Image 20 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image20.JPG" alt="Stunning wedding dress finish" class="gallery-img">
+                <img src="images/image20.JPG" alt="Luxurious Wedding Dress Fit 20" class="gallery-img">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Bridal Gowns</span>
                     <h3>Luxurious Wedding Dress Fit</h3>
@@ -540,19 +536,149 @@
                 </div>
             </div>
 
-            <!-- Portfolio Item 9 -->
+            <!-- Image 21 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image21.JPG" alt="Special occasion formalwear alterations" class="gallery-img">
+                <img src="images/image21.JPG" alt="Special Occasion Tailoring 21" class="gallery-img">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear</span>
                     <h3>Special Occasion Tailoring</h3>
-                    <p>Customized fit and styling adjustments for bridesmaid dresses, galas, and formal events.</p>
+                    <p>Customized fit and styling adjustments for bridesmaid dresses and galas.</p>
+                </div>
+            </div>
+
+            <!-- Image 22 -->
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image22.PNG" alt="Precision Sewing & Finishing 22" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
+                    <h3>Precision Sewing & Finishing</h3>
+                    <p>Detailed adjustments ensuring clean seamlines and elegant drape.</p>
+                </div>
+            </div>
+
+            <!-- Image 23 -->
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image23.jpg" alt="Formalwear Garment Customization 23" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Garment Customization</h3>
+                    <p>Expert tailoring crafted for comfort and a flattering fit.</p>
+                </div>
+            </div>
+
+            <!-- Image 30 -->
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image30.JPG" alt="Bridal Alteration Work 30" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bridal Gowns</span>
+                    <h3>Custom Bridal Fitting</h3>
+                    <p>Precision bodice sculpting and skirt hem tailoring for the perfect gown.</p>
+                </div>
+            </div>
+
+            <!-- Image 31 -->
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image31.JPG" alt="Fine Lace Detail 31" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
+                    <h3>Fine Lace Detailing</h3>
+                    <p>Hand-stitched lace overlay and custom applique reinforcement.</p>
+                </div>
+            </div>
+
+            <!-- Image 32 -->
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image32.JPG" alt="Elegantly Tailored Gown 32" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bridal Gowns</span>
+                    <h3>Elegantly Tailored Gown</h3>
+                    <p>Smooth waist transitions and custom structural bust support.</p>
+                </div>
+            </div>
+
+            <!-- Image 34 -->
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image34.JPG" alt="Evening Gown Refinement 34" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Evening Gown Refinement</h3>
+                    <p>Precision hemline shortening and custom neck alterations.</p>
+                </div>
+            </div>
+
+            <!-- Image 35 -->
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image35.JPG" alt="Hand Craftsmanship 35" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
+                    <h3>Hand Craftsmanship</h3>
+                    <p>Delicate hand-beading repairs and custom trim accents.</p>
+                </div>
+            </div>
+
+            <!-- Image 36 -->
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image36.JPG" alt="Bespoke Wedding Gown 36" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bridal Gowns</span>
+                    <h3>Bespoke Wedding Gown Fit</h3>
+                    <p>Tailored silhouette designed to accentuate comfort and elegance.</p>
+                </div>
+            </div>
+
+            <!-- Image 37 -->
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image37.JPG" alt="Gala & Prom Dress Alteration 37" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Gala & Prom Dress Alteration</h3>
+                    <p>Flawless side-seam adjustments and bodice restructuring.</p>
+                </div>
+            </div>
+
+            <!-- Image 38 -->
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image38.JPG" alt="Custom Bustle & Train 38" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
+                    <h3>Custom Bustle Creation</h3>
+                    <p>Secure train management designed for ease during reception dancing.</p>
+                </div>
+            </div>
+
+            <!-- Image 39 -->
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image39.JPG" alt="Bridal Gown Perfection 39" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bridal Gowns</span>
+                    <h3>Bridal Gown Perfection</h3>
+                    <p>Multi-layer fabric handling with precise finished edges.</p>
+                </div>
+            </div>
+
+            <!-- Image 40 -->
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image40.JPG" alt="Formal Wear Tailoring 40" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Formal Wear Tailoring</h3>
+                    <p>Custom tailored fit for special events and formal occasions.</p>
+                </div>
+            </div>
+
+            <!-- Image 41 -->
+            <div class="portfolio-card" data-category="details">
+                <img src="images/image41.JPG" alt="Detail Work 41" class="gallery-img">
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lace & Details</span>
+                    <h3>Intricate Finish & Trim</h3>
+                    <p>Final detail adjustments ensuring high quality sewing craft.</p>
                 </div>
             </div>
 
         </div>
 
-        <!-- Video Gallery Section (Video 1 through Video 8) -->
+        <!-- Video Gallery Section (video6.MP4 to video17.MP4) -->
         <div class="portfolio-header" style="margin-top: 60px;">
             <h2>Featured Alteration Videos</h2>
             <p style="font-size: 1.15rem; color: #555555; max-width: 800px; margin: 0 auto;">
@@ -562,62 +688,49 @@
 
         <div class="portfolio-grid">
 
-            <!-- Video 1 -->
+            <!-- Video 6 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video1.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Bridal Fitting Process</h3>
-                    <p>A look into initial pinning and precise measurements for custom bridal silhouettes.</p>
-                </div>
-            </div>
-
-            <!-- Video 2 -->
-            <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video2.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video6.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Lace & Bodice Detail</h3>
-                    <p>Intricate hand-sewing and tailoring adjustments on delicate lace elements.</p>
+                    <p>Detailed sewing adjustments on delicate lace work.</p>
                 </div>
             </div>
 
-            <!-- Video 3 -->
+            <!-- Video 7 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video3.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video7.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Train & Bustle Setup</h3>
-                    <p>Demonstration of custom bustle creation for seamless reception movement.</p>
+                    <p>Demonstration of custom bustle creation for seamless gown movement.</p>
                 </div>
             </div>
 
-            <!-- Video 4 -->
+            <!-- Video 8 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video4.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video8.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Garment Shaping & Fit</h3>
-                    <p>Achieving the ideal structure and comfort for special occasion formalwear.</p>
+                    <p>Achieving ideal structure and comfort for special occasion formalwear.</p>
                 </div>
             </div>
 
-            <!-- Video 5 -->
+            <!-- Video 9 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video5.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video9.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
@@ -627,36 +740,101 @@
                 </div>
             </div>
 
-            <!-- Video 6 -->
+            <!-- Video 10 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video6.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video10.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Custom Restyling</h3>
-                    <p>Transforming vintage or off-the-rack pieces into custom-fitted treasures.</p>
+                    <p>Transforming garments into custom-fitted treasures.</p>
                 </div>
             </div>
 
-            <!-- Video 7 -->
+            <!-- Video 11 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/Video7.mp4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video11.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Finishing & Pressing</h3>
-                    <p>The final details, steaming, and quality checks before client pickup.</p>
+                    <h3>Bodice & Corset Work</h3>
+                    <p>Structural adjustments for enhanced support and silhouette contouring.</p>
                 </div>
             </div>
 
-            <!-- Video 8 -->
+            <!-- Video 12 -->
             <div class="portfolio-card">
-                <video controls style="width: 100%; height: 380px; object-fit: cover; display: block; background: #000;">
-                    <source src="images/video8.MP4" type="video/mp4">
+                <video controls preload="metadata">
+                    <source src="images/video12.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Video Highlight</span>
+                    <h3>Hand Sewing Techniques</h3>
+                    <p>Careful hand stitching on delicate trims and beadwork.</p>
+                </div>
+            </div>
+
+            <!-- Video 13 -->
+            <div class="portfolio-card">
+                <video controls preload="metadata">
+                    <source src="images/video13.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Video Highlight</span>
+                    <h3>Formal Gown Alterations</h3>
+                    <p>Tailoring special occasion dresses for a flawless event fit.</p>
+                </div>
+            </div>
+
+            <!-- Video 14 -->
+            <div class="portfolio-card">
+                <video controls preload="metadata">
+                    <source src="images/video14.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Video Highlight</span>
+                    <h3>Gown Transformation</h3>
+                    <p>Before and after fitting results for bridal attire.</p>
+                </div>
+            </div>
+
+            <!-- Video 15 -->
+            <div class="portfolio-card">
+                <video controls preload="metadata">
+                    <source src="images/video15.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Video Highlight</span>
+                    <h3>Pressing & Steaming</h3>
+                    <p>Final preparation and steaming before client pickup.</p>
+                </div>
+            </div>
+
+            <!-- Video 16 -->
+            <div class="portfolio-card">
+                <video controls preload="metadata">
+                    <source src="images/video16.MP4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Video Highlight</span>
+                    <h3>Detailed Tailoring Focus</h3>
+                    <p>Detailed view of expert craftsmanship on intricate fabrics.</p>
+                </div>
+            </div>
+
+            <!-- Video 17 -->
+            <div class="portfolio-card">
+                <video controls preload="metadata">
+                    <source src="images/video17.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
@@ -685,20 +863,20 @@
         <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
 
-    <!-- Footer -->
+    <!-- Footer Matched to Index -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-announcement-box">
                 <h3>Important Announcement</h3>
-                <p>This important announcement process set you an anoune and wwwmmeet your eocoration to our portant announcement.</p>
+                <p>We are now scheduling bridal and evening wear fittings for the upcoming season! Contact us today to reserve your fitting slot and ensure your perfect fit.</p>
                 <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
             </div>
 
             <div class="footer-column">
                 <h4>Customer Satisfaction</h4>
-                <p>Our customer satisfaction within the customer Satisfaction and/ess your promote announcent.</p>
-                <h4 style="margin-top: 15px;">Garment Holding</h4>
-                <p>We garment holding so due to imove any garment holds with our concoment.</p>
+                <p>Your satisfaction is our highest priority. We take pride in precise tailoring and attention to detail so you can look and feel your absolute best.</p>
+                <h4 style="margin-top: 15px;">Garment Holding Policy</h4>
+                <p>Completed garments are stored securely. Please arrange pickup within 30 days of completion unless prior arrangements have been made with our shop.</p>
                 <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
             </div>
 
@@ -716,6 +894,12 @@
                     </a>
                     <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
                         <img src="images/Tiktok.png" alt="TikTok">
+                    </a>
+                    <a href="https://www.youtube.com/@zalterationsbridalsewing" target="_blank" rel="noopener">
+                        <img src="images/youtube.jpg" alt="YouTube">
+                    </a>
+                    <a href="https://share.google/siQitbU8k7p7nxC6O" target="_blank" rel="noopener">
+                        <img src="images/google.jpg" alt="Google">
                     </a>
                 </div>
             </div>

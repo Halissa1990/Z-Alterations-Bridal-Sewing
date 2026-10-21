@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Z Alterations & Bridal Sewing</title>
+    <title>About Us - Z Alterations & Bridal Sewing LLC</title>
     <style>
         :root {
-            --header-pink: #fce1ed; /* Soft pink background matching index */
+            --header-pink: #fce1ed; /* Soft pink background */
             --header-text: #720033;
             --nav-blue: #4ba3f0;
             --nav-text: #ffffff;
             --brand-pink: #e04b82; /* Brighter, more vibrant pink */
             --accent-gold: #c5a059;
+            --dark-dark-pink: #720033; /* Dark dark pink color */
             --text-dark: #333333;
             --bg-light: #f7f9fa;
         }
@@ -30,33 +31,76 @@
             overflow-x: hidden;
         }
 
+        /* HEADER SECTION */
         header {
             background-color: #ffffff;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 0 0 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-bottom: 2px solid var(--header-pink);
+            width: 100%;
         }
 
-        .header-content {
-            max-width: 1000px;
+        .header-container {
+            width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            gap: 10px;
         }
 
-        .logo-container img {
-            max-width: 150px;
+        /* Complete Full Width Banner */
+        .header-bg-banner {
+            width: 100%;
+            display: block;
+        }
+
+        .header-bg-banner img {
+            width: 100%;
             height: auto;
             display: block;
         }
 
-        .site-title {
-            margin: 0;
+        /* Sub-Header Text Section directly under the background banner */
+        .header-details {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .tagline {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
             color: var(--header-text);
-            font-size: 1.6rem;
             font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hours-badge {
+            display: inline-block;
+            background-color: var(--brand-pink);
+            color: #ffffff;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--dark-dark-pink);
+            font-weight: 700;
+            max-width: 650px;
+            margin: 5px 0 0 0;
+            line-height: 1.5;
         }
 
         nav {
@@ -95,7 +139,6 @@
             color: var(--brand-pink);
         }
 
-        /* Welcome Banner Styling */
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
@@ -118,10 +161,10 @@
 
         .about-card {
             background: #ffffff;
-            padding: 20px 15px;
+            padding: 25px 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            margin-bottom: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
         }
 
         .about-card h1 {
@@ -130,15 +173,15 @@
             margin-top: 0;
             margin-bottom: 15px;
             text-align: center;
+            font-family: 'Georgia', serif;
         }
 
         .about-card h2 {
-            color: var(--brand-pink);
-            font-size: 1.3rem;
+            color: var(--header-text);
+            font-size: 1.4rem;
             margin-top: 25px;
-            margin-bottom: 12px;
-            border-bottom: 2px solid var(--header-pink);
-            padding-bottom: 6px;
+            margin-bottom: 15px;
+            font-family: 'Georgia', serif;
         }
 
         .feature-badge {
@@ -161,6 +204,8 @@
         .media-container video {
             width: 100%;
             height: auto;
+            max-height: 450px;
+            object-fit: cover;
             border-radius: 8px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
@@ -326,19 +371,6 @@
 
         /* Desktop Media Queries */
         @media (min-width: 768px) {
-            header {
-                padding: 25px 20px;
-            }
-            .header-content {
-                flex-direction: row;
-                justify-content: center;
-            }
-            .logo-container img {
-                max-width: 200px;
-            }
-            .site-title {
-                font-size: 2.2rem;
-            }
             nav {
                 padding: 15px 10px;
             }
@@ -360,9 +392,6 @@
             }
             .about-card {
                 padding: 30px;
-            }
-            .about-card h1 {
-                font-size: 2.2rem;
             }
             .grid-highlights {
                 grid-template-columns: 1fr 1fr;
@@ -397,13 +426,17 @@
 </head>
 <body>
 
-    <!-- Header Section -->
+    <!-- Header Section matching index layout -->
     <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
+        <div class="header-container">
+            <div class="header-bg-banner">
+                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
             </div>
-            <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
+            <div class="header-details">
+                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="hours-badge">Open Mon–Sat</div>
+                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+            </div>
         </div>
     </header>
 
@@ -430,20 +463,20 @@
                 <div class="feature-badge">Featured on Greenfield: We're Open!</div>
             </div>
 
-            <!-- Featured Image -->
+            <!-- Featured Image (using image.jpg) -->
             <div class="media-container">
-                <img src="images/image1.jpg" alt="Z Alterations Workshop">
+                <img src="images/image.jpg" alt="Z Alterations Workshop">
             </div>
 
             <p>Welcome to <strong>Z Alterations & Bridal Sewing LLC</strong>. Built on a rich legacy of over 22 years of family-owned craftsmanship, we are proud to offer expert tailoring, precision alterations, and dedicated bridal wear design for every occasion.</p>
 
             <p>Located in Greenfield, Wisconsin, our shop is dedicated to bringing your unique garment vision to life with passion, meticulous attention to detail, and dependable, timely service. Whether you need a delicate wedding gown fitted for your big day or custom alterations on everyday wardrobe pieces, we treat every garment with extreme care.</p>
 
-            <!-- Video Section -->
+            <!-- Video Section (using video12.MP4) -->
             <h2>See Our Work in Action</h2>
             <div class="media-container">
                 <video controls>
-                    <source src="images/video.mp4" type="video/mp4">
+                    <source src="images/video12.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -478,26 +511,23 @@
         </section>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer matching index layout -->
     <footer id="contact">
         <div class="footer-container">
-            <!-- Left Box: Important Announcement Card -->
             <div class="footer-announcement-box">
                 <h3>Important Announcement</h3>
-                <p>This important announcement process set you an anoune and wwwmmeet your eocoration to our portant announcement.</p>
+                <p>We are now scheduling bridal and evening wear fittings for the upcoming season! Contact us today to reserve your fitting slot and ensure your perfect fit.</p>
                 <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
             </div>
 
-            <!-- Middle Column: Customer Satisfaction & Garment Holding Policies -->
             <div class="footer-column">
                 <h4>Customer Satisfaction</h4>
-                <p>Our customer satisfaction within the customer Satisfaction and/ess your promote announcent.</p>
-                <h4 style="margin-top: 15px;">Garment Holding</h4>
-                <p>We garment holding so due to imove any garment holds with our concoment.</p>
+                <p>Your satisfaction is our highest priority. We take pride in precise tailoring and attention to detail so you can look and feel your absolute best.</p>
+                <h4 style="margin-top: 15px;">Garment Holding Policy</h4>
+                <p>Completed garments are stored securely. Please arrange pickup within 30 days of completion unless prior arrangements have been made with our shop.</p>
                 <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
             </div>
 
-            <!-- Right Column: Address Us & Socials -->
             <div class="footer-column">
                 <h4>Address Us</h4>
                 <p>
@@ -512,6 +542,12 @@
                     </a>
                     <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
                         <img src="images/Tiktok.png" alt="TikTok">
+                    </a>
+                    <a href="https://www.youtube.com/@zalterationsbridalsewing" target="_blank" rel="noopener">
+                        <img src="images/youtube.jpg" alt="YouTube">
+                    </a>
+                    <a href="https://share.google/siQitbU8k7p7nxC6O" target="_blank" rel="noopener">
+                        <img src="images/google.jpg" alt="Google">
                     </a>
                 </div>
             </div>

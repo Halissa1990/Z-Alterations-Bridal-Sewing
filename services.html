@@ -3,19 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services - Z Alterations & Bridal Sewing LLC</title>
+    <title>Services & Reviews - Z Alterations & Bridal Sewing LLC</title>
     <style>
         :root {
-            --header-pink: #fce1ed; /* Soft pink background */
+            --header-pink: #fce1ed; /* Soft pink background matching index */
             --header-text: #720033;
             --nav-blue: #4ba3f0;
             --nav-text: #ffffff;
             --brand-pink: #e04b82; /* Brighter, more vibrant pink */
             --accent-gold: #c5a059;
+            --dark-dark-pink: #720033; /* Dark dark pink color */
             --text-dark: #333333;
             --bg-light: #f7f9fa;
-            --deep-burgundy: #5c1428;
-            --star-gold: #fbbc04;
         }
 
         * {
@@ -32,33 +31,74 @@
             overflow-x: hidden;
         }
 
+        /* HEADER SECTION */
         header {
             background-color: #ffffff;
-            padding: 15px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            padding: 0 0 25px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            border-bottom: 2px solid var(--header-pink);
+            width: 100%;
         }
 
-        .header-content {
-            max-width: 1000px;
+        .header-container {
+            width: 100%;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
-            gap: 10px;
         }
 
-        .logo-container img {
-            max-width: 150px;
+        .header-bg-banner {
+            width: 100%;
+            display: block;
+        }
+
+        .header-bg-banner img {
+            width: 100%;
             height: auto;
             display: block;
         }
 
-        .site-title {
-            margin: 0;
+        .header-details {
+            text-align: center;
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            padding: 0 15px;
+            width: 100%;
+        }
+
+        .tagline {
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
             color: var(--header-text);
-            font-size: 1.6rem;
             font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .hours-badge {
+            display: inline-block;
+            background-color: var(--brand-pink);
+            color: #ffffff;
+            padding: 5px 18px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .quote-text {
+            font-family: 'Georgia', serif;
+            font-style: italic;
+            font-size: 1.05rem;
+            color: var(--dark-dark-pink);
+            font-weight: 700;
+            max-width: 650px;
+            margin: 5px 0 0 0;
+            line-height: 1.5;
         }
 
         nav {
@@ -97,7 +137,6 @@
             color: var(--brand-pink);
         }
 
-        /* Welcome Banner */
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
@@ -113,378 +152,246 @@
         }
 
         main {
-            padding: 20px 15px;
+            padding: 30px 15px;
             max-width: 1000px;
             margin: 0 auto;
         }
 
-        .hero {
-            text-align: center;
-            padding: 30px 20px;
-            background: #ffffff;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            margin-bottom: 30px;
-        }
-
-        .hero h1 {
-            color: var(--header-text);
-            margin-top: 0;
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-        }
-
-        /* Services Grid Layout */
+        /* Services Grid */
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 25px;
+            gap: 20px;
             margin-bottom: 30px;
-        }
-
-        @media (min-width: 768px) {
-            .services-grid {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         .service-card {
             background: #ffffff;
-            padding: 25px;
+            padding: 25px 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-
-        .service-card h2 {
-            color: var(--header-text);
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 12px;
-            border-bottom: 2px solid var(--header-pink);
-            padding-bottom: 8px;
-        }
-
-        .service-card p {
-            color: #444444;
-            font-size: 0.95rem;
-            margin-bottom: 20px;
-        }
-
-        /* Customer Reviews List Section */
-        .reviews-display-section {
-            margin: 40px auto;
-            max-width: 850px;
-            display: none; /* Hidden until real reviews exist */
-        }
-
-        .reviews-display-section h3 {
-            color: var(--header-text);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .reviews-container {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
-        }
-
-        .display-review-card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-            border-left: 4px solid var(--brand-pink);
-        }
-
-        .display-review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-        }
-
-        .display-reviewer-name {
-            font-weight: 700;
-            color: var(--text-dark);
-            font-size: 1rem;
-        }
-
-        .display-review-stars {
-            color: var(--star-gold);
-            font-size: 1.1rem;
-            letter-spacing: 2px;
-        }
-
-        .display-review-text {
-            color: #555555;
-            font-size: 0.95rem;
-            margin: 0;
-            white-space: pre-wrap;
-        }
-
-        /* Value Feedback Banner */
-        .feedback-banner {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 40px 25px;
-            text-align: center;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.03);
-            margin: 40px auto;
-            max-width: 850px;
-        }
-
-        .feedback-banner h2 {
-            color: #720033;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin-top: 0;
-            margin-bottom: 15px;
-        }
-
-        .feedback-banner p {
-            color: #555555;
-            font-size: 1rem;
-            max-width: 750px;
-            margin: 0 auto 25px auto;
-            line-height: 1.5;
-        }
-
-        .btn-trigger-review {
-            background-color: #e04b82;
-            color: #ffffff;
-            border: none;
-            padding: 12px 28px;
-            font-size: 1rem;
-            font-weight: 600;
-            border-radius: 6px;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        .btn-trigger-review:hover {
-            background-color: #c83b6f;
-        }
-
-        /* Review Modal / Google-style Form Card */
-        .modal-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.5);
-            z-index: 2000;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .modal-overlay.active {
-            display: flex;
-        }
-
-        .review-card {
-            background: #ffffff;
-            width: 100%;
-            max-width: 480px;
-            border-radius: 12px;
-            padding: 25px 30px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--brand-pink);
             position: relative;
-            animation: fadeIn 0.3s ease;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .close-modal {
+        .service-number {
             position: absolute;
             top: 15px;
             right: 20px;
-            font-size: 1.5rem;
-            color: #888;
-            cursor: pointer;
-            border: none;
-            background: none;
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #e0e0e0;
         }
 
-        .user-profile-header {
+        .service-card h3 {
+            color: var(--header-text);
+            font-size: 1.3rem;
+            margin-top: 0;
+            margin-bottom: 15px;
+            padding-right: 40px;
+            font-family: 'Georgia', serif;
+        }
+
+        .service-card ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            color: #444;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .service-card ul li strong {
+            color: var(--header-text);
+        }
+
+        /* Price Disclaimer Card */
+        .disclaimer-card {
+            background: #ffffff;
+            border-left: 5px solid var(--brand-pink);
+            padding: 20px 15px;
+            border-radius: 0 8px 8px 0;
+            margin-top: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+        }
+
+        .disclaimer-card h4 {
+            color: var(--header-text);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .disclaimer-card p {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #444444;
+            margin: 0;
+        }
+
+        /* Reviews Section Styles */
+        .reviews-section {
+            margin-top: 50px;
+            background: #ffffff;
+            padding: 30px 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+        }
+
+        .reviews-header {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px solid var(--header-pink);
+            padding-bottom: 20px;
+        }
+
+        .reviews-header h2 {
+            color: var(--header-text);
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+        }
+
+        .overall-rating {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: var(--header-text);
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+        }
+
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .review-card {
+            background: var(--bg-light);
+            border-left: 4px solid var(--brand-pink);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+        }
+
+        .review-author {
+            font-weight: 700;
+            color: var(--header-text);
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .review-date {
+            font-size: 0.8rem;
+            color: #777;
+            font-weight: normal;
+        }
+
+        .review-stars {
+            color: #ffc107;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .review-text {
+            color: #444;
+            font-size: 0.95rem;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        /* Write Review Form Styling */
+        .write-review-box {
+            background: #fdf6f9;
+            border: 1px solid #f2cdd9;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 30px;
+        }
+
+        .write-review-box h3 {
+            color: var(--header-text);
+            margin-top: 0;
+            font-family: 'Georgia', serif;
+            font-size: 1.3rem;
             margin-bottom: 15px;
         }
 
-        .user-avatar {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background-color: #f1f3f4;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #5f6368;
-        }
-
-        .user-avatar svg {
-            width: 28px;
-            height: 28px;
-            fill: #5f6368;
-        }
-
-        .user-info {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .user-name-input {
-            border: none;
-            border-bottom: 1px solid #ccc;
-            font-weight: 600;
-            font-size: 0.95rem;
-            color: #333;
-            outline: none;
-            padding: 2px 0;
-            width: 200px;
-        }
-
-        .user-name-input:focus {
-            border-bottom-color: #1a73e8;
-        }
-
-        .posting-publicly {
-            font-size: 0.8rem;
-            color: #70757a;
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            margin-top: 2px;
-        }
-
-        .star-rating-container {
-            display: flex;
-            justify-content: center;
-            gap: 12px;
-            margin: 20px 0;
-            direction: rtl;
-        }
-
-        .star-rating-container input {
-            display: none;
-        }
-
-        .star-rating-container label {
-            font-size: 2.2rem;
-            color: #e0e0e0;
-            cursor: pointer;
-            transition: color 0.15s ease;
-        }
-
-        .star-rating-container input:checked ~ label,
-        .star-rating-container label:hover,
-        .star-rating-container label:hover ~ label {
-            color: var(--star-gold);
-        }
-
-        .experience-label {
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: #3c4043;
-            margin-bottom: 8px;
+        .form-group {
+            margin-bottom: 15px;
             text-align: left;
         }
 
-        .google-textarea {
-            width: 100%;
-            border: 1.5px solid #1a73e8;
-            border-radius: 8px;
-            padding: 12px 14px;
-            font-family: inherit;
-            font-size: 0.9rem;
-            resize: vertical;
-            min-height: 90px;
-            outline: none;
-            color: #3c4043;
-        }
-
-        .photo-upload-btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            width: fit-content;
-            margin: 20px auto 0 auto;
-            border: 1px solid #dadce0;
-            border-radius: 20px;
-            padding: 8px 20px;
-            background: #ffffff;
-            color: #1a73e8;
-            font-size: 0.88rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.2s ease;
-        }
-
-        .photo-upload-btn:hover {
-            background-color: #f8f9fa;
-        }
-
-        .photo-upload-btn svg {
-            width: 18px;
-            height: 18px;
-            fill: #1a73e8;
-        }
-
-        .submit-review-btn {
+        .form-group label {
             display: block;
-            width: 100%;
-            margin-top: 20px;
-            background-color: var(--brand-pink);
-            color: #ffffff;
-            border: none;
-            padding: 10px;
-            border-radius: 6px;
             font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--text-dark);
+            font-size: 0.9rem;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #cccccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            background-color: #ffffff;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--brand-pink);
+            box-shadow: 0 0 0 3px rgba(224, 75, 130, 0.15);
+        }
+
+        .rating-select {
+            display: flex;
+            gap: 10px;
+            font-size: 1.5rem;
             cursor: pointer;
+        }
+
+        .rating-select span {
+            color: #ccc;
+            transition: color 0.2s;
+        }
+
+        .rating-select span.selected,
+        .rating-select span:hover {
+            color: #ffc107;
         }
 
         .button {
             display: inline-block;
             background-color: var(--brand-pink);
             color: white;
-            padding: 10px 18px;
+            padding: 10px 20px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
             transition: background 0.3s ease;
-            text-align: center;
             border: none;
             cursor: pointer;
-            width: 100%;
         }
 
         .button:hover {
             background-color: #990033;
-        }
-
-        .button-booking {
-            background-color: var(--deep-burgundy);
-            color: #ffffff;
-            margin-top: 15px;
-            width: auto;
-        }
-
-        .button-booking:hover {
-            background-color: #3b0a18;
         }
 
         .status-message {
@@ -499,7 +406,6 @@
             border: 1px solid #a5d6a7;
         }
 
-        /* Footer */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -571,10 +477,6 @@
             font-weight: 600;
         }
 
-        .footer-column a:hover {
-            text-decoration: underline;
-        }
-
         .footer-image {
             width: 100%;
             max-width: 200px;
@@ -618,42 +520,46 @@
             width: 28px;
             height: 28px;
             object-fit: contain;
-            transition: transform 0.2s ease;
-        }
-
-        .social img:hover {
-            transform: scale(1.1);
         }
 
         @media (min-width: 768px) {
-            header { padding: 25px 20px; }
-            .header-content { flex-direction: row; justify-content: center; }
-            .logo-container img { max-width: 200px; }
-            .site-title { font-size: 2.2rem; }
             nav { padding: 15px 10px; }
             nav ul { gap: 25px; }
             nav ul li a { font-size: 1.25rem; padding: 6px 20px; }
             .welcome-banner { padding: 20px 15px; }
             .welcome-banner h2 { font-size: 1.8rem; }
             main { padding: 40px 20px; }
-            footer { padding: 50px 20px; }
-            .footer-container { flex-direction: row; justify-content: space-between; align-items: flex-start; }
+            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
+            .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-container {
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: flex-start;
+            }
             .footer-announcement-box { width: 300px; }
             .footer-column { flex: 1; min-width: 220px; }
-            .footer-bottom { flex-direction: row; justify-content: space-between; text-align: left; }
+            .footer-bottom {
+                flex-direction: row;
+                justify-content: space-between;
+                text-align: left;
+            }
             .social img { width: 32px; height: 32px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header -->
+    <!-- Header Section matching index.html layout -->
     <header>
-        <div class="header-content">
-            <div class="logo-container">
-                <img src="images/Logo.jpg" alt="Z Alterations & Bridal Sewing Logo">
+        <div class="header-container">
+            <div class="header-bg-banner">
+                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
             </div>
-            <h1 class="site-title">Z Alterations & Bridal Sewing</h1>
+            <div class="header-details">
+                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="hours-badge">Open Mon–Sat</div>
+                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+            </div>
         </div>
     </header>
 
@@ -668,142 +574,208 @@
         </ul>
     </nav>
 
-    <!-- Welcome Banner -->
     <section class="welcome-banner">
-        <h2>Our Tailoring & Sewing Services</h2>
+        <h2>Our Services & Price List</h2>
     </section>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <h1>Expert Craftsmanship For Every Occasion</h1>
-            <p>With over 22 years of professional tailoring and sewing experience, we provide meticulous alterations to ensure your wardrobe fits flawlessly.</p>
-            <div style="margin-top: 15px;">
-                <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">📅 Book Appointment Online</a>
-            </div>
-        </section>
-
         <!-- Services Grid -->
         <div class="services-grid">
+            
+            <!-- Category 01 -->
             <div class="service-card">
-                <div>
-                    <h2>Bridal Wear & Gowns</h2>
-                    <p>Expert bridal gown alterations, custom fittings, bustle creation, and delicate lace or beadwork management to make your special day absolute perfection.</p>
-                </div>
-                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
+                <span class="service-number">01</span>
+                <h3>PANTS, SLACKS, JEANS</h3>
+                <ul>
+                    <li>Jean Hem — <strong>$18+</strong></li>
+                    <li>Plain Hem — <strong>$18+</strong></li>
+                    <li>Double Stitch Hem — <strong>$18+</strong></li>
+                    <li>Euro Hem (Original Hem) — <strong>$25+</strong></li>
+                    <li>Tricky Hem — <strong>$25+</strong></li>
+                    <li>Cuff / Cuff with Lining — <strong>$25+</strong></li>
+                    <li>Taper Legs — <strong>$25+</strong></li>
+                    <li>Waist Seat-In/Out — <strong>$25+</strong></li>
+                    <li>Waist Seat-Crotch — <strong>$25+</strong></li>
+                    <li>Zipper Replace — <strong>$25+</strong></li>
+                    <li>Darts — <strong>$18+</strong></li>
+                </ul>
             </div>
 
+            <!-- Category 02 -->
             <div class="service-card">
-                <div>
-                    <h2>Suits & Tuxedos</h2>
-                    <p>Professional jacket resizing, sleeve shortening, taper adjustments, and trouser tailoring for a sharp, impeccably fitted formal look.</p>
-                </div>
-                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
+                <span class="service-number">02</span>
+                <h3>SHIRTS, BLOUSES, DRESS SHIRTS</h3>
+                <ul>
+                    <li>Take In / Out Sides — <strong>$20+</strong></li>
+                    <li>Shorten Sleeve (No Cuff) — <strong>$25+</strong></li>
+                    <li>Shorten Sleeve (w/ Cuff) — <strong>$38+</strong></li>
+                    <li>Move Shoulder — <strong>$35+</strong></li>
+                    <li>Shorten Bottom — <strong>$25+</strong></li>
+                </ul>
             </div>
 
+            <!-- Category 03 -->
             <div class="service-card">
-                <div>
-                    <h2>Prom & Formal Dresses</h2>
-                    <p>Precise hemming, bodice adjustments, strap modifications, and custom fit alterations for evening gowns, bridesmaid dresses, and prom wear.</p>
-                </div>
-                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
+                <span class="service-number">03</span>
+                <h3>SUITS, COATS, JACKETS</h3>
+                <ul>
+                    <li>Shorten Sleeves (w/o Vent) — <strong>$38+</strong></li>
+                    <li>Shorten Sleeves (w/ Vent) — <strong>$50+</strong></li>
+                    <li>Side In / Out — <strong>$35+</strong></li>
+                    <li>Shorten Bottom — <strong>$65+</strong></li>
+                    <li>Move Collar — <strong>$55+</strong></li>
+                    <li>Move Shoulder — <strong>$95+</strong></li>
+                    <li>Vest Side-In — <strong>$35+</strong></li>
+                    <li>Shorten Ties — <strong>$18+</strong></li>
+                    <li>Zipper Replacement — <strong>$38+</strong></li>
+                </ul>
             </div>
 
+            <!-- Category 04 -->
             <div class="service-card">
-                <div>
-                    <h2>Hemming & General Repairs</h2>
-                    <p>Quick turnaround on everyday garment hemming, zipper replacements, patching, and minor wardrobe repairs to give your favorite clothes new life.</p>
-                </div>
-                <a href="contact.html" class="button button-booking" style="width: auto; text-align: center;">Inquire / Book</a>
+                <span class="service-number">04</span>
+                <h3>BRIDESMAID / PROM / FORMAL DRESS</h3>
+                <ul>
+                    <li>Shorten Bottom — <strong>$35+</strong></li>
+                    <li>Side In / Out — <strong>$45+</strong></li>
+                    <li>Shorten Straps — <strong>$35+</strong></li>
+                    <li>Bustles Creation — <strong>$35+</strong></li>
+                    <li>Add Bra Pads — <strong>$25+</strong></li>
+                    <li>Add Corsets — <strong>$50+</strong></li>
+                </ul>
             </div>
+
+            <!-- Category 05 -->
+            <div class="service-card">
+                <span class="service-number">05</span>
+                <h3>WEDDING DRESS</h3>
+                <ul>
+                    <li>Shorten Bottom — <strong>$95+</strong></li>
+                    <li>Side In / Out — <strong>$80+</strong></li>
+                    <li>Shorten Straps — <strong>$45+</strong></li>
+                    <li>Bustles Creation — <strong>$35+</strong></li>
+                    <li>Add Bra Pads — <strong>$35+</strong></li>
+                    <li>Add Corsets — <strong>$95+</strong></li>
+                </ul>
+            </div>
+
+            <!-- Category 06 -->
+            <div class="service-card">
+                <span class="service-number">06</span>
+                <h3>MISCELLANEOUS</h3>
+                <ul>
+                    <li>Tighten Button — <strong>$5</strong></li>
+                    <li>Add New Button — <strong>$8</strong></li>
+                    <li>Re-Sew Hole / Patch Hole — <strong>$10+</strong></li>
+                    <li>Patches — <strong>$5+</strong></li>
+                    <li>Zipper Slider — <strong>$15+</strong></li>
+                    <li>Re-Hem — <strong>$10+</strong></li>
+                    <li>New Button Holes — <strong>$10+</strong></li>
+                </ul>
+            </div>
+
         </div>
 
-        <!-- Customer Reviews Display Section -->
-        <section id="reviewsSection" class="reviews-display-section">
-            <h3>Customer Reviews</h3>
-            <div id="reviewsContainer" class="reviews-container">
-                <!-- Real submitted reviews will be inserted here -->
+        <!-- Pricing Policy Disclaimer Box -->
+        <div class="disclaimer-card">
+            <h4>Pricing Policy & Information</h4>
+            <p>
+                Prices will vary & determined by the garment's material(s), layer(s), and hem(s). Standard turn-around time is 1–2 weeks (Rush Orders $10–$35). All final prices are at the discretion of the seamstress or tailor using the shop pricing guide.
+            </p>
+        </div>
+
+        <!-- Google Customer Reviews Section -->
+        <section class="reviews-section">
+            <div class="reviews-header">
+                <h2>Customer Reviews & Testimonials</h2>
+                <div class="overall-rating">
+                    <span>5.0</span>
+                    <div class="stars">★★★★★</div>
+                </div>
+                <p style="color: #666; margin: 5px 0 0 0; font-size: 0.95rem;">Based on 13 Google Reviews</p>
             </div>
-        </section>
 
-        <!-- We Value Your Feedback Section -->
-        <section class="feedback-banner">
-            <h2>We Value Your Feedback!</h2>
-            <p>Had a great experience with our tailoring or bridal alterations? We would love to hear your thoughts and share them with future clients.</p>
-            <button class="btn-trigger-review" onclick="openReviewModal()">Leave a Review</button>
-        </section>
+            <div class="reviews-grid" id="reviewsContainer">
+                <div class="review-card">
+                    <div class="review-author">Cebmuag <span class="review-date">3 days ago</span></div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">She did a very god job, whoever needs short sleeve or pants too long bring it to her and support her business you will be happy with her work</p>
+                </div>
 
-        <!-- Interactive Review Modal -->
-        <div class="modal-overlay" id="reviewModal">
-            <div class="review-card">
-                <button class="close-modal" onclick="closeReviewModal()">&times;</button>
-                
+                <div class="review-card">
+                    <div class="review-author">Forest Hipp <span class="review-date">3 weeks ago</span></div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">They did an amazing job! Highly recommend. I came in needing alterations done on very short notice, and they were able to get everything done right away without sacrificing quality.</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-author">Juliana Martin <span class="review-date">2 weeks ago</span></div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Quick turn around for a dress I needed hemmed. Very nice and professional!</p>
+                </div>
+
+                <div class="review-card">
+                    <div class="review-author">Mee Moua <span class="review-date">3 weeks ago</span></div>
+                    <div class="review-stars">★★★★★</div>
+                    <p class="review-text">Amazing service! Everything is perfect. She's the best and I would recommend coming here.</p>
+                </div>
+            </div>
+
+            <!-- Write a Review Box -->
+            <div class="write-review-box">
+                <h3>Leave a Review</h3>
                 <form id="reviewForm" onsubmit="handleReviewSubmit(event)">
-                    <!-- User Account Header -->
-                    <div class="user-profile-header">
-                        <div class="user-avatar">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                            </svg>
+                    <div class="form-group">
+                        <label for="reviewerName">Your Name *</label>
+                        <input type="text" id="reviewerName" class="form-control" placeholder="Enter your name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Rating *</label>
+                        <div class="rating-select" id="starRating">
+                            <span onclick="setRating(1)">★</span>
+                            <span onclick="setRating(2)">★</span>
+                            <span onclick="setRating(3)">★</span>
+                            <span onclick="setRating(4)">★</span>
+                            <span onclick="setRating(5)">★</span>
                         </div>
-                        <div class="user-info">
-                            <input type="text" id="reviewerName" class="user-name-input" placeholder="Your Name" required>
-                            <span class="posting-publicly">Posting Publicly ℹ️</span>
-                        </div>
+                        <input type="hidden" id="selectedRating" value="5">
                     </div>
 
-                    <!-- Star Rating -->
-                    <div class="star-rating-container">
-                        <input type="radio" id="star5" name="rating" value="5" required>
-                        <label for="star5" title="5 stars">★</label>
-                        <input type="radio" id="star4" name="rating" value="4">
-                        <label for="star4" title="4 stars">★</label>
-                        <input type="radio" id="star3" name="rating" value="3">
-                        <label for="star3" title="3 stars">★</label>
-                        <input type="radio" id="star2" name="rating" value="2">
-                        <label for="star2" title="2 stars">★</label>
-                        <input type="radio" id="star1" name="rating" value="1">
-                        <label for="star1" title="1 star">★</label>
+                    <div class="form-group">
+                        <label for="reviewComment">Your Review *</label>
+                        <textarea id="reviewComment" class="form-control" rows="4" placeholder="Share your experience with our tailoring services..." required></textarea>
                     </div>
 
-                    <!-- Review Text Input -->
-                    <div style="margin-top: 15px;">
-                        <div class="experience-label">Share more about your experience</div>
-                        <textarea id="reviewText" class="google-textarea" placeholder="Share details of your own experience at this place" required></textarea>
-                    </div>
-
-                    <!-- Add Photos Button -->
-                    <button type="button" class="photo-upload-btn">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M19 7h-3.17L14.41 5H9.59L8.17 7H5c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V9c0-1.1-.9-2-2-2zm0 12H5V9h2.35l1.43-2h6.44l1.43 2H19v10zm-7-8c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 6c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2z"/>
-                        </svg>
-                        Add photos
-                    </button>
-
-                    <button type="submit" class="submit-review-btn">Submit Review</button>
+                    <button type="submit" class="button">Submit Review</button>
                 </form>
 
                 <div id="reviewStatus" class="status-message">
-                    Thank you so much for your review and support!
+                    Thank you! Your review has been posted successfully.
                 </div>
             </div>
+        </section>
+
+        <div style="text-align: center; margin-top: 35px;">
+            <p style="font-size: 1.05rem; color: #444444; margin-bottom: 15px;">Have questions about a specific alteration or custom design?</p>
+            <a href="contact.html" class="button">Contact Us Today</a>
         </div>
     </main>
 
-    <!-- Footer -->
+    <!-- Footer matching index.html layout -->
     <footer id="contact">
         <div class="footer-container">
             <div class="footer-announcement-box">
                 <h3>Important Announcement</h3>
-                <p>This important announcement process set you an anoune and wwwmmeet your eocoration to our portant announcement.</p>
-                <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem; width: auto;">Read More</a>
+                <p>We are now scheduling bridal and evening wear fittings for the upcoming season! Contact us today to reserve your fitting slot and ensure your perfect fit.</p>
+                <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
             </div>
 
             <div class="footer-column">
                 <h4>Customer Satisfaction</h4>
-                <p>Our customer satisfaction within the customer Satisfaction and/ess your promote announcent.</p>
-                <h4 style="margin-top: 15px;">Garment Holding</h4>
-                <p>We garment holding so due to imove any garment holds with our concoment.</p>
+                <p>Your satisfaction is our highest priority. We take pride in precise tailoring and attention to detail so you can look and feel your absolute best.</p>
+                <h4 style="margin-top: 15px;">Garment Holding Policy</h4>
+                <p>Completed garments are stored securely. Please arrange pickup within 30 days of completion unless prior arrangements have been made with our shop.</p>
                 <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
             </div>
 
@@ -822,6 +794,12 @@
                     <a href="https://www.tiktok.com/@z.alterations?_r=1&_t=ZP-99l2O3nabra" target="_blank" rel="noopener">
                         <img src="images/Tiktok.png" alt="TikTok">
                     </a>
+                    <a href="https://www.youtube.com/@zalterationsbridalsewing" target="_blank" rel="noopener">
+                        <img src="images/youtube.jpg" alt="YouTube">
+                    </a>
+                    <a href="https://share.google/siQitbU8k7p7nxC6O" target="_blank" rel="noopener">
+                        <img src="images/google.jpg" alt="Google">
+                    </a>
                 </div>
             </div>
         </div>
@@ -833,85 +811,54 @@
     </footer>
 
     <script>
-        // Load saved reviews on page load
-        document.addEventListener('DOMContentLoaded', loadSavedReviews);
-
-        function openReviewModal() {
-            document.getElementById('reviewModal').classList.add('active');
+        let currentRating = 5;
+        function setRating(rating) {
+            currentRating = rating;
+            document.getElementById('selectedRating').value = rating;
+            const stars = document.getElementById('starRating').children;
+            for (let i = 0; i < stars.length; i++) {
+                if (i < rating) {
+                    stars[i].classList.add('selected');
+                } else {
+                    stars[i].classList.remove('selected');
+                }
+            }
         }
-
-        function closeReviewModal() {
-            document.getElementById('reviewModal').classList.remove('active');
-        }
+        // Initialize 5 stars selected by default
+        setRating(5);
 
         function handleReviewSubmit(event) {
             event.preventDefault();
-            
             const name = document.getElementById('reviewerName').value;
-            const text = document.getElementById('reviewText').value;
-            const ratingInput = document.querySelector('input[name="rating"]:checked');
-            const rating = ratingInput ? parseInt(ratingInput.value) : 5;
+            const comment = document.getElementById('reviewComment').value;
+            const rating = document.getElementById('selectedRating').value;
+            
+            const starString = '★'.repeat(rating) + '☆'.repeat(5 - rating);
 
-            const newReview = { name, text, rating };
+            const container = document.getElementById('reviewsContainer');
+            const newCard = document.createElement('div');
+            newCard.className = 'review-card';
+            newCard.innerHTML = `
+                <div class="review-author">${escapeHtml(name)} <span class="review-date">Just now</span></div>
+                <div class="review-stars">${starString}</div>
+                <p class="review-text">${escapeHtml(comment)}</p>
+            `;
+            container.prepend(newCard);
 
-            // Save review to local storage
-            const storedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            storedReviews.unshift(newReview);
-            localStorage.setItem('userReviews', JSON.stringify(storedReviews));
-
-            // Display review
-            renderReviewCard(newReview, true);
-
-            // Show success status message
-            const statusMessage = document.getElementById('reviewStatus');
-            statusMessage.style.display = 'block';
+            const status = document.getElementById('reviewStatus');
+            status.style.display = 'block';
+            status.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            document.getElementById('reviewForm').reset();
+            setRating(5);
 
             setTimeout(() => {
-                document.getElementById('reviewForm').reset();
-                statusMessage.style.display = 'none';
-                closeReviewModal();
-            }, 1500);
+                status.style.display = 'none';
+            }, 5000);
         }
 
-        function loadSavedReviews() {
-            const storedReviews = JSON.parse(localStorage.getItem('userReviews')) || [];
-            if (storedReviews.length > 0) {
-                storedReviews.forEach(review => renderReviewCard(review, false));
-            }
-        }
-
-        function renderReviewCard(review, isNew) {
-            const reviewsSection = document.getElementById('reviewsSection');
-            const reviewsContainer = document.getElementById('reviewsContainer');
-
-            // Show the section when a review exists
-            reviewsSection.style.display = 'block';
-
-            const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
-
-            const reviewCard = document.createElement('div');
-            reviewCard.className = 'display-review-card';
-            reviewCard.innerHTML = `
-                <div class="display-review-header">
-                    <span class="display-reviewer-name">${escapeHtml(review.name)}</span>
-                    <span class="display-review-stars">${stars}</span>
-                </div>
-                <p class="display-review-text">${escapeHtml(review.text)}</p>
-            `;
-
-            if (isNew) {
-                reviewsContainer.prepend(reviewCard);
-            } else {
-                reviewsContainer.appendChild(reviewCard);
-            }
-        }
-
-        function escapeHtml(str) {
-            return str.replace(/&/g, "&amp;")
-                      .replace(/</g, "&lt;")
-                      .replace(/>/g, "&gt;")
-                      .replace(/"/g, "&quot;")
-                      .replace(/'/g, "&#039;");
+        function escapeHtml(text) {
+            const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
         }
     </script>
 </body>
