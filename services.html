@@ -31,11 +31,12 @@
             overflow-x: hidden;
         }
 
-        /* HEADER SECTION */
+        /* HEADER SECTION - MATCHING INDEX.HTML */
         header {
             background-color: #ffffff;
-            padding: 0 0 25px 0;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            padding: 0;
+            margin: 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             border-bottom: 2px solid var(--header-pink);
             width: 100%;
         }
@@ -43,6 +44,7 @@
         .header-container {
             width: 100%;
             margin: 0 auto;
+            padding: 0;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -50,60 +52,67 @@
 
         .header-bg-banner {
             width: 100%;
-            display: block;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 5px 0;
         }
 
         .header-bg-banner img {
             width: 100%;
+            max-width: 650px;
             height: auto;
             display: block;
         }
 
         .header-details {
             text-align: center;
-            margin-top: 20px;
+            margin: 10px 0 15px 0;
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
+            gap: 6px;
             padding: 0 15px;
             width: 100%;
         }
 
         .tagline {
             font-family: 'Georgia', serif;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--header-text);
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
+            margin: 0;
         }
 
         .hours-badge {
             display: inline-block;
             background-color: var(--brand-pink);
             color: #ffffff;
-            padding: 5px 18px;
-            border-radius: 20px;
-            font-size: 0.9rem;
+            padding: 3px 14px;
+            border-radius: 15px;
+            font-size: 0.85rem;
             font-weight: 600;
             letter-spacing: 0.5px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 1px 4px rgba(0,0,0,0.1);
         }
 
         .quote-text {
             font-family: 'Georgia', serif;
             font-style: italic;
-            font-size: 1.05rem;
+            font-size: 1rem;
             color: var(--dark-dark-pink);
             font-weight: 700;
             max-width: 650px;
-            margin: 5px 0 0 0;
-            line-height: 1.5;
+            margin: 2px 0 0 0;
+            line-height: 1.3;
         }
 
+        /* NAVIGATION BAR - MATCHING INDEX.HTML */
         nav {
             background-color: var(--nav-blue);
-            padding: 10px;
+            padding: 8px 10px;
             box-shadow: 0 3px 6px rgba(0,0,0,0.08);
             position: sticky;
             top: 0;
@@ -125,7 +134,7 @@
             font-weight: 600;
             text-decoration: none;
             font-size: 0.95rem;
-            padding: 6px 12px;
+            padding: 4px 10px;
             border-radius: 4px;
             transition: all 0.3s ease;
             display: inline-block;
@@ -140,14 +149,14 @@
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
-            padding: 15px 10px;
+            padding: 10px;
             border-bottom: 1px solid #f2cdd9;
         }
 
         .welcome-banner h2 {
             margin: 0;
             color: var(--header-text);
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             font-weight: 700;
         }
 
@@ -406,11 +415,56 @@
             border: 1px solid #a5d6a7;
         }
 
+        /* LIGHTBOX MODAL */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 80%;
+            border-radius: 4px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.5);
+        }
+
+        .lightbox-caption {
+            color: #ffffff;
+            margin-top: 15px;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #ffffff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+
+        .lightbox-close:hover {
+            color: var(--brand-pink);
+        }
+
+        /* FOOTER & ANNOUNCEMENT STYLING - MATCHING INDEX.HTML */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
-            padding: 30px 15px;
-            margin-top: 30px;
+            padding: 35px 20px;
+            margin-top: 25px;
             border-top: 1px solid #f2cdd9;
         }
 
@@ -419,72 +473,136 @@
             margin: 0 auto;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 30px;
             text-align: left;
         }
 
+        /* SQUARE ANNOUNCEMENT BOX */
         .footer-announcement-box {
-            background: #ffffff;
+            background: #fffdfa;
             border: 2px solid var(--accent-gold);
             outline: 1px solid var(--accent-gold);
-            outline-offset: -4px;
-            border-radius: 4px;
-            padding: 15px;
+            outline-offset: -5px;
+            border-radius: 2px;
+            padding: 24px;
             width: 100%;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: left;
         }
 
-        .footer-announcement-box h3 {
+        .announcement-main-title {
+            color: var(--header-text);
             font-family: 'Georgia', serif;
-            color: #5c1428;
-            font-size: 1rem;
-            margin-top: 0;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
+            font-size: 1.35rem;
+            font-weight: 700;
             text-transform: uppercase;
+            letter-spacing: 1.2px;
+            text-align: center;
+            margin: 0 0 15px 0;
+            padding-bottom: 10px;
+            position: relative;
         }
 
-        .footer-announcement-box p {
-            font-size: 0.85rem;
-            color: #444444;
-            line-height: 1.4;
-            margin-bottom: 12px;
+        .announcement-main-title::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 2px;
+            background-color: var(--accent-gold);
+            margin: 8px auto 0 auto;
+        }
+
+        .policy-section-title {
+            color: var(--header-text);
+            font-family: 'Georgia', serif;
+            font-size: 0.92rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            margin: 14px 0 6px 0;
+        }
+
+        .policy-text {
+            font-size: 0.88rem;
+            color: #333333;
+            margin: 0 0 10px 0;
+            line-height: 1.45;
+        }
+
+        .announcement-thankyou {
+            font-family: 'Georgia', serif;
+            font-size: 0.82rem;
+            font-weight: 700;
+            color: var(--brand-pink);
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            text-align: center;
+            margin-top: 18px;
+            margin-bottom: 6px;
+        }
+
+        .announcement-shop-name {
+            font-family: 'Georgia', serif;
+            font-size: 0.88rem;
+            font-weight: 700;
+            color: var(--header-text);
+            letter-spacing: 1px;
+            text-align: center;
+            margin: 0;
+            text-transform: uppercase;
         }
 
         .footer-column {
             width: 100%;
         }
 
+        /* EXTRA LARGE ADDRESS SECTION STYLING */
         .footer-column h4 {
-            color: var(--text-dark);
-            font-size: 1rem;
+            color: var(--header-text);
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
             font-weight: 700;
             margin-top: 0;
-            margin-bottom: 8px;
+            margin-bottom: 12px;
         }
 
         .footer-column p {
-            font-size: 0.9rem;
-            color: #444;
-            margin: 0 0 10px 0;
-            line-height: 1.5;
+            font-size: 1.35rem;
+            color: #111111;
+            margin: 0 0 16px 0;
+            line-height: 1.55;
+            font-weight: 600;
         }
 
         .footer-column a {
             color: var(--brand-pink);
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 1.3rem;
         }
 
         .footer-image {
             width: 100%;
-            max-width: 200px;
+            max-width: 220px;
             height: auto;
             border-radius: 6px;
-            margin-top: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-top: 15px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.12);
             display: block;
+            cursor: pointer;
+        }
+
+        .social {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-top: 18px;
+        }
+
+        .social img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
         }
 
         .footer-bottom {
@@ -495,13 +613,13 @@
             align-items: center;
             text-align: center;
             border-top: 1px solid #f2cdd9;
-            padding-top: 15px;
-            gap: 10px;
+            padding-top: 14px;
+            gap: 8px;
         }
 
         .footer-bottom-company {
             font-weight: 700;
-            font-size: 1rem;
+            font-size: 0.95rem;
             color: var(--header-text);
         }
 
@@ -510,40 +628,60 @@
             color: #666;
         }
 
-        .social {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .social img {
-            width: 28px;
-            height: 28px;
-            object-fit: contain;
-        }
-
+        /* DESKTOP MEDIA QUERIES */
         @media (min-width: 768px) {
-            nav { padding: 15px 10px; }
-            nav ul { gap: 25px; }
-            nav ul li a { font-size: 1.25rem; padding: 6px 20px; }
-            .welcome-banner { padding: 20px 15px; }
-            .welcome-banner h2 { font-size: 1.8rem; }
-            main { padding: 40px 20px; }
-            .services-grid { grid-template-columns: repeat(2, 1fr); gap: 25px; }
-            .reviews-grid { grid-template-columns: repeat(2, 1fr); }
+            .header-bg-banner img {
+                max-width: 750px;
+            }
+            nav {
+                padding: 10px 15px;
+            }
+            nav ul {
+                gap: 20px;
+            }
+            nav ul li a {
+                font-size: 1.1rem;
+                padding: 5px 15px;
+            }
+            .welcome-banner h2 {
+                font-size: 1.5rem;
+            }
+            main {
+                padding: 30px 20px;
+            }
+            footer {
+                padding: 40px 30px;
+            }
+
+            /* CREATES SPACE BETWEEN SQUARE ANNOUNCEMENT & ADDRESS */
             .footer-container {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
             }
-            .footer-announcement-box { width: 300px; }
-            .footer-column { flex: 1; min-width: 220px; }
+
+            /* 1:1 Square layout on desktop */
+            .footer-announcement-box {
+                width: 480px;
+                max-width: 480px;
+                aspect-ratio: 1 / 1;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            /* Pushes larger address section to far right */
+            .footer-column {
+                width: auto;
+                min-width: 290px;
+                margin-left: auto;
+            }
+
             .footer-bottom {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
             }
-            .social img { width: 32px; height: 32px; }
         }
     </style>
 </head>
@@ -762,21 +900,37 @@
         </div>
     </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Enlarged View">
+        <div class="lightbox-caption" id="lightbox-caption"></div>
+    </div>
+
     <!-- Footer matching index.html layout -->
     <footer id="contact">
         <div class="footer-container">
+            <!-- Square Announcement Card -->
             <div class="footer-announcement-box">
-                <h3>Important Announcement</h3>
-                <p>We are now scheduling bridal and evening wear fittings for the upcoming season! Contact us today to reserve your fitting slot and ensure your perfect fit.</p>
-                <a href="services.html" class="button" style="margin-top: 0; padding: 8px 16px; font-size: 0.85rem;">Read More</a>
-            </div>
+                <div class="announcement-main-title">Important Announcement</div>
 
-            <div class="footer-column">
-                <h4>Customer Satisfaction</h4>
-                <p>Your satisfaction is our highest priority. We take pride in precise tailoring and attention to detail so you can look and feel your absolute best.</p>
-                <h4 style="margin-top: 15px;">Garment Holding Policy</h4>
-                <p>Completed garments are stored securely. Please arrange pickup within 30 days of completion unless prior arrangements have been made with our shop.</p>
-                <img src="images/image23.jpg" alt="Tailoring Detail" class="footer-image">
+                <div class="policy-section-title">Customer Satisfaction Policy</div>
+                <p class="policy-text">
+                    Not satisfied with our work? Please bring your garment back within 14 days with your yellow receipt, and we'll be happy to redo it at no extra charge.
+                </p>
+                <p class="policy-text">
+                    Please make sure you are satisfied with the pinning and measurements before we begin alterations. Once alterations are completed, any changes or adjustments requested due to a change of preference or fit may be subject to an additional charge.
+                </p>
+
+                <div class="policy-section-title">Garment Holding Policy</div>
+                <p class="policy-text">
+                    Please pick up your garments within 45 days. Garments left longer than 45 days may be considered abandoned.
+                </p>
+
+                <p class="announcement-thankyou">
+                    Thank you for choosing us! We truly appreciate your business.
+                </p>
+                <div class="announcement-shop-name">Z-Alterations & Bridal Sewing LLC</div>
             </div>
 
             <div class="footer-column">
@@ -787,7 +941,11 @@
                     (414) 467-2291
                 </p>
                 <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
-                <div class="social" style="margin-top: 10px;">
+                
+                <!-- Footer Image with Lightbox Support -->
+                <img src="images/image23.jpg" alt="Garment Customization Detail" class="footer-image" onclick="openLightbox(this)">
+
+                <div class="social">
                     <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
                         <img src="images/facebook.png" alt="Facebook">
                     </a>
@@ -859,6 +1017,20 @@
         function escapeHtml(text) {
             const map = { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#039;' };
             return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = img.alt;
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
         }
     </script>
 </body>
