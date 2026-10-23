@@ -32,7 +32,7 @@
             overflow-x: hidden;
         }
 
-        /* HEADER SECTION - MATCHED TO INDEX */
+        /* HEADER SECTION */
         header {
             background-color: #ffffff;
             padding: 0;
@@ -110,7 +110,7 @@
             line-height: 1.3;
         }
 
-        /* NAVIGATION BAR - MATCHED TO INDEX */
+        /* NAVIGATION BAR */
         nav {
             background-color: var(--nav-blue);
             padding: 8px 10px;
@@ -353,7 +353,7 @@
             color: var(--brand-pink);
         }
 
-        /* FOOTER & ANNOUNCEMENT STYLING - MATCHED TO INDEX */
+        /* FOOTER & ANNOUNCEMENT STYLING */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -371,7 +371,6 @@
             text-align: left;
         }
 
-        /* SQUARE ANNOUNCEMENT BOX */
         .footer-announcement-box {
             background: #fffdfa;
             border: 2px solid var(--accent-gold);
@@ -450,7 +449,6 @@
             width: 100%;
         }
 
-        /* EXTRA LARGE ADDRESS SECTION STYLING */
         .footer-column h4 {
             color: var(--header-text);
             font-family: 'Georgia', serif;
@@ -545,14 +543,12 @@
                 padding: 40px 30px;
             }
 
-            /* CREATES SPACE BETWEEN SQUARE ANNOUNCEMENT & ADDRESS */
             .footer-container {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
             }
 
-            /* 1:1 Square layout on desktop */
             .footer-announcement-box {
                 width: 480px;
                 max-width: 480px;
@@ -562,7 +558,6 @@
                 justify-content: center;
             }
 
-            /* Pushes larger address section to far right */
             .footer-column {
                 width: auto;
                 min-width: 290px;
@@ -622,168 +617,170 @@
             <button class="filter-btn" onclick="filterPortfolio('bridal')">Bridal Gowns</button>
             <button class="filter-btn" onclick="filterPortfolio('details')">Lace & Details</button>
             <button class="filter-btn" onclick="filterPortfolio('formal')">Formalwear</button>
+            <button class="filter-btn" onclick="filterPortfolio('leather')">Leather</button>
+            <button class="filter-btn" onclick="filterPortfolio('menswear')">Menswear</button>
         </div>
 
         <!-- Portfolio Image Grid -->
         <div class="portfolio-grid">
             
             <!-- Image 18 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image18.JPG" alt="Classic Bridal Silhouette" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image18.JPG" alt="Jacket Alterations & Refitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Classic Bridal Silhouette</h3>
-                    <p>Flawless bodice fitting and custom hem adjustments tailored to perfection.</p>
+                    <span class="portfolio-tag">Formalwear</span>
+                    <h3>Jacket Alterations & Refitting</h3>
+                    <p>Custom sleeve line adjustments, shoulder fitting, and precision tailoring for outerwear.</p>
                 </div>
             </div>
 
             <!-- Image 19 -->
             <div class="portfolio-card" data-category="details">
-                <img src="images/image19.JPG" alt="Intricate Lacework & Trim" onclick="openLightbox(this)">
+                <img src="images/image19.JPG" alt="Delicate Lace Restoration & Fitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Intricate Lacework & Trim</h3>
-                    <p>Meticulous hand-sewing and lace placement to preserve original gown patterns.</p>
+                    <h3>Delicate Lace Restoration & Fitting</h3>
+                    <p>Hand-sewn lace placement, horsehair hem finishing, and detailed embellishment work for a flawless wedding gown fit.</p>
                 </div>
             </div>
 
             <!-- Image 20 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image20.JPG" alt="Luxurious Wedding Dress Fit" onclick="openLightbox(this)">
+                <img src="images/image20.JPG" alt="Contoured Bustle & Backline Fitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Luxurious Wedding Dress Fit</h3>
-                    <p>Expert structural support, cup insertions, and seamless side-seam adjustments.</p>
+                    <span class="portfolio-tag">Bridal Alterations</span>
+                    <h3>Contoured Bustle & Backline Fitting</h3>
+                    <p>Structural bodice modifications, seamless side-seam tailoring, and delicate button detail work.</p>
                 </div>
             </div>
 
             <!-- Image 21 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image21.JPG" alt="Special Occasion Tailoring" onclick="openLightbox(this)">
+                <img src="images/image21.JPG" alt="Custom Evening Gown Fitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear</span>
-                    <h3>Special Occasion Tailoring</h3>
-                    <p>Customized fit and styling adjustments for bridesmaid dresses and galas.</p>
+                    <h3>Custom Evening Gown Fitting</h3>
+                    <p>Tailored bust contouring, strap placement, and specialized beaded hem adjustments for gala dresses and red-carpet wear.</p>
                 </div>
             </div>
 
             <!-- Image 22 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image22.PNG" alt="Precision Sewing & Finishing" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image22.PNG" alt="A-Line Lace Gown Customization" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Precision Sewing & Finishing</h3>
-                    <p>Detailed adjustments ensuring clean seamlines and elegant drape.</p>
+                    <span class="portfolio-tag">Bridal Alterations</span>
+                    <h3>A-Line Lace Gown Customization</h3>
+                    <p>Tailored illusion back, waist contouring, multi-layer tulle hem adjustments, and custom bustle fitting.</p>
                 </div>
             </div>
 
             <!-- Image 30 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image30.JPG" alt="Custom Bridal Fitting" onclick="openLightbox(this)">
+                <img src="images/image30.JPG" alt="Corset Back Transformation (Before)" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Custom Bridal Fitting</h3>
-                    <p>Precision bodice sculpting and skirt hem tailoring for the perfect gown.</p>
+                    <span class="portfolio-tag">Custom Alterations</span>
+                    <h3>Corset Back Transformation (Before)</h3>
+                    <p>Expert conversion from a zipper closure to an adjustable lace-up corset back to expand sizing and improve support.</p>
                 </div>
             </div>
 
             <!-- Image 31 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image31.JPG" alt="Fine Lace Detailing" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="bridal">
+                <img src="images/image31.JPG" alt="Corset Back Transformation (After)" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Fine Lace Detailing</h3>
-                    <p>Hand-stitched lace overlay and custom applique reinforcement.</p>
+                    <span class="portfolio-tag">Custom Alterations</span>
+                    <h3>Corset Back Transformation (After)</h3>
+                    <p>Completed lace-up corset back conversion, providing enhanced flexibility, improved structural support, and an elegant finish.</p>
                 </div>
             </div>
 
             <!-- Image 32 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image32.JPG" alt="Elegantly Tailored Gown" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="leather">
+                <img src="images/image32.JPG" alt="Precision Leather Repair & Refitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Elegantly Tailored Gown</h3>
-                    <p>Smooth waist transitions and custom structural bust support.</p>
+                    <span class="portfolio-tag">Leather Tailoring</span>
+                    <h3>Precision Leather Repair & Refitting</h3>
+                    <p>Sleeve adjustments, heavy-duty zipper repairs, and custom fitting for classic motorcycle and leather jackets.</p>
                 </div>
             </div>
 
             <!-- Image 34 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image34.JPG" alt="Evening Gown Refinement" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="leather">
+                <img src="images/image34.JPG" alt="Leather Jacket Refitting & Sleeve Adjustment" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear</span>
-                    <h3>Evening Gown Refinement</h3>
-                    <p>Precision hemline shortening and custom neck alterations.</p>
+                    <span class="portfolio-tag">Leather Alterations</span>
+                    <h3>Leather Jacket Refitting & Sleeve Adjustment</h3>
+                    <p>Sleeve tapering, hardware repositioning, and custom body fit adjustments for classic leather motorcycle jackets.</p>
                 </div>
             </div>
 
             <!-- Image 35 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image35.JPG" alt="Hand Craftsmanship" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image35.JPG" alt="Ruched Bodice & Hem Fitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Hand Craftsmanship</h3>
-                    <p>Delicate hand-beading repairs and custom trim accents.</p>
+                    <span class="portfolio-tag">Formalwear Alterations</span>
+                    <h3>Ruched Bodice & Hem Fitting</h3>
+                    <p>Custom bust support, waist seam adjustments, and hem leveling for formal and special occasion dresses.</p>
                 </div>
             </div>
 
             <!-- Image 36 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image36.JPG" alt="Bespoke Wedding Gown Fit" onclick="openLightbox(this)">
+                <img src="images/image36.JPG" alt="Champagne Satin Gown Customization" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Bespoke Wedding Gown Fit</h3>
-                    <p>Tailored silhouette designed to accentuate comfort and elegance.</p>
+                    <span class="portfolio-tag">Bridal Alterations</span>
+                    <h3>Champagne Satin Gown Customization</h3>
+                    <p>Tailored V-neck bodice, waistband fitting, strap adjustments, and clean hem finishing.</p>
                 </div>
             </div>
 
             <!-- Image 37 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image37.JPG" alt="Gala & Prom Dress Alteration" onclick="openLightbox(this)">
+                <img src="images/image37.JPG" alt="Prom & Evening Dress Customization" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear</span>
-                    <h3>Gala & Prom Dress Alteration</h3>
-                    <p>Flawless side-seam adjustments and bodice restructuring.</p>
+                    <span class="portfolio-tag">Formalwear Alterations</span>
+                    <h3>Prom & Evening Dress Customization</h3>
+                    <p>Custom bust fitting, strap adjustments, side-seam tailoring, and specialized lace-inset hem alterations.</p>
                 </div>
             </div>
 
             <!-- Image 38 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image38.JPG" alt="Custom Bustle Creation" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="formal">
+                <img src="images/image38.JPG" alt="Draped Evening Dress Refitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Custom Bustle Creation</h3>
-                    <p>Secure train management designed for ease during reception dancing.</p>
+                    <span class="portfolio-tag">Formalwear Alterations</span>
+                    <h3>Draped Evening Dress Refitting</h3>
+                    <p>Precision fitting along the V-neck bodice, twisted waistline detailing, sleeve adjustment, and sheer chiffon hem finishing.</p>
                 </div>
             </div>
 
             <!-- Image 39 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image39.JPG" alt="Bridal Gown Perfection" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="menswear">
+                <img src="images/image39.JPG" alt="Suit Jacket & Blazer Tailoring" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Gowns</span>
-                    <h3>Bridal Gown Perfection</h3>
-                    <p>Multi-layer fabric handling with precise finished edges.</p>
+                    <span class="portfolio-tag">Suits & Menswear</span>
+                    <h3>Suit Jacket & Blazer Tailoring</h3>
+                    <p>Professional sleeve shortening, shoulder contouring, chest refitting, and waist suppression for a clean, sharp, custom-tailored silhouette.</p>
                 </div>
             </div>
 
             <!-- Image 40 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image40.JPG" alt="Formal Wear Tailoring" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="menswear">
+                <img src="images/image40.JPG" alt="Plaid Suit Jacket & Blazer Tailoring" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear</span>
-                    <h3>Formal Wear Tailoring</h3>
-                    <p>Custom tailored fit for special events and formal occasions.</p>
+                    <span class="portfolio-tag">Suits & Menswear</span>
+                    <h3>Plaid Suit Jacket & Blazer Tailoring</h3>
+                    <p>Custom sleeve length adjustments, shoulder fitting, side-seam waist suppression, and precise pattern-matching for structured menswear.</p>
                 </div>
             </div>
 
             <!-- Image 41 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image41.JPG" alt="Intricate Finish & Trim" onclick="openLightbox(this)">
+            <div class="portfolio-card" data-category="menswear">
+                <img src="images/image41.JPG" alt="Custom Floral Vest & Waistcoat Fitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Intricate Finish & Trim</h3>
-                    <p>Final detail adjustments ensuring high quality sewing craft.</p>
+                    <span class="portfolio-tag">Suits & Menswear</span>
+                    <h3>Custom Floral Vest & Waistcoat Fitting</h3>
+                    <p>Tailored side-seam adjustments, armhole fitting, button alignment, and clean neck edge finishing for brocade and patterned vests.</p>
                 </div>
             </div>
 
@@ -800,41 +797,41 @@
         <div class="portfolio-grid">
 
             <!-- Video 6 -->
-            <div class="portfolio-card" data-category="details">
+            <div class="portfolio-card" data-category="leather">
                 <video controls preload="metadata">
                     <source src="images/video6.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Lace & Bodice Detail</h3>
-                    <p>Detailed sewing adjustments on delicate lace work.</p>
+                    <h3>Leather Repair & Zipper Replacement</h3>
+                    <p>Expert heavy-duty zipper repair, leather stitching reinforcement, and hardware restoration for custom leather bags and accessories.</p>
                 </div>
             </div>
 
             <!-- Video 7 -->
-            <div class="portfolio-card" data-category="bridal">
+            <div class="portfolio-card" data-category="formal">
                 <video controls preload="metadata">
                     <source src="images/video7.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Train & Bustle Setup</h3>
-                    <p>Demonstration of custom bustle creation for seamless gown movement.</p>
+                    <h3>Denim Alteration & Waist Resizing</h3>
+                    <p>Step-by-step demonstration of waist alteration, belt loop repositioning, and precision seam adjustments on denim jeans.</p>
                 </div>
             </div>
 
             <!-- Video 8 -->
-            <div class="portfolio-card" data-category="formal">
+            <div class="portfolio-card" data-category="details">
                 <video controls preload="metadata">
                     <source src="images/video8.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Garment Shaping & Fit</h3>
-                    <p>Achieving ideal structure and comfort for special occasion formalwear.</p>
+                    <h3>Precision Fabric Cutting & Pattern Preparation</h3>
+                    <p>Demonstration of expert hand-cutting techniques for delicate sheer tulle, organza, and mesh layers on a grid cutting mat.</p>
                 </div>
             </div>
 
@@ -846,8 +843,8 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Hemline Adjustments</h3>
-                    <p>Precise multi-layer skirt and hem corrections on luxury gowns.</p>
+                    <h3>Corset Back Transformation & Resizing</h3>
+                    <p>Before-and-after demonstration converting a zipper back closure into a custom lace-up corset panel with matching fabric modesty backing.</p>
                 </div>
             </div>
 
@@ -859,21 +856,21 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Custom Restyling</h3>
-                    <p>Transforming garments into custom-fitted treasures.</p>
+                    <h3>Jeans Zipper Replacement & Fly Repair (Before)</h3>
+                    <p>Complete zipper replacement and fly stitching repair for denim jeans, replacing broken sliders with heavy-duty metal zippers for smooth operation.</p>
                 </div>
             </div>
 
             <!-- Video 11 -->
-            <div class="portfolio-card" data-category="bridal">
+            <div class="portfolio-card" data-category="formal">
                 <video controls preload="metadata">
                     <source src="images/video11.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Bodice & Corset Work</h3>
-                    <p>Structural adjustments for enhanced support and silhouette contouring.</p>
+                    <h3>Jeans Zipper Replacement & Fly Repair (After)</h3>
+                    <p>Completed heavy-duty zipper and fly repair showcasing secure stitching and reinforced durability.</p>
                 </div>
             </div>
 
@@ -885,73 +882,60 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Hand Sewing Techniques</h3>
-                    <p>Careful hand stitching on delicate trims and beadwork.</p>
+                    <h3>Hand Sewing & Beaded Hem Trimming</h3>
+                    <p>Precise hand-cutting and delicate beadwork reinforcement on heavily embellished tulle and pearl-embroidered bridal fabric.</p>
                 </div>
             </div>
 
             <!-- Video 13 -->
-            <div class="portfolio-card" data-category="formal">
+            <div class="portfolio-card" data-category="details">
                 <video controls preload="metadata">
                     <source src="images/video13.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Formal Gown Alterations</h3>
-                    <p>Tailoring special occasion dresses for a flawless event fit.</p>
-                </div>
-            </div>
-
-            <!-- Video 14 -->
-            <div class="portfolio-card" data-category="bridal">
-                <video controls preload="metadata">
-                    <source src="images/video14.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Gown Transformation</h3>
-                    <p>Before and after fitting results for bridal attire.</p>
+                    <h3>Lace Trimming & Special Occasion Hemming</h3>
+                    <p>Precision hand-cutting along floral lace patterns to resize hems while preserving intricate edge details on formal gowns.</p>
                 </div>
             </div>
 
             <!-- Video 15 -->
-            <div class="portfolio-card" data-category="formal">
+            <div class="portfolio-card" data-category="leather">
                 <video controls preload="metadata">
                     <source src="images/video15.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Pressing & Steaming</h3>
-                    <p>Final preparation and steaming before client pickup.</p>
+                    <h3>Heavy-Duty Jacket Repair & Zipper Replacement</h3>
+                    <p>Specialized zipper replacement, snap-closure reinforcement, and custom repairs for camouflage hunting jackets and heavy outdoor gear.</p>
                 </div>
             </div>
 
             <!-- Video 16 -->
-            <div class="portfolio-card" data-category="details">
+            <div class="portfolio-card" data-category="formal">
                 <video controls preload="metadata">
                     <source src="images/video16.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Detailed Tailoring Focus</h3>
-                    <p>Detailed view of expert craftsmanship on intricate fabrics.</p>
+                    <h3>Invisible Zipper Repair & Replacement</h3>
+                    <p>Seamless invisible zipper installation and repair on pleated chiffon bridesmaid and formal dress.</p>
                 </div>
             </div>
 
             <!-- Video 17 -->
-            <div class="portfolio-card" data-category="bridal">
+            <div class="portfolio-card" data-category="menswear">
                 <video controls preload="metadata">
                     <source src="images/video17.MP4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Final Gown Reveal</h3>
-                    <p>Showcasing the completed custom tailoring masterpiece ready for the aisle.</p>
+                    <h3>Suit Sleeve Tailoring & Button Detail</h3>
+                    <p>Demonstration of professional suit jacket sleeve shortening, cuff repositioning, and button attachment on plaid menswear.</p>
                 </div>
             </div>
 
@@ -974,7 +958,7 @@
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <!-- FOOTER SECTION - MATCHED TO INDEX -->
+    <!-- FOOTER SECTION -->
     <footer id="contact">
         <div class="footer-container">
             <!-- Square Announcement Card -->
@@ -1000,7 +984,7 @@
                 <div class="announcement-shop-name">Z-Alterations & Bridal Sewing LLC</div>
             </div>
 
-            <!-- Extra Large Address Column with Garment Customization Image -->
+            <!-- Extra Large Address Column -->
             <div class="footer-column">
                 <h4>Address Us</h4>
                 <p>
@@ -1010,7 +994,6 @@
                 </p>
                 <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
                 
-                <!-- Garment Customization image placed in footer -->
                 <img src="images/image23.jpg" alt="Garment Customization Detail" class="footer-image" onclick="openLightbox(this)">
 
                 <div class="social">
@@ -1040,7 +1023,10 @@
         function filterPortfolio(category) {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            
+            if (event && event.target) {
+                event.target.classList.add('active');
+            }
 
             const cards = document.querySelectorAll('.portfolio-card');
             cards.forEach(card => {
