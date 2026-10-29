@@ -211,6 +211,50 @@
             background-color: var(--brand-pink);
         }
 
+        /* FEATURE SHOWCASE CARD (Middle Image with Strong Flash Effect) */
+        .showcase-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .feature-card img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+            animation: dramaticFlash 1.2s infinite ease-in-out;
+        }
+
+        @keyframes dramaticFlash {
+            0%, 100% {
+                opacity: 1;
+                filter: brightness(1) contrast(1);
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            }
+            50% {
+                opacity: 0.6;
+                filter: brightness(1.4) contrast(1.2);
+                box-shadow: 0 0 35px rgba(224, 75, 130, 0.95), 0 0 20px rgba(255, 255, 255, 1);
+            }
+        }
+
+        .feature-card img:hover {
+            transform: scale(1.02);
+            animation-play-state: paused;
+        }
+
         .difference-card {
             background: #ffffff;
             padding: 20px 15px;
@@ -426,7 +470,6 @@
             width: 100%;
         }
 
-        /* EXTRA LARGE ADDRESS SECTION STYLING */
         .footer-column h4 {
             color: var(--header-text);
             font-family: 'Georgia', serif;
@@ -613,7 +656,7 @@
     <header>
         <div class="header-container">
             <div class="header-bg-banner">
-                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
+                <img src="images/hallowen.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
             </div>
 
             <div class="header-details">
@@ -640,6 +683,7 @@
     </section>
 
     <main>
+        <!-- Slideshow Container -->
         <div class="slideshow-container">
             <div class="slide"><img src="images/image1.jpg" alt="Tailoring Craftsmanship 1"></div>
             <div class="slide"><img src="images/image2.jpg" alt="Tailoring Craftsmanship 2"></div>
@@ -672,6 +716,13 @@
             <span class="dot" onclick="currentSlide(12)"></span>
             <span class="dot" onclick="currentSlide(13)"></span>
             <span class="dot" onclick="currentSlide(14)"></span>
+        </div>
+
+        <!-- Middle Professional Showcase Image with Strong Flashing Effect -->
+        <div class="showcase-grid">
+            <div class="feature-card">
+                <img src="images/IMG_4515.jpeg" alt="Precision Tailoring Work" onclick="openLightbox(this)"> 
+            </div>
         </div>
 
         <section class="difference-card">
