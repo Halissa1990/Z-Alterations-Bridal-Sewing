@@ -166,49 +166,25 @@
             margin: 0 auto;
         }
 
-        .slideshow-container {
+        /* VIDEO CONTAINER STYLING */
+        .video-container {
             max-width: 1000px;
-            position: relative;
-            margin: 0 auto 15px auto;
+            margin: 0 auto 20px auto;
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            background-color: #ffffff;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        .slide {
-            display: none;
-        }
-
-        .slide img {
+        .video-container video {
             width: 100%;
+            max-height: 500px;
             height: auto;
-            max-height: 350px;
-            object-fit: cover;
-            vertical-align: middle;
-        }
-
-        .dots-container {
-            text-align: center;
-            margin-bottom: 20px;
-            padding: 0 10px;
-            overflow-x: auto;
-            white-space: nowrap;
-        }
-
-        .dot {
-            height: 10px;
-            width: 10px;
-            margin: 0 3px;
-            background-color: #bbb;
-            border-radius: 50%;
-            display: inline-block;
-            transition: background-color 0.6s ease;
-            cursor: pointer;
-        }
-
-        .dot.active, .dot:hover {
-            background-color: var(--brand-pink);
+            display: block;
+            outline: none;
         }
 
         /* FEATURE SHOWCASE CARD (Middle Image with Strong Flash Effect) */
@@ -615,9 +591,6 @@
             main {
                 padding: 30px 20px;
             }
-            .slide img {
-                max-height: 450px;
-            }
             footer {
                 padding: 40px 30px;
             }
@@ -656,7 +629,7 @@
     <header>
         <div class="header-container">
             <div class="header-bg-banner">
-                <img src="images/hallowen.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
+                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
             </div>
 
             <div class="header-details">
@@ -683,39 +656,12 @@
     </section>
 
     <main>
-        <!-- Slideshow Container -->
-        <div class="slideshow-container">
-            <div class="slide"><img src="images/image1.jpg" alt="Tailoring Craftsmanship 1"></div>
-            <div class="slide"><img src="images/image2.jpg" alt="Tailoring Craftsmanship 2"></div>
-            <div class="slide"><img src="images/image3.jpg" alt="Tailoring Craftsmanship 3"></div>
-            <div class="slide"><img src="images/image4.jpg" alt="Tailoring Craftsmanship 4"></div>
-            <div class="slide"><img src="images/image5.jpg" alt="Tailoring Craftsmanship 5"></div>
-            <div class="slide"><img src="images/image6.jpg" alt="Tailoring Craftsmanship 6"></div>
-            <div class="slide"><img src="images/image7.jpg" alt="Tailoring Craftsmanship 7"></div>
-            <div class="slide"><img src="images/image8.JPG" alt="Tailoring Craftsmanship 8"></div>
-            <div class="slide"><img src="images/image14.JPG" alt="Tailoring Craftsmanship 14"></div>
-            <div class="slide"><img src="images/image18.JPG" alt="Tailoring Craftsmanship 18"></div>
-            <div class="slide"><img src="images/image19.JPG" alt="Tailoring Craftsmanship 19"></div>
-            <div class="slide"><img src="images/image20.JPG" alt="Tailoring Craftsmanship 20"></div>
-            <div class="slide"><img src="images/image21.JPG" alt="Tailoring Craftsmanship 21"></div>
-            <div class="slide"><img src="images/image22.PNG" alt="Tailoring Craftsmanship 22"></div>
-        </div>
-
-        <div class="dots-container">
-            <span class="dot" onclick="currentSlide(1)"></span>
-            <span class="dot" onclick="currentSlide(2)"></span>
-            <span class="dot" onclick="currentSlide(3)"></span>
-            <span class="dot" onclick="currentSlide(4)"></span>
-            <span class="dot" onclick="currentSlide(5)"></span>
-            <span class="dot" onclick="currentSlide(6)"></span>
-            <span class="dot" onclick="currentSlide(7)"></span>
-            <span class="dot" onclick="currentSlide(8)"></span>
-            <span class="dot" onclick="currentSlide(9)"></span>
-            <span class="dot" onclick="currentSlide(10)"></span>
-            <span class="dot" onclick="currentSlide(11)"></span>
-            <span class="dot" onclick="currentSlide(12)"></span>
-            <span class="dot" onclick="currentSlide(13)"></span>
-            <span class="dot" onclick="currentSlide(14)"></span>
+        <!-- Featured Video Container -->
+        <div class="video-container">
+            <video controls autoplay loop muted playsinline>
+                <source src="images/z.MP4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
         </div>
 
         <!-- Middle Professional Showcase Image with Strong Flashing Effect -->
@@ -826,33 +772,6 @@
     </footer>
 
     <script>
-        let slideIndex = 0;
-        let slideTimer;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) {slideIndex = 1}    
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            slideTimer = setTimeout(showSlides, 20000); // 20 seconds
-        }
-
-        function currentSlide(n) {
-            clearTimeout(slideTimer);
-            slideIndex = n - 1;
-            showSlides();
-        }
-
         function openLightbox(img) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
