@@ -30,6 +30,13 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
+        }
+
+        /* RTL Layout adjustment when Arabic is selected */
+        body.rtl-active {
+            direction: rtl;
+            text-align: right;
         }
 
         /* HEADER SECTION */
@@ -145,6 +152,43 @@
         nav ul li a.active {
             background-color: #ffffff;
             color: var(--brand-pink);
+        }
+
+        /* LANGUAGE SWITCHER STYLES */
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.88rem;
+            color: #ffffff;
+        }
+
+        .language-switcher a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon, 
+        #goog-gt-tt {
+            display: none !important;
+        }
+        
+        body {
+            top: 0px !important;
         }
 
         .welcome-banner {
@@ -279,34 +323,6 @@
             font-size: 0.9rem;
             line-height: 1.4;
             margin: 0;
-        }
-
-        /* CTA CARD */
-        .cta-card {
-            background: #ffffff;
-            border: 1px solid #f2cdd9;
-            padding: 25px 15px;
-            border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            margin-bottom: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            background-color: var(--brand-pink);
-            color: white;
-            padding: 8px 18px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            transition: background 0.3s ease;
-            margin-top: 10px;
-        }
-
-        .button:hover {
-            background-color: #990033;
         }
 
         /* LIGHTBOX MODAL */
@@ -564,10 +580,19 @@
                 margin-left: auto;
             }
 
+            body.rtl-active .footer-column {
+                margin-left: 0;
+                margin-right: auto;
+            }
+
             .footer-bottom {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
+            }
+
+            body.rtl-active .footer-bottom {
+                text-align: right;
             }
         }
     </style>
@@ -581,9 +606,9 @@
             </div>
 
             <div class="header-details">
-                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="tagline">Elegance. Perfect Fit. Custom Sewing.</div>
                 <div class="hours-badge">Open Mon–Sat</div>
-                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+                <p class="quote-text">"Over 20 years of expert sewing and custom alterations for men and women."</p>
             </div>
         </div>
     </header>
@@ -594,8 +619,17 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html" class="active">Portfolio</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
         </ul>
+
+        <!-- Language Selector Bar -->
+        <div class="language-switcher">
+            <a href="javascript:void(0)" onclick="translatePage('en')">English</a> |
+            <a href="javascript:void(0)" onclick="translatePage('zh-CN')">中文</a> |
+            <a href="javascript:void(0)" onclick="translatePage('es')">Español</a> |
+            <a href="javascript:void(0)" onclick="translatePage('ar')">العربية</a>
+        </div>
+        <div id="google_translate_element" style="display: none;"></div>
     </nav>
 
     <section class="welcome-banner">
@@ -607,7 +641,7 @@
         <div class="portfolio-header">
             <h2>Explore Our Craftsmanship</h2>
             <p style="font-size: 1rem; color: #555555; max-width: 800px; margin: 0 auto;">
-                Take a look at our recent bridal alterations, intricate lace details, and custom tailoring projects. Each piece reflects our commitment to precision, fit, and craftsmanship.
+                Take a look at our recent bridal dresses, delicate lace work, and custom tailoring projects. Each piece shows our care for precision and fit.
             </p>
         </div>
 
@@ -626,161 +660,161 @@
             
             <!-- Image 18 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image18.JPG" alt="Jacket Alterations & Refitting" onclick="openLightbox(this)">
+                <img src="images/image18.JPG" alt="Jacket Tailoring" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear</span>
-                    <h3>Jacket Alterations & Refitting</h3>
-                    <p>Custom sleeve line adjustments, shoulder fitting, and precision tailoring for outerwear.</p>
+                    <h3>Jacket Tailoring & Fitting</h3>
+                    <p>Sleeve adjustments and precision tailoring for jackets and coats.</p>
                 </div>
             </div>
 
             <!-- Image 19 -->
             <div class="portfolio-card" data-category="details">
-                <img src="images/image19.JPG" alt="Delicate Lace Restoration & Fitting" onclick="openLightbox(this)">
+                <img src="images/image19.JPG" alt="Lace Work" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Delicate Lace Restoration & Fitting</h3>
-                    <p>Hand-sewn lace placement, horsehair hem finishing, and detailed embellishment work for a flawless wedding gown fit.</p>
+                    <h3>Lace Repair & Fitting</h3>
+                    <p>Hand-sewn lace placement and hem finishing for wedding dresses.</p>
                 </div>
             </div>
 
             <!-- Image 20 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image20.JPG" alt="Contoured Bustle & Backline Fitting" onclick="openLightbox(this)">
+                <img src="images/image20.JPG" alt="Bridal Fitting" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Bridal Alterations</span>
-                    <h3>Contoured Bustle & Backline Fitting</h3>
-                    <p>Structural bodice modifications, seamless side-seam tailoring, and delicate button detail work.</p>
+                    <h3>Bustle & Bodice Fitting</h3>
+                    <p>Custom bodice adjustments and secure bustle creation.</p>
                 </div>
             </div>
 
             <!-- Image 21 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image21.JPG" alt="Custom Evening Gown Fitting" onclick="openLightbox(this)">
+                <img src="images/image21.JPG" alt="Evening Gown" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear</span>
-                    <h3>Custom Evening Gown Fitting</h3>
-                    <p>Tailored bust contouring, strap placement, and specialized beaded hem adjustments for gala dresses and red-carpet wear.</p>
+                    <h3>Evening Dress Fitting</h3>
+                    <p>Tailored bust contouring and hem adjustments for special events.</p>
                 </div>
             </div>
 
             <!-- Image 22 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image22.PNG" alt="A-Line Lace Gown Customization" onclick="openLightbox(this)">
+                <img src="images/image22.PNG" alt="A-Line Dress" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Bridal Alterations</span>
                     <h3>A-Line Lace Gown Customization</h3>
-                    <p>Tailored illusion back, waist contouring, multi-layer tulle hem adjustments, and custom bustle fitting.</p>
+                    <p>Waist contouring, multi-layer tulle hem adjustments, and custom bustle.</p>
                 </div>
             </div>
 
             <!-- Image 30 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image30.JPG" alt="Corset Back Transformation (Before)" onclick="openLightbox(this)">
+                <img src="images/image30.JPG" alt="Corset Back Before" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Custom Alterations</span>
-                    <h3>Corset Back Transformation (Before)</h3>
-                    <p>Expert conversion from a zipper closure to an adjustable lace-up corset back to expand sizing and improve support.</p>
+                    <h3>Corset Back Conversion (Before)</h3>
+                    <p>Converting a zipper back into an adjustable lace-up corset back.</p>
                 </div>
             </div>
 
             <!-- Image 31 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image31.JPG" alt="Corset Back Transformation (After)" onclick="openLightbox(this)">
+                <img src="images/image31.JPG" alt="Corset Back After" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Custom Alterations</span>
-                    <h3>Corset Back Transformation (After)</h3>
-                    <p>Completed lace-up corset back conversion, providing enhanced flexibility, improved structural support, and an elegant finish.</p>
+                    <h3>Corset Back Conversion (After)</h3>
+                    <p>Completed lace-up corset back for a flexible fit and elegant finish.</p>
                 </div>
             </div>
 
             <!-- Image 32 -->
             <div class="portfolio-card" data-category="leather">
-                <img src="images/image32.JPG" alt="Precision Leather Repair & Refitting" onclick="openLightbox(this)">
+                <img src="images/image32.JPG" alt="Leather Repair" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Leather Tailoring</span>
-                    <h3>Precision Leather Repair & Refitting</h3>
-                    <p>Sleeve adjustments, heavy-duty zipper repairs, and custom fitting for classic motorcycle and leather jackets.</p>
+                    <h3>Leather Repair & Refitting</h3>
+                    <p>Heavy-duty zipper repairs and sleeve adjustments for leather jackets.</p>
                 </div>
             </div>
 
             <!-- Image 34 -->
             <div class="portfolio-card" data-category="leather">
-                <img src="images/image34.JPG" alt="Leather Jacket Refitting & Sleeve Adjustment" onclick="openLightbox(this)">
+                <img src="images/image34.JPG" alt="Leather Jacket" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Leather Alterations</span>
-                    <h3>Leather Jacket Refitting & Sleeve Adjustment</h3>
-                    <p>Sleeve tapering, hardware repositioning, and custom body fit adjustments for classic leather motorcycle jackets.</p>
+                    <h3>Leather Jacket Sizing</h3>
+                    <p>Sleeve tapering and custom body fit adjustments for motorcycle jackets.</p>
                 </div>
             </div>
 
             <!-- Image 35 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image35.JPG" alt="Ruched Bodice & Hem Fitting" onclick="openLightbox(this)">
+                <img src="images/image35.JPG" alt="Ruched Bodice" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear Alterations</span>
                     <h3>Ruched Bodice & Hem Fitting</h3>
-                    <p>Custom bust support, waist seam adjustments, and hem leveling for formal and special occasion dresses.</p>
+                    <p>Bust support, waist adjustments, and hem leveling for formal gowns.</p>
                 </div>
             </div>
 
             <!-- Image 36 -->
             <div class="portfolio-card" data-category="bridal">
-                <img src="images/image36.JPG" alt="Champagne Satin Gown Customization" onclick="openLightbox(this)">
+                <img src="images/image36.JPG" alt="Satin Gown" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Bridal Alterations</span>
-                    <h3>Champagne Satin Gown Customization</h3>
-                    <p>Tailored V-neck bodice, waistband fitting, strap adjustments, and clean hem finishing.</p>
+                    <h3>Satin Gown Customization</h3>
+                    <p>V-neck bodice tailoring, waist fitting, and clean hem finishing.</p>
                 </div>
             </div>
 
             <!-- Image 37 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image37.JPG" alt="Prom & Evening Dress Customization" onclick="openLightbox(this)">
+                <img src="images/image37.JPG" alt="Prom Dress" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear Alterations</span>
                     <h3>Prom & Evening Dress Customization</h3>
-                    <p>Custom bust fitting, strap adjustments, side-seam tailoring, and specialized lace-inset hem alterations.</p>
+                    <p>Bust fitting, side-seam tailoring, and lace-inset adjustments.</p>
                 </div>
             </div>
 
             <!-- Image 38 -->
             <div class="portfolio-card" data-category="formal">
-                <img src="images/image38.JPG" alt="Draped Evening Dress Refitting" onclick="openLightbox(this)">
+                <img src="images/image38.JPG" alt="Draped Dress" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Formalwear Alterations</span>
                     <h3>Draped Evening Dress Refitting</h3>
-                    <p>Precision fitting along the V-neck bodice, twisted waistline detailing, sleeve adjustment, and sheer chiffon hem finishing.</p>
+                    <p>Precision bodice fitting, sleeve adjustments, and chiffon hem finishing.</p>
                 </div>
             </div>
 
             <!-- Image 39 -->
             <div class="portfolio-card" data-category="menswear">
-                <img src="images/image39.JPG" alt="Suit Jacket & Blazer Tailoring" onclick="openLightbox(this)">
+                <img src="images/image39.JPG" alt="Suit Jacket" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Suits & Menswear</span>
                     <h3>Suit Jacket & Blazer Tailoring</h3>
-                    <p>Professional sleeve shortening, shoulder contouring, chest refitting, and waist suppression for a clean, sharp, custom-tailored silhouette.</p>
+                    <p>Professional sleeve shortening, shoulder fitting, and waist suppression.</p>
                 </div>
             </div>
 
             <!-- Image 40 -->
             <div class="portfolio-card" data-category="menswear">
-                <img src="images/image40.JPG" alt="Plaid Suit Jacket & Blazer Tailoring" onclick="openLightbox(this)">
+                <img src="images/image40.JPG" alt="Plaid Suit" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Suits & Menswear</span>
-                    <h3>Plaid Suit Jacket & Blazer Tailoring</h3>
-                    <p>Custom sleeve length adjustments, shoulder fitting, side-seam waist suppression, and precise pattern-matching for structured menswear.</p>
+                    <h3>Plaid Suit Jacket Tailoring</h3>
+                    <p>Sleeve adjustments and precise pattern-matching for structured menswear.</p>
                 </div>
             </div>
 
             <!-- Image 41 -->
             <div class="portfolio-card" data-category="menswear">
-                <img src="images/image41.JPG" alt="Custom Floral Vest & Waistcoat Fitting" onclick="openLightbox(this)">
+                <img src="images/image41.JPG" alt="Floral Vest" onclick="openLightbox(this)">
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Suits & Menswear</span>
-                    <h3>Custom Floral Vest & Waistcoat Fitting</h3>
-                    <p>Tailored side-seam adjustments, armhole fitting, button alignment, and clean neck edge finishing for brocade and patterned vests.</p>
+                    <h3>Vest & Waistcoat Fitting</h3>
+                    <p>Side-seam adjustments and button alignment for patterned vests.</p>
                 </div>
             </div>
 
@@ -790,7 +824,7 @@
         <div class="portfolio-header" style="margin-top: 50px;">
             <h2>Featured Alteration Videos</h2>
             <p style="font-size: 1rem; color: #555555; max-width: 800px; margin: 0 auto;">
-                Watch our expert tailoring processes, behind-the-scenes fittings, and bridal transformations in action.
+                Watch our expert tailoring processes and fitting transformations in action.
             </p>
         </div>
 
@@ -805,7 +839,7 @@
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Leather Repair & Zipper Replacement</h3>
-                    <p>Expert heavy-duty zipper repair, leather stitching reinforcement, and hardware restoration for custom leather bags and accessories.</p>
+                    <p>Heavy-duty zipper repair and leather stitching reinforcement.</p>
                 </div>
             </div>
 
@@ -818,7 +852,7 @@
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Denim Alteration & Waist Resizing</h3>
-                    <p>Step-by-step demonstration of waist alteration, belt loop repositioning, and precision seam adjustments on denim jeans.</p>
+                    <p>Demonstration of waist alteration and seam adjustments on jeans.</p>
                 </div>
             </div>
 
@@ -830,8 +864,8 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Precision Fabric Cutting & Pattern Preparation</h3>
-                    <p>Demonstration of expert hand-cutting techniques for delicate sheer tulle, organza, and mesh layers on a grid cutting mat.</p>
+                    <h3>Fabric Cutting & Pattern Preparation</h3>
+                    <p>Expert hand-cutting techniques for delicate tulle and organza layers.</p>
                 </div>
             </div>
 
@@ -843,8 +877,8 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Corset Back Transformation & Resizing</h3>
-                    <p>Before-and-after demonstration converting a zipper back closure into a custom lace-up corset panel with matching fabric modesty backing.</p>
+                    <h3>Corset Back Transformation</h3>
+                    <p>Converting a zipper back into a custom lace-up corset panel.</p>
                 </div>
             </div>
 
@@ -856,8 +890,8 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Jeans Zipper Replacement & Fly Repair (Before)</h3>
-                    <p>Complete zipper replacement and fly stitching repair for denim jeans, replacing broken sliders with heavy-duty metal zippers for smooth operation.</p>
+                    <h3>Jeans Zipper Repair (Before)</h3>
+                    <p>Replacing broken sliders with heavy-duty metal zippers.</p>
                 </div>
             </div>
 
@@ -869,8 +903,8 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Jeans Zipper Replacement & Fly Repair (After)</h3>
-                    <p>Completed heavy-duty zipper and fly repair showcasing secure stitching and reinforced durability.</p>
+                    <h3>Jeans Zipper Repair (After)</h3>
+                    <p>Completed heavy-duty zipper and fly repair with secure stitching.</p>
                 </div>
             </div>
 
@@ -883,7 +917,7 @@
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
                     <h3>Hand Sewing & Beaded Hem Trimming</h3>
-                    <p>Precise hand-cutting and delicate beadwork reinforcement on heavily embellished tulle and pearl-embroidered bridal fabric.</p>
+                    <p>Delicate beadwork reinforcement on pearl-embroidered bridal fabric.</p>
                 </div>
             </div>
 
@@ -895,59 +929,11 @@
                 </video>
                 <div class="portfolio-info">
                     <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Lace Trimming & Special Occasion Hemming</h3>
-                    <p>Precision hand-cutting along floral lace patterns to resize hems while preserving intricate edge details on formal gowns.</p>
+                    <h3>Detailed Stitching & Finishing</h3>
+                    <p>Precision stitching techniques for high-end garments.</p>
                 </div>
             </div>
 
-            <!-- Video 15 -->
-            <div class="portfolio-card" data-category="leather">
-                <video controls preload="metadata">
-                    <source src="images/video15.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Heavy-Duty Jacket Repair & Zipper Replacement</h3>
-                    <p>Specialized zipper replacement, snap-closure reinforcement, and custom repairs for camouflage hunting jackets and heavy outdoor gear.</p>
-                </div>
-            </div>
-
-            <!-- Video 16 -->
-            <div class="portfolio-card" data-category="formal">
-                <video controls preload="metadata">
-                    <source src="images/video16.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Invisible Zipper Repair & Replacement</h3>
-                    <p>Seamless invisible zipper installation and repair on pleated chiffon bridesmaid and formal dress.</p>
-                </div>
-            </div>
-
-            <!-- Video 17 -->
-            <div class="portfolio-card" data-category="menswear">
-                <video controls preload="metadata">
-                    <source src="images/video17.MP4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Video Highlight</span>
-                    <h3>Suit Sleeve Tailoring & Button Detail</h3>
-                    <p>Demonstration of professional suit jacket sleeve shortening, cuff repositioning, and button attachment on plaid menswear.</p>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- Call to Action Box -->
-        <div class="cta-card">
-            <h3 style="color: var(--header-text); font-size: 1.4rem; margin-top: 0; margin-bottom: 10px; font-family: 'Georgia', serif;">Ready to Transform Your Garment?</h3>
-            <p style="font-size: 0.95rem; color: #444; max-width: 700px; margin: 0 auto 15px auto; line-height: 1.5;">
-                Whether it's your dream wedding dress or everyday formal wear, trust our experienced tailor to get the perfect fit.
-            </p>
-            <a href="contact.html" class="button">Schedule a Fitting</a>
         </div>
     </main>
 
@@ -958,35 +944,34 @@
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <!-- FOOTER SECTION -->
+    <!-- Footer matching index layout -->
     <footer id="contact">
         <div class="footer-container">
-            <!-- Square Announcement Card -->
+            <!-- Announcement Box -->
             <div class="footer-announcement-box">
-                <div class="announcement-main-title">Important Announcement</div>
+                <div class="announcement-main-title">Important Information</div>
 
-                <div class="policy-section-title">Customer Satisfaction Policy</div>
+                <div class="policy-section-title">Satisfaction Policy</div>
                 <p class="policy-text">
-                    Not satisfied with our work? Please bring your garment back within 14 days with your yellow receipt, and we'll be happy to redo it at no extra charge.
+                    Not happy with our work? Please bring your garment back within 14 days with your yellow receipt, and we will fix it for free.
                 </p>
                 <p class="policy-text">
-                    Please make sure you are satisfied with the pinning and measurements before we begin alterations. Once alterations are completed, any changes or adjustments requested due to a change of preference or fit may be subject to an additional charge.
+                    Please check that you like the fit and pins before we start working. After alterations are finished, any extra changes requested because of a change in mind or fit preference may cost extra.
                 </p>
 
-                <div class="policy-section-title">Garment Holding Policy</div>
+                <div class="policy-section-title">Pickup Policy</div>
                 <p class="policy-text">
-                    Please pick up your garments within 45 days. Garments left longer than 45 days may be considered abandoned.
+                    Please pick up your clothes within 45 days. Clothes left longer than 45 days may be disposed of or donated.
                 </p>
 
                 <p class="announcement-thankyou">
-                    Thank you for choosing us! We truly appreciate your business.
+                    Thank you for choosing us! We appreciate your business.
                 </p>
-                <div class="announcement-shop-name">Z-Alterations & Bridal Sewing LLC</div>
+                <div class="announcement-shop-name">Z Alterations & Bridal Sewing LLC</div>
             </div>
 
-            <!-- Extra Large Address Column -->
             <div class="footer-column">
-                <h4>Address Us</h4>
+                <h4>Visit Us</h4>
                 <p>
                     4160A S 108th Street,<br>
                     Greenfield, WI 53228<br>
@@ -994,7 +979,7 @@
                 </p>
                 <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
                 
-                <img src="images/image23.jpg" alt="Garment Customization Detail" class="footer-image" onclick="openLightbox(this)">
+                <img src="images/image23.jpg" alt="Garment Customization Detail" class="footer-image">
 
                 <div class="social">
                     <a href="https://www.facebook.com/z.alterations21/" target="_blank" rel="noopener">
@@ -1020,24 +1005,6 @@
     </footer>
 
     <script>
-        function filterPortfolio(category) {
-            const buttons = document.querySelectorAll('.filter-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            
-            if (event && event.target) {
-                event.target.classList.add('active');
-            }
-
-            const cards = document.querySelectorAll('.portfolio-card');
-            cards.forEach(card => {
-                if (category === 'all' || card.dataset.category === category) {
-                    card.classList.remove('hide');
-                } else {
-                    card.classList.add('hide');
-                }
-            });
-        }
-
         function openLightbox(img) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
@@ -1051,6 +1018,45 @@
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+
+        function filterPortfolio(category) {
+            const cards = document.querySelectorAll('.portfolio-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.classList.remove('hide');
+                } else {
+                    card.classList.add('hide');
+                }
+            });
+        }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,zh-CN,es,ar',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translatePage(langCode) {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+
+            if (langCode === 'ar') {
+                document.body.classList.add('rtl-active');
+            } else {
+                document.body.classList.remove('rtl-active');
+            }
+        }
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

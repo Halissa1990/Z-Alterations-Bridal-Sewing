@@ -29,7 +29,13 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
-            scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+            scroll-behavior: smooth;
+        }
+
+        /* RTL Layout adjustment when Arabic is selected */
+        body.rtl-active {
+            direction: rtl;
+            text-align: right;
         }
 
         /* HEADER SECTION */
@@ -146,6 +152,43 @@
             color: var(--brand-pink);
         }
 
+        /* LANGUAGE SWITCHER STYLES */
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.88rem;
+            color: #ffffff;
+        }
+
+        .language-switcher a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon, 
+        #goog-gt-tt {
+            display: none !important;
+        }
+        
+        body {
+            top: 0px !important;
+        }
+
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
@@ -166,7 +209,6 @@
             margin: 0 auto;
         }
 
-        /* VIDEO CONTAINER STYLING */
         .video-container {
             max-width: 1000px;
             margin: 0 auto 20px auto;
@@ -187,7 +229,6 @@
             outline: none;
         }
 
-        /* FEATURE SHOWCASE CARD (Middle Image with Strong Flash Effect) */
         .showcase-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -283,6 +324,16 @@
             top: -2px;
         }
 
+        body.rtl-active .difference-list li {
+            padding-left: 0;
+            padding-right: 18px;
+        }
+
+        body.rtl-active .difference-list li::before {
+            left: auto;
+            right: 0;
+        }
+
         .difference-list strong {
             color: var(--header-text);
         }
@@ -319,7 +370,6 @@
             background-color: #990033;
         }
 
-        /* BOOKING SECTION */
         .booking-section {
             background: #ffffff;
             padding: 30px 15px;
@@ -349,7 +399,6 @@
             margin: 0 auto;
         }
 
-        /* FOOTER & ANNOUNCEMENT STYLING */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -367,7 +416,6 @@
             text-align: left;
         }
 
-        /* SQUARE ANNOUNCEMENT BOX */
         .footer-announcement-box {
             background: #fffdfa;
             border: 2px solid var(--accent-gold);
@@ -517,7 +565,6 @@
             color: #666;
         }
 
-        /* LIGHTBOX MODAL */
         .lightbox {
             display: none;
             position: fixed;
@@ -569,6 +616,9 @@
                 flex-direction: row;
                 text-align: left;
             }
+            body.rtl-active .difference-card {
+                text-align: right;
+            }
             .difference-card img {
                 width: 45%;
             }
@@ -616,10 +666,19 @@
                 margin-left: auto;
             }
 
+            body.rtl-active .footer-column {
+                margin-left: 0;
+                margin-right: auto;
+            }
+
             .footer-bottom {
                 flex-direction: row;
                 justify-content: space-between;
                 text-align: left;
+            }
+
+            body.rtl-active .footer-bottom {
+                text-align: right;
             }
         }
     </style>
@@ -633,9 +692,9 @@
             </div>
 
             <div class="header-details">
-                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="tagline">Elegance. Perfect Fit. Custom Sewing.</div>
                 <div class="hours-badge">Open Mon–Sat</div>
-                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+                <p class="quote-text">"Over 20 years of expert sewing and custom alterations for men and women."</p>
             </div>
         </div>
     </header>
@@ -646,17 +705,26 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html">Contact us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
             <li><a href="#booking" style="background-color: var(--brand-pink); color: white;">Book Now</a></li>
         </ul>
+
+        <!-- Language Selector Bar -->
+        <div class="language-switcher">
+            <a href="javascript:void(0)" onclick="translatePage('en')">English</a> |
+            <a href="javascript:void(0)" onclick="translatePage('zh-CN')">中文</a> |
+            <a href="javascript:void(0)" onclick="translatePage('es')">Español</a> |
+            <a href="javascript:void(0)" onclick="translatePage('ar')">العربية</a>
+        </div>
+        <div id="google_translate_element" style="display: none;"></div>
     </nav>
 
     <section class="welcome-banner">
-        <h2>Welcome To Z Alterations & Bridal Sewing</h2>
+        <h2>Welcome to Z Alterations & Bridal Sewing</h2>
     </section>
 
     <main>
-        <!-- Featured Video Container -->
+        <!-- Featured Video -->
         <div class="video-container">
             <video controls autoplay loop muted playsinline>
                 <source src="images/z.MP4" type="video/mp4">
@@ -664,43 +732,43 @@
             </video>
         </div>
 
-        <!-- Middle Professional Showcase Image with Strong Flashing Effect -->
+        <!-- Featured Image -->
         <div class="showcase-grid">
             <div class="feature-card">
-                <img src="images/IMG_4515.jpeg" alt="Precision Tailoring Work" onclick="openLightbox(this)"> 
+                <img src="images/IMG_4515.jpeg" alt="Precision Sewing Work" onclick="openLightbox(this)"> 
             </div>
         </div>
 
         <section class="difference-card">
-            <img src="images/wedding.jpg" alt="Bridal Tailoring Excellence">
+            <img src="images/wedding.jpg" alt="Bridal Sewing Work">
             <div class="difference-content">
-                <h2>The Difference</h2>
+                <h2>Why Choose Us</h2>
                 <ul class="difference-list">
-                    <li><strong>Skilled Specialists:</strong> Our team’s deep expertise ensures your garments are in the most capable hands.</li>
-                    <li><strong>Dedicated Attention:</strong> We listen closely to your needs to deliver a customized fit that makes you feel great.</li>
-                    <li><strong>Flawless Craftsmanship:</strong> We take pride in the details, ensuring clean finishes and long-lasting quality.</li>
-                    <li><strong>On-Time Guarantee:</strong> Fast, dependable turnarounds so your wardrobe is ready when you need it.</li>
+                    <li><strong>Expert Tailors:</strong> Our skilled team makes sure your clothes fit you right.</li>
+                    <li><strong>Personal Care:</strong> We listen to what you need so your clothes feel great to wear.</li>
+                    <li><strong>Quality Work:</strong> We pay close attention to every detail for clean and strong stitching.</li>
+                    <li><strong>On-Time Delivery:</strong> Fast and reliable service so your clothes are ready when you need them.</li>
                 </ul>
-                <p>Whatever the event, let us elevate your wardrobe to fit you flawlessly. Schedule your appointment today!</p>
-                <a href="#booking" class="button">Schedule Appointment</a>
+                <p>No matter the occasion, we make your clothes fit you perfectly. Book your appointment today!</p>
+                <a href="#booking" class="button">Book Appointment</a>
             </div>
         </section>
 
         <!-- ONLINE BOOKING SECTION -->
         <section id="booking" class="booking-section">
             <h2>Book Your Appointment Online</h2>
-            <p>Click the button below to schedule your appointment on our secure booking calendar.</p>
+            <p>Click the button below to pick a time on our calendar.</p>
             <div class="booking-container" style="padding: 40px 20px; background-color: #fce1ed; border-radius: 8px;">
                 <a href="https://book.squareup.com/appointments/4eaj8n0b1p2fkf/location/L4RD7P1H0RGZ4/services" target="_blank" class="button" style="font-size: 1.2rem; padding: 14px 32px; display: inline-block;">
-                    📅 Schedule Appointment Now
+                    📅 Book Appointment Now
                 </a>
             </div>
         </section>
 
         <section class="intro-card">
-            <h2>Expert Alterations & Fine Sewing</h2>
-            <p>Welcome to Z Alterations & Bridal Sewing LLC. Over 22 years of family-owned experience delivering perfection for your special garments and daily wardrobe.</p>
-            <a href="services.html" class="button">Explore Our Services</a>
+            <h2>Expert Sewing & Clothing Alterations</h2>
+            <p>Welcome to Z Alterations & Bridal Sewing LLC. We have over 22 years of family experience making your everyday clothes and special dresses look perfect.</p>
+            <a href="services.html" class="button">See Our Services</a>
         </section>
     </main>
 
@@ -713,31 +781,31 @@
 
     <footer id="contact">
         <div class="footer-container">
-            <!-- Square Announcement Card -->
+            <!-- Announcement Box -->
             <div class="footer-announcement-box">
-                <div class="announcement-main-title">Important Announcement</div>
+                <div class="announcement-main-title">Important Information</div>
 
-                <div class="policy-section-title">Customer Satisfaction Policy</div>
+                <div class="policy-section-title">Satisfaction Policy</div>
                 <p class="policy-text">
-                    Not satisfied with our work? Please bring your garment back within 14 days with your yellow receipt, and we'll be happy to redo it at no extra charge.
+                    Not happy with our work? Please bring your garment back within 14 days with your yellow receipt, and we will fix it for free.
                 </p>
                 <p class="policy-text">
-                    Please make sure you are satisfied with the pinning and measurements before we begin alterations. Once alterations are completed, any changes or adjustments requested due to a change of preference or fit may be subject to an additional charge.
+                    Please check that you like the fit and pins before we start working. After alterations are finished, any extra changes requested because of a change in mind or fit preference may cost extra.
                 </p>
 
-                <div class="policy-section-title">Garment Holding Policy</div>
+                <div class="policy-section-title">Pickup Policy</div>
                 <p class="policy-text">
-                    Please pick up your garments within 45 days. Garments left longer than 45 days may be considered abandoned.
+                    Please pick up your clothes within 45 days. Clothes left longer than 45 days may be disposed of or donated.
                 </p>
 
                 <p class="announcement-thankyou">
-                    Thank you for choosing us! We truly appreciate your business.
+                    Thank you for choosing us! We appreciate your business.
                 </p>
-                <div class="announcement-shop-name">Z-Alterations & Bridal Sewing LLC</div>
+                <div class="announcement-shop-name">Z Alterations & Bridal Sewing LLC</div>
             </div>
 
             <div class="footer-column">
-                <h4>Address Us</h4>
+                <h4>Visit Us</h4>
                 <p>
                     4160A S 108th Street,<br>
                     Greenfield, WI 53228<br>
@@ -745,7 +813,6 @@
                 </p>
                 <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
                 
-                <!-- Added image23.jpg right below Yahoo Local Listing -->
                 <img src="images/image23.jpg" alt="Garment Customization Detail" class="footer-image" onclick="openLightbox(this)">
 
                 <div class="social">
@@ -785,6 +852,29 @@
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,zh-CN,es,ar',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translatePage(langCode) {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+
+            if (langCode === 'ar') {
+                document.body.classList.add('rtl-active');
+            } else {
+                document.body.classList.remove('rtl-active');
+            }
+        }
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

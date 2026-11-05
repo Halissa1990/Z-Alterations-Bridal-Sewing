@@ -30,9 +30,16 @@
             color: var(--text-dark);
             line-height: 1.6;
             overflow-x: hidden;
+            scroll-behavior: smooth;
         }
 
-        /* HEADER SECTION - MATCHING INDEX.HTML */
+        /* RTL Layout adjustment when Arabic is selected */
+        body.rtl-active {
+            direction: rtl;
+            text-align: right;
+        }
+
+        /* HEADER SECTION */
         header {
             background-color: #ffffff;
             padding: 0;
@@ -110,7 +117,7 @@
             line-height: 1.3;
         }
 
-        /* NAVIGATION BAR - MATCHING INDEX.HTML */
+        /* NAVIGATION BAR */
         nav {
             background-color: var(--nav-blue);
             padding: 8px 10px;
@@ -147,7 +154,43 @@
             color: var(--brand-pink);
         }
 
-        /* Welcome Banner */
+        /* LANGUAGE SWITCHER STYLES */
+        .language-switcher {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 8px;
+            padding-top: 6px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 0.88rem;
+            color: #ffffff;
+        }
+
+        .language-switcher a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 2px 8px;
+            border-radius: 3px;
+            transition: background 0.2s ease, color 0.2s ease;
+        }
+
+        .language-switcher a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
+        }
+
+        .goog-te-banner-frame.skiptranslate, 
+        .goog-te-gadget-icon, 
+        #goog-gt-tt {
+            display: none !important;
+        }
+        
+        body {
+            top: 0px !important;
+        }
+
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
@@ -234,6 +277,10 @@
             margin-bottom: 18px;
         }
 
+        body.rtl-active .contact-detail-item {
+            flex-direction: row-reverse;
+        }
+
         .contact-icon {
             font-size: 1.3rem;
             line-height: 1;
@@ -309,6 +356,10 @@
         .form-group {
             margin-bottom: 15px;
             text-align: left;
+        }
+
+        body.rtl-active .form-group {
+            text-align: right;
         }
 
         .form-group label {
@@ -460,7 +511,7 @@
             color: var(--brand-pink);
         }
 
-        /* FOOTER & ANNOUNCEMENT STYLING - MATCHING INDEX.HTML */
+        /* FOOTER & ANNOUNCEMENT STYLING */
         footer {
             background-color: var(--header-pink);
             color: var(--text-dark);
@@ -478,7 +529,10 @@
             text-align: left;
         }
 
-        /* SQUARE ANNOUNCEMENT BOX */
+        body.rtl-active .footer-container {
+            text-align: right;
+        }
+
         .footer-announcement-box {
             background: #fffdfa;
             border: 2px solid var(--accent-gold);
@@ -489,6 +543,10 @@
             width: 100%;
             box-shadow: 0 4px 15px rgba(0,0,0,0.05);
             text-align: left;
+        }
+
+        body.rtl-active .footer-announcement-box {
+            text-align: right;
         }
 
         .announcement-main-title {
@@ -557,7 +615,6 @@
             width: 100%;
         }
 
-        /* EXTRA LARGE ADDRESS SECTION STYLING */
         .footer-column h4 {
             color: var(--header-text);
             font-family: 'Georgia', serif;
@@ -598,6 +655,10 @@
             align-items: center;
             gap: 16px;
             margin-top: 18px;
+        }
+
+        body.rtl-active .social {
+            justify-content: flex-start;
         }
 
         .social img {
@@ -669,14 +730,12 @@
                 padding: 40px 30px;
             }
 
-            /* CREATES SPACE BETWEEN SQUARE ANNOUNCEMENT & ADDRESS */
             .footer-container {
                 flex-direction: row;
                 justify-content: space-between;
                 align-items: flex-start;
             }
 
-            /* 1:1 Square layout on desktop */
             .footer-announcement-box {
                 width: 480px;
                 max-width: 480px;
@@ -686,11 +745,15 @@
                 justify-content: center;
             }
 
-            /* Pushes larger address section to far right */
             .footer-column {
                 width: auto;
                 min-width: 290px;
                 margin-left: auto;
+            }
+
+            body.rtl-active .footer-column {
+                margin-left: 0;
+                margin-right: auto;
             }
 
             .footer-bottom {
@@ -698,21 +761,25 @@
                 justify-content: space-between;
                 text-align: left;
             }
+
+            body.rtl-active .footer-bottom {
+                text-align: right;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- Header Section matching index layout -->
+    <!-- Header Section -->
     <header>
         <div class="header-container">
             <div class="header-bg-banner">
                 <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
             </div>
             <div class="header-details">
-                <div class="tagline">Elegance. Tailored. Bespoke.</div>
+                <div class="tagline">Elegance. Perfect Fit. Custom Sewing.</div>
                 <div class="hours-badge">Open Mon–Sat</div>
-                <p class="quote-text">"Providing two decades of master tailoring and custom alterations for men and women."</p>
+                <p class="quote-text">"Over 20 years of expert sewing and custom alterations for men and women."</p>
             </div>
         </div>
     </header>
@@ -724,8 +791,17 @@
             <li><a href="about.html">About Us</a></li>
             <li><a href="services.html">Services</a></li>
             <li><a href="portfolio.html">Portfolio</a></li>
-            <li><a href="contact.html" class="active">Contact us</a></li>
+            <li><a href="contact.html" class="active">Contact Us</a></li>
         </ul>
+
+        <!-- Language Selector Bar -->
+        <div class="language-switcher">
+            <a href="javascript:void(0)" onclick="translatePage('en')">English</a> |
+            <a href="javascript:void(0)" onclick="translatePage('zh-CN')">中文</a> |
+            <a href="javascript:void(0)" onclick="translatePage('es')">Español</a> |
+            <a href="javascript:void(0)" onclick="translatePage('ar')">العربية</a>
+        </div>
+        <div id="google_translate_element" style="display: none;"></div>
     </nav>
 
     <!-- Welcome Banner -->
@@ -737,11 +813,11 @@
         <!-- Hero Section -->
         <section class="hero">
             <h1>Get in Touch With Our Tailoring Experts</h1>
-            <p>With 22 years of experience in clothing alterations and sewing, we are passionate about helping every customer look and feel their best in clothing that fits perfectly.</p>
+            <p>With over 20 years of experience in clothing alterations and sewing, we are passionate about helping every customer look and feel their best in clothing that fits perfectly.</p>
             <div style="margin-top: 15px;">
                 <a href="https://zalterations.square.site" target="_blank" rel="noopener" class="button button-booking">📅 Book Appointment Online</a>
             </div>
-            <div class="feature-badge">Featured on Greenfield: We're Open!</div>
+            <div class="feature-badge">Open Mon–Sat • Walk-Ins & Appointments Welcome</div>
         </section>
 
         <!-- Contact Grid -->
@@ -885,6 +961,17 @@
                 </div>
             </div>
         </section>
+
+        <!-- Video Demonstration Showcase -->
+        <div style="text-align: center; margin-top: 50px;">
+            <h2>Visit Our Shop & Studio</h2>
+            <p style="font-size: 1rem; color: #555555; max-width: 800px; margin: 0 auto 20px auto;">
+                The video below offers a look at professional fittings and tailor studio setups for custom garments.
+            </p>
+        </div>
+        <Carousel>
+          <Video source="youtube" query="professional tailor shop fittings consultation walkthrough" count="3"/>
+        </Carousel>
     </main>
 
     <!-- Lightbox Modal -->
@@ -894,34 +981,34 @@
         <div class="lightbox-caption" id="lightbox-caption"></div>
     </div>
 
-    <!-- Footer matching index layout -->
+    <!-- Footer -->
     <footer id="contact">
         <div class="footer-container">
-            <!-- Square Announcement Card -->
+            <!-- Announcement Box -->
             <div class="footer-announcement-box">
-                <div class="announcement-main-title">Important Announcement</div>
+                <div class="announcement-main-title">Important Information</div>
 
-                <div class="policy-section-title">Customer Satisfaction Policy</div>
+                <div class="policy-section-title">Satisfaction Policy</div>
                 <p class="policy-text">
-                    Not satisfied with our work? Please bring your garment back within 14 days with your yellow receipt, and we'll be happy to redo it at no extra charge.
+                    Not happy with our work? Please bring your garment back within 14 days with your yellow receipt, and we will fix it for free.
                 </p>
                 <p class="policy-text">
-                    Please make sure you are satisfied with the pinning and measurements before we begin alterations. Once alterations are completed, any changes or adjustments requested due to a change of preference or fit may be subject to an additional charge.
+                    Please check that you like the fit and pins before we start working. After alterations are finished, any extra changes requested because of a change in mind or fit preference may cost extra.
                 </p>
 
-                <div class="policy-section-title">Garment Holding Policy</div>
+                <div class="policy-section-title">Pickup Policy</div>
                 <p class="policy-text">
-                    Please pick up your garments within 45 days. Garments left longer than 45 days may be considered abandoned.
+                    Please pick up your clothes within 45 days. Clothes left longer than 45 days may be disposed of or donated.
                 </p>
 
                 <p class="announcement-thankyou">
-                    Thank you for choosing us! We truly appreciate your business.
+                    Thank you for choosing us! We appreciate your business.
                 </p>
-                <div class="announcement-shop-name">Z-Alterations & Bridal Sewing LLC</div>
+                <div class="announcement-shop-name">Z Alterations & Bridal Sewing LLC</div>
             </div>
 
             <div class="footer-column">
-                <h4>Address Us</h4>
+                <h4>Visit Us</h4>
                 <p>
                     4160A S 108th Street,<br>
                     Greenfield, WI 53228<br>
@@ -929,7 +1016,6 @@
                 </p>
                 <p><a href="https://local.yahoo.com/info-236106218-kv-alterations-bridal-sewing-brookfield/" target="_blank" rel="noopener">Yahoo Local Listing</a></p>
                 
-                <!-- Added image23.jpg into footer -->
                 <img src="images/image23.jpg" alt="Garment Customization Detail" class="footer-image" onclick="openLightbox(this)">
 
                 <div class="social">
@@ -977,6 +1063,29 @@
         function closeLightbox() {
             document.getElementById('lightbox').style.display = 'none';
         }
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'en',
+                includedLanguages: 'en,zh-CN,es,ar',
+                autoDisplay: false
+            }, 'google_translate_element');
+        }
+
+        function translatePage(langCode) {
+            var select = document.querySelector('.goog-te-combo');
+            if (select) {
+                select.value = langCode;
+                select.dispatchEvent(new Event('change'));
+            }
+
+            if (langCode === 'ar') {
+                document.body.classList.add('rtl-active');
+            } else {
+                document.body.classList.remove('rtl-active');
+            }
+        }
     </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
