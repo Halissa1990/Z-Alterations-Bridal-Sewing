@@ -225,6 +225,151 @@
             font-family: 'Georgia', serif;
         }
 
+        /* FEATURED COMMERCIAL PROJECT SPOTLIGHT */
+        .featured-project-section {
+            background: #ffffff;
+            border: 2px solid var(--header-pink);
+            border-top: 4px solid var(--brand-pink);
+            border-radius: 10px;
+            padding: 24px 20px;
+            margin-bottom: 45px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+        }
+
+        .featured-badge {
+            display: inline-block;
+            background-color: var(--header-pink);
+            color: var(--brand-pink);
+            font-size: 0.78rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 4px 12px;
+            border-radius: 15px;
+            margin-bottom: 10px;
+        }
+
+        .featured-project-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .featured-project-header h2 {
+            font-family: 'Georgia', serif;
+            color: var(--header-text);
+            font-size: 1.55rem;
+            margin: 0 0 12px 0;
+        }
+
+        .featured-project-description {
+            font-size: 0.98rem;
+            color: #444444;
+            max-width: 850px;
+            margin: 0 auto;
+            line-height: 1.65;
+        }
+
+        .featured-slideshow-box {
+            position: relative;
+            max-width: 780px;
+            margin: 20px auto 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+            background-color: #1a1a1a;
+        }
+
+        .featured-slide {
+            display: none;
+            width: 100%;
+        }
+
+        .featured-slide.active {
+            display: block;
+            animation: fadeEffect 0.4s ease;
+        }
+
+        @keyframes fadeEffect {
+            from { opacity: 0.6; }
+            to { opacity: 1; }
+        }
+
+        .featured-slide img {
+            width: 100%;
+            height: 440px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+        }
+
+        .featured-slide-caption {
+            background: rgba(114, 0, 51, 0.92);
+            color: #ffffff;
+            padding: 10px 15px;
+            font-size: 0.9rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .featured-nav-btn {
+            position: absolute;
+            top: 46%;
+            transform: translateY(-50%);
+            background-color: rgba(224, 75, 130, 0.9);
+            color: #ffffff;
+            border: none;
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            font-size: 1.25rem;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .featured-nav-btn:hover {
+            background-color: var(--header-text);
+        }
+
+        .featured-nav-btn.prev {
+            left: 12px;
+        }
+
+        .featured-nav-btn.next {
+            right: 12px;
+        }
+
+        .featured-dots {
+            text-align: center;
+            padding: 12px 0 4px 0;
+        }
+
+        .featured-dot {
+            cursor: pointer;
+            height: 11px;
+            width: 11px;
+            margin: 0 4px;
+            background-color: #f2cdd9;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .featured-dot.active,
+        .featured-dot:hover {
+            background-color: var(--brand-pink);
+            transform: scale(1.2);
+        }
+
+        @media (max-width: 600px) {
+            .featured-slide img {
+                height: 280px;
+            }
+        }
+
         /* FILTER CONTROLS */
         .filter-container {
             display: flex;
@@ -254,7 +399,81 @@
             border-color: var(--brand-pink);
         }
 
-        /* GRID LAYOUT */
+        /* HORIZONTAL IMAGE SLIDESHOW STYLING */
+        .slideshow-wrapper {
+            position: relative;
+            max-width: 100%;
+            margin: 0 auto 30px auto;
+        }
+
+        .slideshow-container {
+            display: flex;
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            gap: 20px;
+            padding: 10px 5px 20px 5px;
+            scrollbar-width: thin;
+            scrollbar-color: var(--brand-pink) var(--header-pink);
+        }
+
+        .slideshow-container::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .slideshow-container::-webkit-scrollbar-track {
+            background: var(--header-pink);
+            border-radius: 4px;
+        }
+
+        .slideshow-container::-webkit-scrollbar-thumb {
+            background-color: var(--brand-pink);
+            border-radius: 4px;
+        }
+
+        .slideshow-container .portfolio-card {
+            flex: 0 0 300px;
+            scroll-snap-align: start;
+        }
+
+        .slideshow-btn {
+            position: absolute;
+            top: 45%;
+            transform: translateY(-50%);
+            background-color: var(--brand-pink);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 10;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .slideshow-btn:hover {
+            background-color: var(--header-text);
+        }
+
+        .slideshow-btn.prev {
+            left: -15px;
+        }
+
+        .slideshow-btn.next {
+            right: -15px;
+        }
+
+        @media (max-width: 768px) {
+            .slideshow-btn {
+                display: none;
+            }
+        }
+
+        /* GRID LAYOUT (For Videos) */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -621,7 +840,7 @@
             <li><a href="portfolio.html" class="active">Portfolio</a></li>
             <li><a href="contact.html">Contact Us</a></li>
         </ul>
-
+        
         <!-- Language Selector Bar -->
         <div class="language-switcher">
             <a href="javascript:void(0)" onclick="translatePage('en')">English</a> |
@@ -637,6 +856,62 @@
     </section>
 
     <main>
+        <!-- Featured Commercial Project Spotlight -->
+        <section class="featured-project-section">
+            <div class="featured-project-header">
+                <span class="featured-badge">Featured Commercial Project</span>
+                <h2>Milwaukee Rooftop Custom Exterior Upholstery</h2>
+                <p class="featured-project-description">
+                    Z-Alterations &amp; Bridal Sewing LLC was commissioned by Tiffin Millwork Co. LLC to execute bespoke exterior seating upholstery for an upscale hotel rooftop in Milwaukee. Every element—from the deep navy bench cushions to the multi-striped backrests and piped bolster pillows—was custom-patterned to align cleanly with the surrounding architectural woodwork. Engineered with resilient outdoor textiles, this installation delivers refined visual appeal built to withstand continuous commercial use.
+                </p>
+            </div>
+
+            <div class="featured-slideshow-box">
+                <button class="featured-nav-btn prev" onclick="changeFeaturedSlide(-1)" aria-label="Previous Project Photo">&#10094;</button>
+
+                <div class="featured-slide active">
+                    <img src="images/image42.jpg" alt="Milwaukee Hotel Rooftop Custom Exterior Seating Upholstery" onclick="openLightbox(this)">
+                    <div class="featured-slide-caption">1 / 6 — Custom Navy Bench Cushions, Striped Backrests &amp; Piped Bolsters</div>
+                </div>
+
+                <div class="featured-slide">
+                    <img src="images/image43.jpg" alt="Wrap-Around Rooftop Lounge Seating Installation" onclick="openLightbox(this)">
+                    <div class="featured-slide-caption">2 / 6 — Wrap-Around Commercial Lounge Seating &amp; Fire Pit Area</div>
+                </div>
+
+                <div class="featured-slide">
+                    <img src="images/image44.jpg" alt="Precision-Fitted Outdoor Navy Seat Cushions" onclick="openLightbox(this)">
+                    <div class="featured-slide-caption">3 / 6 — Custom-Patterned Cushions Aligned with Architectural Millwork</div>
+                </div>
+
+                <div class="featured-slide">
+                    <img src="images/image45.jpg" alt="Long Bench Seating & Modular Outdoor Cushions" onclick="openLightbox(this)">
+                    <div class="featured-slide-caption">4 / 6 — Precision Corner &amp; Linear Bench Cushion Fitment</div>
+                </div>
+
+                <div class="featured-slide">
+                    <img src="images/image46.jpg" alt="Rooftop Corner Seating with Striped Backrest & Piped Bolster" onclick="openLightbox(this)">
+                    <div class="featured-slide-caption">5 / 6 — Multi-Striped Backrests &amp; Piped Bolster Detail</div>
+                </div>
+
+                <div class="featured-slide">
+                    <img src="images/image47.jpg" alt="Commercial-Grade Outdoor Upholstery Finish" onclick="openLightbox(this)">
+                    <div class="featured-slide-caption">6 / 6 — Durable Commercial Outdoor Textiles &amp; Tailored Piping</div>
+                </div>
+
+                <button class="featured-nav-btn next" onclick="changeFeaturedSlide(1)" aria-label="Next Project Photo">&#10095;</button>
+            </div>
+
+            <div class="featured-dots">
+                <span class="featured-dot active" onclick="goToFeaturedSlide(0)"></span>
+                <span class="featured-dot" onclick="goToFeaturedSlide(1)"></span>
+                <span class="featured-dot" onclick="goToFeaturedSlide(2)"></span>
+                <span class="featured-dot" onclick="goToFeaturedSlide(3)"></span>
+                <span class="featured-dot" onclick="goToFeaturedSlide(4)"></span>
+                <span class="featured-dot" onclick="goToFeaturedSlide(5)"></span>
+            </div>
+        </section>
+
         <!-- Portfolio Header Section -->
         <div class="portfolio-header">
             <h2>Explore Our Craftsmanship</h2>
@@ -647,177 +922,242 @@
 
         <!-- Category Filter Buttons -->
         <div class="filter-container">
-            <button class="filter-btn active" onclick="filterPortfolio('all')">All Projects</button>
-            <button class="filter-btn" onclick="filterPortfolio('bridal')">Bridal Gowns</button>
-            <button class="filter-btn" onclick="filterPortfolio('details')">Lace & Details</button>
-            <button class="filter-btn" onclick="filterPortfolio('formal')">Formalwear</button>
-            <button class="filter-btn" onclick="filterPortfolio('leather')">Leather</button>
-            <button class="filter-btn" onclick="filterPortfolio('menswear')">Menswear</button>
+            <button class="filter-btn active" onclick="filterPortfolio('all', this)">All Projects</button>
+            <button class="filter-btn" onclick="filterPortfolio('bridal', this)">Bridal Gowns</button>
+            <button class="filter-btn" onclick="filterPortfolio('details', this)">Lace & Details</button>
+            <button class="filter-btn" onclick="filterPortfolio('formal', this)">Formalwear</button>
+            <button class="filter-btn" onclick="filterPortfolio('leather', this)">Leather</button>
+            <button class="filter-btn" onclick="filterPortfolio('menswear', this)">Menswear</button>
+            <button class="filter-btn" onclick="filterPortfolio('upholstery', this)">Custom Upholstery</button>
         </div>
 
-        <!-- Portfolio Image Grid -->
-        <div class="portfolio-grid">
-            
-            <!-- Image 18 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image18.JPG" alt="Jacket Tailoring" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear</span>
-                    <h3>Jacket Tailoring & Fitting</h3>
-                    <p>Sleeve adjustments and precision tailoring for jackets and coats.</p>
+        <!-- Portfolio Image Slideshow -->
+        <div class="slideshow-wrapper">
+            <button class="slideshow-btn prev" onclick="scrollSlideshow(-1)" aria-label="Previous Slide">&#10094;</button>
+            <div class="slideshow-container" id="portfolioSlideshow">
+                
+                <!-- Image 18 -->
+                <div class="portfolio-card" data-category="formal">
+                    <img src="images/image18.JPG" alt="Jacket Tailoring" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Formalwear</span>
+                        <h3>Jacket Tailoring & Fitting</h3>
+                        <p>Sleeve adjustments and precision tailoring for jackets and coats.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 19 -->
-            <div class="portfolio-card" data-category="details">
-                <img src="images/image19.JPG" alt="Lace Work" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Lace & Details</span>
-                    <h3>Lace Repair & Fitting</h3>
-                    <p>Hand-sewn lace placement and hem finishing for wedding dresses.</p>
+                <!-- Image 19 -->
+                <div class="portfolio-card" data-category="details">
+                    <img src="images/image19.JPG" alt="Lace Work" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Lace & Details</span>
+                        <h3>Lace Repair & Fitting</h3>
+                        <p>Hand-sewn lace placement and hem finishing for wedding dresses.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 20 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image20.JPG" alt="Bridal Fitting" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Alterations</span>
-                    <h3>Bustle & Bodice Fitting</h3>
-                    <p>Custom bodice adjustments and secure bustle creation.</p>
+                <!-- Image 20 -->
+                <div class="portfolio-card" data-category="bridal">
+                    <img src="images/image20.JPG" alt="Bridal Fitting" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Bridal Alterations</span>
+                        <h3>Bustle & Bodice Fitting</h3>
+                        <p>Custom bodice adjustments and secure bustle creation.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 21 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image21.JPG" alt="Evening Gown" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear</span>
-                    <h3>Evening Dress Fitting</h3>
-                    <p>Tailored bust contouring and hem adjustments for special events.</p>
+                <!-- Image 21 -->
+                <div class="portfolio-card" data-category="formal">
+                    <img src="images/image21.JPG" alt="Evening Gown" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Formalwear</span>
+                        <h3>Evening Dress Fitting</h3>
+                        <p>Tailored bust contouring and hem adjustments for special events.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 22 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image22.PNG" alt="A-Line Dress" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Alterations</span>
-                    <h3>A-Line Lace Gown Customization</h3>
-                    <p>Waist contouring, multi-layer tulle hem adjustments, and custom bustle.</p>
+                <!-- Image 22 -->
+                <div class="portfolio-card" data-category="bridal">
+                    <img src="images/image22.PNG" alt="A-Line Dress" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Bridal Alterations</span>
+                        <h3>A-Line Lace Gown Customization</h3>
+                        <p>Waist contouring, multi-layer tulle hem adjustments, and custom bustle.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 30 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image30.JPG" alt="Corset Back Before" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Custom Alterations</span>
-                    <h3>Corset Back Conversion (Before)</h3>
-                    <p>Converting a zipper back into an adjustable lace-up corset back.</p>
+                <!-- Image 30 -->
+                <div class="portfolio-card" data-category="bridal">
+                    <img src="images/image30.JPG" alt="Corset Back Before" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Alterations</span>
+                        <h3>Corset Back Conversion (Before)</h3>
+                        <p>Converting a zipper back into an adjustable lace-up corset back.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 31 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image31.JPG" alt="Corset Back After" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Custom Alterations</span>
-                    <h3>Corset Back Conversion (After)</h3>
-                    <p>Completed lace-up corset back for a flexible fit and elegant finish.</p>
+                <!-- Image 31 -->
+                <div class="portfolio-card" data-category="bridal">
+                    <img src="images/image31.JPG" alt="Corset Back After" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Alterations</span>
+                        <h3>Corset Back Conversion (After)</h3>
+                        <p>Completed lace-up corset back for a flexible fit and elegant finish.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 32 -->
-            <div class="portfolio-card" data-category="leather">
-                <img src="images/image32.JPG" alt="Leather Repair" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Leather Tailoring</span>
-                    <h3>Leather Repair & Refitting</h3>
-                    <p>Heavy-duty zipper repairs and sleeve adjustments for leather jackets.</p>
+                <!-- Image 32 -->
+                <div class="portfolio-card" data-category="leather">
+                    <img src="images/image32.JPG" alt="Leather Repair" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Leather Tailoring</span>
+                        <h3>Leather Repair & Refitting</h3>
+                        <p>Heavy-duty zipper repairs and sleeve adjustments for leather jackets.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 34 -->
-            <div class="portfolio-card" data-category="leather">
-                <img src="images/image34.JPG" alt="Leather Jacket" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Leather Alterations</span>
-                    <h3>Leather Jacket Sizing</h3>
-                    <p>Sleeve tapering and custom body fit adjustments for motorcycle jackets.</p>
+                <!-- Image 34 -->
+                <div class="portfolio-card" data-category="leather">
+                    <img src="images/image34.JPG" alt="Leather Jacket" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Leather Alterations</span>
+                        <h3>Leather Jacket Sizing</h3>
+                        <p>Sleeve tapering and custom body fit adjustments for motorcycle jackets.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 35 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image35.JPG" alt="Ruched Bodice" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear Alterations</span>
-                    <h3>Ruched Bodice & Hem Fitting</h3>
-                    <p>Bust support, waist adjustments, and hem leveling for formal gowns.</p>
+                <!-- Image 35 -->
+                <div class="portfolio-card" data-category="formal">
+                    <img src="images/image35.JPG" alt="Ruched Bodice" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Formalwear Alterations</span>
+                        <h3>Ruched Bodice & Hem Fitting</h3>
+                        <p>Bust support, waist adjustments, and hem leveling for formal gowns.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 36 -->
-            <div class="portfolio-card" data-category="bridal">
-                <img src="images/image36.JPG" alt="Satin Gown" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bridal Alterations</span>
-                    <h3>Satin Gown Customization</h3>
-                    <p>V-neck bodice tailoring, waist fitting, and clean hem finishing.</p>
+                <!-- Image 36 -->
+                <div class="portfolio-card" data-category="bridal">
+                    <img src="images/image36.JPG" alt="Satin Gown" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Bridal Alterations</span>
+                        <h3>Satin Gown Customization</h3>
+                        <p>V-neck bodice tailoring, waist fitting, and clean hem finishing.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 37 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image37.JPG" alt="Prom Dress" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear Alterations</span>
-                    <h3>Prom & Evening Dress Customization</h3>
-                    <p>Bust fitting, side-seam tailoring, and lace-inset adjustments.</p>
+                <!-- Image 37 -->
+                <div class="portfolio-card" data-category="formal">
+                    <img src="images/image37.JPG" alt="Prom Dress" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Formalwear Alterations</span>
+                        <h3>Prom & Evening Dress Customization</h3>
+                        <p>Bust fitting, side-seam tailoring, and lace-inset adjustments.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 38 -->
-            <div class="portfolio-card" data-category="formal">
-                <img src="images/image38.JPG" alt="Draped Dress" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Formalwear Alterations</span>
-                    <h3>Draped Evening Dress Refitting</h3>
-                    <p>Precision bodice fitting, sleeve adjustments, and chiffon hem finishing.</p>
+                <!-- Image 38 -->
+                <div class="portfolio-card" data-category="formal">
+                    <img src="images/image38.JPG" alt="Draped Dress" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Formalwear Alterations</span>
+                        <h3>Draped Evening Dress Refitting</h3>
+                        <p>Precision bodice fitting, sleeve adjustments, and chiffon hem finishing.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 39 -->
-            <div class="portfolio-card" data-category="menswear">
-                <img src="images/image39.JPG" alt="Suit Jacket" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Suits & Menswear</span>
-                    <h3>Suit Jacket & Blazer Tailoring</h3>
-                    <p>Professional sleeve shortening, shoulder fitting, and waist suppression.</p>
+                <!-- Image 39 -->
+                <div class="portfolio-card" data-category="menswear">
+                    <img src="images/image39.JPG" alt="Suit Jacket" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Suits & Menswear</span>
+                        <h3>Suit Jacket & Blazer Tailoring</h3>
+                        <p>Professional sleeve shortening, shoulder fitting, and waist suppression.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 40 -->
-            <div class="portfolio-card" data-category="menswear">
-                <img src="images/image40.JPG" alt="Plaid Suit" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Suits & Menswear</span>
-                    <h3>Plaid Suit Jacket Tailoring</h3>
-                    <p>Sleeve adjustments and precise pattern-matching for structured menswear.</p>
+                <!-- Image 40 -->
+                <div class="portfolio-card" data-category="menswear">
+                    <img src="images/image40.JPG" alt="Plaid Suit" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Suits & Menswear</span>
+                        <h3>Plaid Suit Jacket Tailoring</h3>
+                        <p>Sleeve adjustments and precise pattern-matching for structured menswear.</p>
+                    </div>
                 </div>
-            </div>
 
-            <!-- Image 41 -->
-            <div class="portfolio-card" data-category="menswear">
-                <img src="images/image41.JPG" alt="Floral Vest" onclick="openLightbox(this)">
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Suits & Menswear</span>
-                    <h3>Vest & Waistcoat Fitting</h3>
-                    <p>Side-seam adjustments and button alignment for patterned vests.</p>
+                <!-- Image 41 -->
+                <div class="portfolio-card" data-category="menswear">
+                    <img src="images/image41.JPG" alt="Floral Vest" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Suits & Menswear</span>
+                        <h3>Vest & Waistcoat Fitting</h3>
+                        <p>Side-seam adjustments and button alignment for patterned vests.</p>
+                    </div>
                 </div>
-            </div>
 
+                <!-- Image 42 -->
+                <div class="portfolio-card" data-category="upholstery">
+                    <img src="images/image42.jpg" alt="Milwaukee Rooftop Exterior Seating" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Upholstery</span>
+                        <h3>Hotel Rooftop Seating (Milwaukee)</h3>
+                        <p>Bespoke navy cushions, striped backrests, and piped bolsters for Tiffin Millwork Co. LLC.</p>
+                    </div>
+                </div>
+
+                <!-- Image 43 -->
+                <div class="portfolio-card" data-category="upholstery">
+                    <img src="images/image43.jpg" alt="Rooftop Sectional Upholstery" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Upholstery</span>
+                        <h3>Commercial Rooftop Lounge</h3>
+                        <p>Custom-patterned outdoor textiles engineered for continuous commercial use.</p>
+                    </div>
+                </div>
+
+                <!-- Image 44 -->
+                <div class="portfolio-card" data-category="upholstery">
+                    <img src="images/image44.jpg" alt="Custom Navy Bench Cushions" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Upholstery</span>
+                        <h3>Architectural Bench Cushions</h3>
+                        <p>Precision-tailored deep navy seat cushions aligned with architectural woodwork.</p>
+                    </div>
+                </div>
+
+                <!-- Image 45 -->
+                <div class="portfolio-card" data-category="upholstery">
+                    <img src="images/image45.jpg" alt="Modular Rooftop Seating" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Upholstery</span>
+                        <h3>Modular Exterior Cushion Fit</h3>
+                        <p>Clean corner seams and resilient weather-resistant outdoor fabrics.</p>
+                    </div>
+                </div>
+
+                <!-- Image 46 -->
+                <div class="portfolio-card" data-category="upholstery">
+                    <img src="images/image46.jpg" alt="Piped Bolster and Striped Backrest" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Upholstery</span>
+                        <h3>Piped Bolsters &amp; Striped Backrests</h3>
+                        <p>Multi-striped backrests paired with custom contrast-piped bolster pillows.</p>
+                    </div>
+                </div>
+
+                <!-- Image 47 -->
+                <div class="portfolio-card" data-category="upholstery">
+                    <img src="images/image47.jpg" alt="Commercial Outdoor Seating Detail" onclick="openLightbox(this)">
+                    <div class="portfolio-info">
+                        <span class="portfolio-tag">Custom Upholstery</span>
+                        <h3>Custom Outdoor Piping &amp; Finish</h3>
+                        <p>Detailed trim and heavy-duty stitching for upscale commercial hospitality.</p>
+                    </div>
+                </div>
+
+            </div>
+            <button class="slideshow-btn next" onclick="scrollSlideshow(1)" aria-label="Next Slide">&#10095;</button>
         </div>
 
         <!-- Video Gallery Section -->
@@ -1005,6 +1345,36 @@
     </footer>
 
     <script>
+        /* FEATURED PROJECT SLIDESHOW CONTROLS */
+        let currentFeaturedIndex = 0;
+
+        function showFeaturedSlide(index) {
+            const slides = document.querySelectorAll('.featured-slide');
+            const dots = document.querySelectorAll('.featured-dot');
+            if (!slides.length) return;
+
+            if (index >= slides.length) currentFeaturedIndex = 0;
+            else if (index < 0) currentFeaturedIndex = slides.length - 1;
+            else currentFeaturedIndex = index;
+
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === currentFeaturedIndex);
+            });
+
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === currentFeaturedIndex);
+            });
+        }
+
+        function changeFeaturedSlide(step) {
+            showFeaturedSlide(currentFeaturedIndex + step);
+        }
+
+        function goToFeaturedSlide(index) {
+            showFeaturedSlide(index);
+        }
+
+        /* LIGHTBOX CONTROLS */
         function openLightbox(img) {
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
@@ -1019,12 +1389,21 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
-        function filterPortfolio(category) {
+        /* HORIZONTAL PORTFOLIO SLIDESHOW CONTROLS */
+        function scrollSlideshow(direction) {
+            const container = document.getElementById('portfolioSlideshow');
+            const isRTL = document.body.classList.contains('rtl-active');
+            const scrollAmount = 320 * (isRTL ? -direction : direction);
+            container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+
+        function filterPortfolio(category, activeBtn) {
             const cards = document.querySelectorAll('.portfolio-card');
             const buttons = document.querySelectorAll('.filter-btn');
+            const slideshow = document.getElementById('portfolioSlideshow');
 
             buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            if (activeBtn) activeBtn.classList.add('active');
 
             cards.forEach(card => {
                 if (category === 'all' || card.getAttribute('data-category') === category) {
@@ -1033,8 +1412,13 @@
                     card.classList.add('hide');
                 }
             });
+
+            if (slideshow) {
+                slideshow.scrollTo({ left: 0, behavior: 'smooth' });
+            }
         }
 
+        /* GOOGLE TRANSLATE CONTROLS */
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({
                 pageLanguage: 'en',
