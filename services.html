@@ -17,7 +17,7 @@
             --bg-light: #f7f9fa;
         }
 
-        * {
+        *, *::before, *::after {
             box-sizing: border-box;
         }
 
@@ -25,6 +25,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
+            top: 0px !important;
             background-color: var(--bg-light);
             color: var(--text-dark);
             line-height: 1.6;
@@ -184,10 +185,6 @@
         .goog-te-gadget-icon, 
         #goog-gt-tt {
             display: none !important;
-        }
-        
-        body {
-            top: 0px !important;
         }
 
         .welcome-banner {
@@ -349,7 +346,7 @@
             display: grid;
             grid-template-columns: 1fr;
             gap: 20px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
 
         .review-card {
@@ -391,6 +388,32 @@
             font-size: 0.95rem;
             margin: 0;
             line-height: 1.5;
+        }
+
+        .customer-note-photo {
+            text-align: center;
+            margin: 25px 0 35px 0;
+            padding: 15px;
+            background: #fdf6f9;
+            border: 1px solid #f2cdd9;
+            border-radius: 8px;
+        }
+
+        .customer-note-photo img {
+            width: 100%;
+            max-width: 360px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            cursor: pointer;
+            display: inline-block;
+        }
+
+        .customer-note-caption {
+            margin: 10px 0 0 0;
+            font-size: 0.9rem;
+            color: var(--header-text);
+            font-weight: 600;
         }
 
         /* Write Review Form Styling */
@@ -494,7 +517,7 @@
         .lightbox {
             display: none;
             position: fixed;
-            z-index: 1000;
+            z-index: 2000;
             top: 0;
             left: 0;
             width: 100%;
@@ -962,6 +985,12 @@
                 </div>
             </div>
 
+            <!-- Customer Thank-You Card Photo -->
+            <div class="customer-note-photo">
+                <img src="images/image52.jpg" alt="Handwritten thank-you card from Tashena appreciating time, care, and attention on wedding dress alterations" onclick="openLightbox(this)">
+                <p class="customer-note-caption">Thank-you note from bridal alteration client Tashena</p>
+            </div>
+
             <!-- Write a Review Box -->
             <div class="write-review-box">
                 <h3>Leave a Review</h3>
@@ -1004,9 +1033,6 @@
                 The video below shows the careful pinning, fitting, and stitching techniques our tailors use for custom alterations.
             </p>
         </div>
-        <Carousel>
-          <Video source="youtube" query="master tailor alterations fitting process demonstration" count="3"/>
-        </Carousel>
 
         <div style="text-align: center; margin-top: 35px;">
             <p style="font-size: 1.05rem; color: #444444; margin-bottom: 15px;">Have questions about a specific alteration or custom design?</p>
@@ -1101,23 +1127,32 @@
             event.preventDefault();
             const name = document.getElementById('reviewerName').value;
             const comment = document.getElementById('reviewComment').value;
-            const rating = document.getElementById('selectedRating').value;
+            const rating = parseInt(document.getElementById('selectedRating').value, 10) || 5;
 
             const container = document.getElementById('reviewsContainer');
             const card = document.createElement('div');
             card.className = 'review-card';
 
-            let starString = '';
-            for (let i = 0; i < rating; i++) {
-                starString += '★';
-            }
+            const authorDiv = document.createElement('div');
+            authorDiv.className = 'review-author';
+            authorDiv.textContent = name;
 
-            card.innerHTML = `
-                <div class="review-author">${name} <span class="review-date">Just now</span></div>
-                <div class="review-stars">${starString}</div>
-                <p class="review-text">${comment}</p>
-            `;
+            const dateSpan = document.createElement('span');
+            dateSpan.className = 'review-date';
+            dateSpan.textContent = 'Just now';
+            authorDiv.appendChild(dateSpan);
 
+            const starsDiv = document.createElement('div');
+            starsDiv.className = 'review-stars';
+            starsDiv.textContent = '★'.repeat(rating);
+
+            const textP = document.createElement('p');
+            textP.className = 'review-text';
+            textP.textContent = comment;
+
+            card.appendChild(authorDiv);
+            card.appendChild(starsDiv);
+            card.appendChild(textP);
             container.prepend(card);
 
             document.getElementById('reviewForm').reset();
