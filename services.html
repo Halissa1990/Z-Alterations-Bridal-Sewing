@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Services & Reviews - Z Alterations & Bridal Sewing LLC</title>
+    <title>Services &amp; Reviews - Z Alterations &amp; Bridal Sewing LLC</title>
     <style>
         :root {
             --header-pink: #fce1ed; /* Soft pink background matching index */
@@ -15,6 +15,7 @@
             --dark-dark-pink: #720033; /* Dark dark pink color */
             --text-dark: #333333;
             --bg-light: #f7f9fa;
+            --border-soft: #f0d7e3;
         }
 
         *, *::before, *::after {
@@ -190,20 +191,22 @@
         .welcome-banner {
             background-color: var(--header-pink);
             text-align: center;
-            padding: 10px;
+            padding: 14px 15px;
             border-bottom: 1px solid #f2cdd9;
         }
 
         .welcome-banner h2 {
             margin: 0;
             color: var(--header-text);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-weight: 700;
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.3px;
         }
 
         main {
-            padding: 30px 15px;
-            max-width: 1000px;
+            padding: 32px 15px;
+            max-width: 1020px;
             margin: 0 auto;
         }
 
@@ -211,86 +214,174 @@
         .services-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 20px;
+            gap: 24px;
             margin-bottom: 30px;
         }
 
         .service-card {
             background: #ffffff;
-            padding: 25px 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            padding: 24px 22px;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(114, 0, 51, 0.05);
+            border: 1px solid #f5e6ed;
             border-top: 4px solid var(--brand-pink);
             position: relative;
+            transition: transform 0.22s ease, box-shadow 0.22s ease;
         }
 
-        .service-number {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            font-size: 1.6em;
-            font-weight: bold;
-            color: #e0e0e0;
+        .service-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 22px rgba(114, 0, 51, 0.09);
         }
 
-        body.rtl-active .service-number {
-            right: auto;
-            left: 20px;
+        .service-card-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            padding-bottom: 12px;
+            margin-bottom: 14px;
+            border-bottom: 1px solid #f5e6ed;
+        }
+
+        .service-title-group {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-icon {
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            border-radius: 9px;
+            background-color: var(--header-pink);
+            color: var(--header-text);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border-soft);
+        }
+
+        .service-icon svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--header-text);
+            fill: none;
+            stroke-width: 1.8;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .service-card h3 {
             color: var(--header-text);
-            font-size: 1.3rem;
-            margin-top: 0;
-            margin-bottom: 15px;
-            padding-right: 40px;
+            font-size: 1.15rem;
+            margin: 0;
             font-family: 'Georgia', serif;
+            letter-spacing: 0.2px;
+            line-height: 1.3;
         }
 
-        body.rtl-active .service-card h3 {
-            padding-right: 0;
-            padding-left: 40px;
+        .service-number {
+            font-size: 1.35rem;
+            font-weight: 700;
+            color: #e9c4d4;
+            font-family: 'Georgia', serif;
+            line-height: 1;
+            flex-shrink: 0;
         }
 
         .service-card ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            color: #444;
+            list-style-type: none;
+            padding-left: 0;
+            color: #3d3d3d;
             font-size: 0.95rem;
-            line-height: 1.8;
+            line-height: 1.6;
             margin: 0;
         }
 
         body.rtl-active .service-card ul {
-            padding-left: 0;
-            padding-right: 20px;
+            padding-right: 0;
         }
 
-        .service-card ul li strong {
-            color: var(--header-text);
+        .service-card ul li {
+            position: relative;
+            padding-left: 16px;
+            margin-bottom: 6px;
+        }
+
+        .service-card ul li::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0.62em;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: var(--brand-pink);
+        }
+
+        body.rtl-active .service-card ul li {
+            padding-left: 0;
+            padding-right: 16px;
+        }
+
+        body.rtl-active .service-card ul li::before {
+            left: auto;
+            right: 0;
+        }
+
+        .service-card ul li:last-child {
+            margin-bottom: 0;
         }
 
         /* Price Disclaimer Card */
         .disclaimer-card {
             background: #ffffff;
+            border: 1px solid #f5e6ed;
             border-left: 5px solid var(--brand-pink);
-            padding: 20px 15px;
-            border-radius: 0 8px 8px 0;
+            padding: 20px 22px;
+            border-radius: 0 10px 10px 0;
             margin-top: 30px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
         }
 
         body.rtl-active .disclaimer-card {
-            border-left: none;
+            border-left: 1px solid #f5e6ed;
             border-right: 5px solid var(--brand-pink);
-            border-radius: 8px 0 0 8px;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .disclaimer-icon {
+            width: 36px;
+            height: 36px;
+            min-width: 36px;
+            border-radius: 50%;
+            background-color: var(--header-pink);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2px;
+        }
+
+        .disclaimer-icon svg {
+            width: 18px;
+            height: 18px;
+            stroke: var(--header-text);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .disclaimer-card h4 {
             color: var(--header-text);
-            font-size: 1.2rem;
+            font-size: 1.15rem;
             margin-top: 0;
-            margin-bottom: 10px;
+            margin-bottom: 6px;
             font-family: 'Georgia', serif;
         }
 
@@ -306,7 +397,8 @@
             margin-top: 50px;
             background: #ffffff;
             padding: 30px 25px;
-            border-radius: 8px;
+            border-radius: 10px;
+            border: 1px solid #f5e6ed;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
         }
 
@@ -484,21 +576,34 @@
         }
 
         .button {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             background-color: var(--brand-pink);
             color: white;
-            padding: 10px 20px;
-            border-radius: 4px;
+            padding: 11px 22px;
+            border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.95rem;
-            transition: background 0.3s ease;
+            transition: background 0.25s ease, transform 0.2s ease;
             border: none;
             cursor: pointer;
         }
 
         .button:hover {
             background-color: #990033;
+            transform: translateY(-1px);
+        }
+
+        .button svg {
+            width: 16px;
+            height: 16px;
+            stroke: currentColor;
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .status-message {
@@ -755,10 +860,10 @@
                 font-size: 1.5rem;
             }
             main {
-                padding: 30px 20px;
+                padding: 36px 20px;
             }
             .services-grid {
-                grid-template-columns: 1fr 1fr;
+                grid-template-columns: repeat(2, 1fr);
             }
             footer {
                 padding: 40px 30px;
@@ -808,7 +913,7 @@
     <header>
         <div class="header-container">
             <div class="header-bg-banner">
-                <img src="images/logo.jpg" alt="Z Alterations & Bridal Sewing LLC Logo">
+                <img src="images/logo.jpg" alt="Z Alterations &amp; Bridal Sewing LLC Logo">
             </div>
             <div class="header-details">
                 <div class="tagline">Elegance. Perfect Fit. Custom Sewing.</div>
@@ -839,102 +944,239 @@
     </nav>
 
     <section class="welcome-banner">
-        <h2>Our Services & Price List</h2>
+        <h2>Our Alteration &amp; Tailoring Services</h2>
     </section>
 
     <main>
         <!-- Services Grid -->
         <div class="services-grid">
-            
+
             <!-- Category 01 -->
             <div class="service-card">
-                <span class="service-number">01</span>
-                <h3>Pants, Slacks & Jeans</h3>
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Pants Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M6 3h12l1.5 18h-5.2L12 10l-2.3 11H4.5L6 3z"/>
+                                <path d="M9 3v3M15 3v3M6 7h12"/>
+                            </svg>
+                        </span>
+                        <h3>Pants, Slacks, Jeans</h3>
+                    </div>
+                    <span class="service-number">01</span>
+                </div>
                 <ul>
-                    <li>Jean Hem — <strong>$18+</strong></li>
-                    <li>Plain Hem — <strong>$18+</strong></li>
-                    <li>Double Stitch Hem — <strong>$18+</strong></li>
-                    <li>Original Hem — <strong>$25+</strong></li>
-                    <li>Tricky Hem — <strong>$25+</strong></li>
-                    <li>Cuff / Cuff with Lining — <strong>$25+</strong></li>
-                    <li>Taper Legs — <strong>$25+</strong></li>
-                    <li>Waist Seat In/Out — <strong>$25+</strong></li>
-                    <li>Waist Seat Crotch — <strong>$25+</strong></li>
-                    <li>Zipper Replace — <strong>$25+</strong></li>
-                    <li>Darts — <strong>$18+</strong></li>
+                    <li>Plain Hem</li>
+                    <li>Jeans Hem</li>
+                    <li>Original Hem (Euro Hem)</li>
+                    <li>Double Hem</li>
+                    <li>Tricky Hem</li>
+                    <li>Cuff</li>
+                    <li>Cuff with Lining</li>
+                    <li>Re-Hem Cuff</li>
+                    <li>Re-Hem Plain</li>
+                    <li>Taper with Cups</li>
+                    <li>Shorten with Lining</li>
+                    <li>Shorten or Lengthen Cuff</li>
+                    <li>Replace New Zipper with Lining</li>
+                    <li>Replace New Zipper (Invisible)</li>
+                    <li>Replace New Zipper (Metal)</li>
+                    <li>Replace New Zipper (Plastic)</li>
+                    <li>Waist Dart</li>
+                    <li>Waist Seat In/Out</li>
+                    <li>Waist Seat Crotch</li>
+                    <li>Replace Elastic in Waist</li>
+                    <li>Lengthen Cover</li>
                 </ul>
             </div>
 
             <!-- Category 02 -->
             <div class="service-card">
-                <span class="service-number">02</span>
-                <h3>Shirts & Blouses</h3>
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Shirt Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 3l4 3 4-3 4 3-2 5-2-1v14H8V7L6 8 4 3l4-3z"/>
+                                <line x1="12" y1="6" x2="12" y2="21"/>
+                            </svg>
+                        </span>
+                        <h3>Shirts, Blouses, Dress Shirts</h3>
+                    </div>
+                    <span class="service-number">02</span>
+                </div>
                 <ul>
-                    <li>Take In / Out Sides — <strong>$20+</strong></li>
-                    <li>Shorten Sleeves (No Cuff) — <strong>$25+</strong></li>
-                    <li>Shorten Sleeves (With Cuff) — <strong>$38+</strong></li>
-                    <li>Move Shoulder — <strong>$35+</strong></li>
-                    <li>Shorten Bottom — <strong>$25+</strong></li>
+                    <li>Shorten Sleeve No Cuff</li>
+                    <li>Shorten Sleeve w/Cuff</li>
+                    <li>Move Shoulder</li>
+                    <li>Shorten Bottom</li>
+                    <li>Side In / Out</li>
+                    <li>Move Collar</li>
                 </ul>
             </div>
 
             <!-- Category 03 -->
             <div class="service-card">
-                <span class="service-number">03</span>
-                <h3>Suits, Coats & Jackets</h3>
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Suit / Blazer Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 3l4 5 4-5 4 3v15H4V6l4-3z"/>
+                                <path d="M12 8v13M8 3l2 9M16 3l-2 9"/>
+                            </svg>
+                        </span>
+                        <h3>Suits, Coats, Jackets</h3>
+                    </div>
+                    <span class="service-number">03</span>
+                </div>
                 <ul>
-                    <li>Shorten Sleeves (No Vent) — <strong>$38+</strong></li>
-                    <li>Shorten Sleeves (With Vent) — <strong>$50+</strong></li>
-                    <li>Side In / Out — <strong>$35+</strong></li>
-                    <li>Shorten Bottom — <strong>$65+</strong></li>
-                    <li>Move Collar — <strong>$55+</strong></li>
-                    <li>Move Shoulder — <strong>$95+</strong></li>
-                    <li>Vest Side-In — <strong>$35+</strong></li>
-                    <li>Shorten Ties — <strong>$18+</strong></li>
-                    <li>Zipper Replacement — <strong>$38+</strong></li>
+                    <li>Shorten Sleeve</li>
+                    <li>Shorten Bottom</li>
+                    <li>Side in / Side out</li>
+                    <li>Move Shoulder</li>
+                    <li>Move Collar</li>
+                    <li>Vest Side-In</li>
+                    <li>Shorten Ties</li>
                 </ul>
             </div>
 
             <!-- Category 04 -->
             <div class="service-card">
-                <span class="service-number">04</span>
-                <h3>Formal & Prom Dresses</h3>
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Formal Dress Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M9 3h6l-1 5 5 13H5l5-13-1-5z"/>
+                                <path d="M9.5 11h5"/>
+                            </svg>
+                        </span>
+                        <h3>Prom &amp; Casual Dresses</h3>
+                    </div>
+                    <span class="service-number">04</span>
+                </div>
                 <ul>
-                    <li>Shorten Bottom — <strong>$35+</strong></li>
-                    <li>Side In / Out — <strong>$45+</strong></li>
-                    <li>Shorten Straps — <strong>$25+</strong></li>
-                    <li>Bustle Creation — <strong>$35+</strong></li>
-                    <li>Add Bra Pads — <strong>$25+</strong></li>
-                    <li>Add Corset Back — <strong>$50+</strong></li>
+                    <li>Shorten or Lengthen</li>
+                    <li>Shorten with Lining</li>
+                    <li>Shorten Straps</li>
+                    <li>Lengthen Straps</li>
+                    <li>Side in / Side out</li>
+                    <li>Add bra Cups</li>
+                    <li>Replace ew Zipper</li>
                 </ul>
             </div>
 
             <!-- Category 05 -->
             <div class="service-card">
-                <span class="service-number">05</span>
-                <h3>Wedding Dresses</h3>
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Bridal / Sparkle Gown Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3l1.4 2.8L16.5 7l-3.1 1.2L12 11l-1.4-2.8L7.5 7l3.1-1.2L12 3z"/>
+                                <path d="M9 12h6l-1 2 5 7H5l5-7-1-2z"/>
+                            </svg>
+                        </span>
+                        <h3>Wedding Dress</h3>
+                    </div>
+                    <span class="service-number">05</span>
+                </div>
                 <ul>
-                    <li>Shorten Bottom — <strong>$95+</strong></li>
-                    <li>Side In / Out — <strong>$80+</strong></li>
-                    <li>Shorten Straps — <strong>$45+</strong></li>
-                    <li>Bustle Creation — <strong>$35+</strong></li>
-                    <li>Add Bra Pads — <strong>$35+</strong></li>
-                    <li>Add Corset Back — <strong>$95+</strong></li>
+                    <li>Shorten strap</li>
+                    <li>Shorten Bottom</li>
+                    <li>Shorten Sleeve</li>
+                    <li>Zipper Replacement</li>
+                    <li>Sleeve Shorten or Lengthen</li>
+                    <li>Add Bra Cups</li>
+                    <li>Add Corsets</li>
+                    <li>Side in / Side out with lace or bead</li>
+                    <li>Hem per layer</li>
+                    <li>Bustles</li>
+                    <li>Add Material</li>
                 </ul>
             </div>
 
             <!-- Category 06 -->
             <div class="service-card">
-                <span class="service-number">06</span>
-                <h3>Miscellaneous Sewing</h3>
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Shield / Heavy Fabric Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M12 3l8 4v5c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V7l8-4z"/>
+                                <path d="M9 12l2 2 4-4"/>
+                            </svg>
+                        </span>
+                        <h3>Leather</h3>
+                    </div>
+                    <span class="service-number">06</span>
+                </div>
                 <ul>
-                    <li>Tighten Button — <strong>$5</strong></li>
-                    <li>Add New Button — <strong>$8</strong></li>
-                    <li>Repair / Patch Hole — <strong>$10+</strong></li>
-                    <li>Add Patches — <strong>$5+</strong></li>
-                    <li>Zipper Slider Repair — <strong>$15+</strong></li>
-                    <li>Re-Hem — <strong>$10+</strong></li>
-                    <li>New Button Holes — <strong>$10+</strong></li>
+                    <li>Belt</li>
+                    <li>Waist in / Waist out</li>
+                    <li>Leather Shorten or Lengthen (Pants)</li>
+                    <li>Leather Shorten (Sleeve)</li>
+                    <li>Leather Shorten (Skirt)</li>
+                    <li>Leather Zipper (New) Pants or Skirt</li>
+                    <li>Leather Zipper (New) - Invisible Pants or Skirt</li>
+                    <li>Buttons on Leather</li>
+                </ul>
+            </div>
+
+            <!-- Category 07 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Skirt Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <path d="M8 5h8l4 15H4L8 5z"/>
+                                <path d="M6.5 16h11"/>
+                            </svg>
+                        </span>
+                        <h3>Skirt</h3>
+                    </div>
+                    <span class="service-number">07</span>
+                </div>
+                <ul>
+                    <li>Shorten with Lining</li>
+                    <li>Waist in / Waist out</li>
+                    <li>Shorten or Lengthen</li>
+                    <li>Zipper Replace</li>
+                    <li>Skirt Re-Hem</li>
+                    <li>Waist Dart</li>
+                </ul>
+            </div>
+
+            <!-- Category 08 -->
+            <div class="service-card">
+                <div class="service-card-header">
+                    <div class="service-title-group">
+                        <span class="service-icon" aria-hidden="true">
+                            <!-- Scissors / Tailoring Icon -->
+                            <svg viewBox="0 0 24 24">
+                                <circle cx="6" cy="18" r="2.5"/>
+                                <circle cx="18" cy="18" r="2.5"/>
+                                <line x1="8" y1="16" x2="18" y2="4"/>
+                                <line x1="16" y1="16" x2="6" y2="4"/>
+                            </svg>
+                        </span>
+                        <h3>Miscellaneous</h3>
+                    </div>
+                    <span class="service-number">08</span>
+                </div>
+                <ul>
+                    <li>Add New Buttons</li>
+                    <li>New Buttonholes</li>
+                    <li>Tighten Button</li>
+                    <li>Re-sew Hole</li>
+                    <li>Patches</li>
+                    <li>New Sliders</li>
+                    <li>Sew Patches</li>
+                    <li>Patch on Sleeve</li>
+                    <li>Re-Hem</li>
                 </ul>
             </div>
 
@@ -942,16 +1184,25 @@
 
         <!-- Pricing Policy Disclaimer Box -->
         <div class="disclaimer-card">
-            <h4>Pricing Policy & Information</h4>
-            <p>
-                Prices vary depending on fabric, layers, and hems. Standard turnaround time is 1–2 weeks (Rush orders available for $10–$35). All final prices are determined by our tailors.
-            </p>
+            <span class="disclaimer-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="9"/>
+                    <line x1="12" y1="10" x2="12" y2="16"/>
+                    <circle cx="12" cy="7.2" r="0.8" fill="currentColor" stroke="none"/>
+                </svg>
+            </span>
+            <div>
+                <h4>Pricing &amp; Turnaround Information</h4>
+                <p>
+                    Every garment and alteration is unique. Pricing and turnaround times depend on fabric type, layers, trims, and detailing—please visit our shop or contact us for an in-person fitting and quote.
+                </p>
+            </div>
         </div>
 
         <!-- Customer Reviews Section -->
         <section class="reviews-section">
             <div class="reviews-header">
-                <h2>Customer Reviews & Testimonials</h2>
+                <h2>Customer Reviews &amp; Testimonials</h2>
                 <div class="overall-rating">
                     <span>5.0</span>
                     <div class="stars">★★★★★</div>
@@ -1017,7 +1268,13 @@
                         <textarea id="reviewComment" class="form-control" rows="4" placeholder="Share your experience with our tailoring services..." required></textarea>
                     </div>
 
-                    <button type="submit" class="button">Submit Review</button>
+                    <button type="submit" class="button">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <line x1="22" y1="2" x2="11" y2="13"/>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+                        </svg>
+                        Submit Review
+                    </button>
                 </form>
 
                 <div id="reviewStatus" class="status-message">
@@ -1036,7 +1293,13 @@
 
         <div style="text-align: center; margin-top: 35px;">
             <p style="font-size: 1.05rem; color: #444444; margin-bottom: 15px;">Have questions about a specific alteration or custom design?</p>
-            <a href="contact.html" class="button">Contact Us Today</a>
+            <a href="contact.html" class="button">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                </svg>
+                Contact Us Today
+            </a>
         </div>
     </main>
 
@@ -1070,7 +1333,7 @@
                 <p class="announcement-thankyou">
                     Thank you for choosing us! We appreciate your business.
                 </p>
-                <div class="announcement-shop-name">Z Alterations & Bridal Sewing LLC</div>
+                <div class="announcement-shop-name">Z Alterations &amp; Bridal Sewing LLC</div>
             </div>
 
             <div class="footer-column">
@@ -1102,8 +1365,8 @@
         </div>
 
         <div class="footer-bottom">
-            <div class="footer-bottom-company">Z Alterations & Bridal Sewing LLC</div>
-            <div class="footer-bottom-copy">&copy; 2026 Z Alterations & Bridal Sewing LLC. All rights reserved.</div>
+            <div class="footer-bottom-company">Z Alterations &amp; Bridal Sewing LLC</div>
+            <div class="footer-bottom-copy">&copy; 2026 Z Alterations &amp; Bridal Sewing LLC. All rights reserved.</div>
         </div>
     </footer>
 
